@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faster than light claim for neutrinos - 2011</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Faster than light claim for neutrinos - 2011</h1>
+<div class="meta">N. Vivian Pope — 2011</div>
+<p>Comment on latest news at CERN Faster than light claim for neutrinos at CERN Einstein’s assertion that nothing travels faster than light is by no means refuted by the latest claim by the CERN physicists to have discovered that there are neutrinos which can arrive at destinations ahead of the speed if light. The mistake these physicists are making is to assume that there is just one time by which a motion is measured. In fact, in relativity, there are two times. One is the time which is measured by the observer of the motion, called the relative time (as in the experiments at CERN) and the other is the time registered by the particle itself, called the proper time. The upper, unreachable speed-limit of a particle in this proper time is instantaneity, while that same limit in relative time is the finite limit c. These two times are simply dual aspects of the same motion. Obviously, nothing can travel faster than instantaneity, hence nothing can travel faster than c. If it did, then a neutrino sent from one laboratory today might arrive at another laboratory yesterday which is, of course, nonsense. This ‘new result’ which the physicists have found has been predicted decades ago, and can be found on the website www.poams.org , which prescribes a whole new physics based on the relativistic views of Einstein’s mentor, Mach rather than that of his relativistic successor, Einstein. This neo-Machian approach shows how these claimed ‘new results’ are no more than to be expected.</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

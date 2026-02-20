@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Analog to Digital - 2004</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>From Analog to Digital - 2004</h1>
+<div class="meta">N. Vivian Pope — 2004</div>
+<p>From Analog to Digital: A Revolution in Modern Physics Never, since it was first suggested that the world is round not flat, has our way of thinking about the world been challenged with a more revolutionary proposal than one which has been presented recently. A group of scientists, called the POAMS group,* meeting at the University of West of England, Bristol are agreed that Einstein’s theory of relativity did not go far enough, that it has not completed the revolution in common thought that, logically, it ought to have done. The reason, these POAMS scientists say, is that Einstein presented his theory in an unnecessarily complicated way, which makes it as confusing as though we were invited to think of the world as both round and flat at the same time. If that is so then it is little wonder that the theory remains a by-word for obscurity. The main stumbling-block to a common understanding of relativity, say these scientists, is Einstein’s having based his theory on the classical idea of light travelling at a constant speed in a vacuum. In Einstein’s relativity it is axiomatic that the speed of light in a vacuum is constant. The group points out, however, that to think of anything travelling at a speed which is constant in or relative to a vacuum is pure nonsense. Speeds are measured relatively to physical objects, never to a void. To measure a speed is to measure the distance travelled by some object during a measured time, and there is neither distance nor time to be measured in a vacuum as such. By definition, a vacuum contains no measuring devices, hence no dimensions, whence to attribute to it properties and dimensions is a prime source of confusion. This confusion, the POAMS group concurs, can be removed simply by abandoning this axiom of Einstein’s that light travels in vacuo at a constant speed behind and beyond all our perceptions of it. They show, mathematically and logically, that this assumption of Einstein’s is redundant, that all the important consequences of relativity theory can be deduced much more simply and efficiently without it. We may then think of the space and the time – even what is customarily conceived (or, rather, misconceived) as ‘the speed of light’ – as being in the light as we observe it. The dimensions of the world, its space, its time, the masses and speeds of bodies are then in the light by which they interact and/or communicate. The light is thus a kind of interactive hologram whose informational elements (quanta) appear to the observer like the pixels on a video-screen from which the viewer projects the video scenario. In this way, the POAMS group tells us, relativity comes into its own in the way that Einstein’s philosophy tutor, Ernst Mach, tried to teach him but failed. The result of this revolutionary shift in thinking is to unstick physical science from the constraints of past physics analogs and reinstate it on a basis more in keeping with that of modern information theory. This, it is claimed, clears the way for a logically consistent relativism that is an advance on the relativity of Einstein and which serves the combined best interests of both Science and Commonsense. ■</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

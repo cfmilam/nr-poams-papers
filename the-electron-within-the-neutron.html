@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Electron within the Neutron</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>The Electron within the Neutron</h1>
+<div class="meta">N. Vivian Pope</div>
+<p>/:'</p>
+<p>l</p>
+<p>'4</p>
+<p>t'\</p>
+<p>g 2-</p>
+<p>--.[.* fret- Sfl,f"*C.."*&amp;&amp; 4.t l</p>
+<p>t,L</p>
+<p>-. t F+-i-.';:l ir ]$ '! ,</p>
+<p>&amp;r',.oil'J'pc"n T:-rnt,</p>
+<p>$t*ff*.</p>
+<p>.1,1,:. ,,=l-::. , ,</p>
+<p>*3n5 L]?ry</p>
+<p>lr- .i., ,1,.:1. -..,]:-f..- l.-t''i-l€</p>
+<p>. *U*-Esse ftr ?hi* -**:+*::t:d b*t.a*d*eeg *f t&amp;e sri:t:'*.a € =.*-*"j'*E: *gr}-if-* s;ertia;:+*';*I"y infla *:: *ie*tr'sr: a-d e E:r*t"e:* {e-r*",:ei:3" * h:3a{.r*g*-r: +t+x} p3;r* a ncL&amp;i *f *b,xrt *.8 He? sf -*-**tt* *ri*r&amp;r. ?I3* r;e'**:'.]&amp;, ft*r+{tr*r, lee &amp;. Eq-es v*:-y *iejjar</p>
+<p>t"* *Fet</p>
+<p>*}l</p>
+<p>s:f th* lrry&amp;*ogen {pr"*t:'x} €t"aa, "r*:i=h *$i'+g3,$t,9 $f c}::e g:,:.c.'1**8, H- = 3"5?.*6i&amp; x l-0 Fg e.*d *ne =l*cl.*, *u = q.:C'g::tS r lO*31 *g (*"o+;*i- *</p>
+<p>% = =*il;;esx:O-2?'&lt;g)"</p>
+<p>tl-k-* tis* +rF;3,**:Xi' i.qr3:'eg*n Btm, 6.is** 4h+ ::e.*.*r.qs-* ie electrio*:^Lg x*u*2e1, uier*"* f.;'.r:8 a baia-n+e *f p+siiil,e a-d r:,:;eti'srg ;le:ges ie i;+;,.E*k*..u"p.</p>
+<p>$w e-il thie *e**s t* r;96*et thet '*ee ::*-,:ir,s, -iJ-k* t&amp;e kydr,:gs* a'i,{ffis :*&amp;ff b* **::c*lv*d a* * pl*-**tar=g **rifJg,-::raii*ri -{,-rivclv*:g a;x.ri** ari{3 e&amp; *:'b'i*:ag *i-eei:'+n; but r,o. Hori p$siei**ts &amp;;*+ e.l*,:+;rt Liet'Litie j,g r.i*t $.rc" T=;,x+'*e</p>
+<p>;*,*t *::e *f a*e:r t.a:rtb**F,e *;a=g =+::* ,:r '1.r:.p* -a-he **sw e&amp;-lxgs e?tress *3*ctg"*;Ee d* x.,:l! exf*t ix *h* rr**i*;:s F;r{.o:" ** ti*i:' # "**ircm .bc}-t tu?"+ .e-=aF-:H[ at the t.lrre + of iheis *iaisgi+n. rr</p>
+<p>t k$-5t'Ag1[g-+.4-Eg*5gfuAffii6;-*S, C. H" 33*:,*?*r"-d, C. E. 3,*rc,+rf, A* $. St.*r:sr *.rd g* I*. B.sli*r* Fi';-,g*"ft *# $*n*, L*::{*a, 8:rd *d. j?59" ;ea* 3S?</p>
+<p>I i</p>
+<p>L*t u.s ia*k-e as e *tenC*"rd af *erx;erj-**n the t:*aditi*rsI pl*::etary x*del of t'he $r{r*gen stm, *:pp15-*d b:y S-Le}-s E+hr, :a eh&amp;t, e. e}r aj,1 the eiectr*&amp;ic srbi+*s hes* radil dij.ei: *.* o2r-*.", dt*re a i* an fxtegcr {jx ac*orderrce e-rit&amp; g-r;axtrm tl,e*rr) M</p>
+<p>,u**o ( = 5.t?j-77r_5 x lo*il:a) :E *re pirxl-mep or ryr*rrd*J.Esel_</p>
+<p>*sbjt" ?!:.* *r:*rgj,es l-*xL *r gai:r+d ix the '=:'-bit*Juups &amp;re *;h*n *xp,rees*d. !n x*'*as ef freet.i*#o2 sf tha t*ta-l i*r:i*&amp;tio*l *:i*rry heR {o Fl.*.::ck(s **nstant t.i"x*s fr*gi;+rrcy, o 13*6 *Y), 3'i6*:</p>
+<p>r.</p>
+<p>il</p>
+<p>3=</p>
+<p>*ere h * Fl*-srck?e crxrst*-nt, * * {}:* ei*ctrmagrretle **a=tesrt E * t"he F.;rdberg simber for ffiro*</p>
+<p>h*n(1 - 1 ) ;l</p>
+<p>g*n</p>
+<p>Ttr* seriee *f *::e'*"gr*&lt;3-iffe::enr*e flb::s rry:..r*ss*d. ls t!:at of ihe s***ell-*d L3man</p>
+<p>**ri*s {a:-:.::*ttrurediatc s-e:'i*s ha.;e b**n eit,t# f*r s}eptietty}, Thie is ae f+ll-*lrs l-</p>
+<p>z</p>
+<p>i,aI.i,L)r</p>
+<p>t,</p>
+<p>?</p>
+<p>I</p>
+<p>+</p>
+<p>,.1 )</p>
+<p>':&lt;</p>
+<p>+!)</p>
+<p>,15</p>
+<p>l{ta* i:ere* *f em:-:rse, :: is i:r 5-n+.egers *erresp*aCj_&amp;&amp; i;o +*he r+quireaerts *f</p>
+<p>qi:mtu* ii:**ry* 3t ts j"-estr*ctive t-c *+,*sld*r, h*_er*r, Edeg kc}uj-d h,app*r: jtg_ffi *Wry-%i...&amp;}S- ' +:1t..FF-fsSSi'1s53sE for *rbit* s*.j-l-er tk</p>
+<p>"Eo!_n,</p>
+<p>:ra;r L'e';'tr?* gaiks**h*S-uEis. ?:ere i-s no :E&amp;ean .dry s;*h</p>
+<p>eIid sll-eas Lkt a</p>
+<p>i.ra*.siilo*s shft:id</p>
+<p>::et b* al3c,e.*d re i +ag as t!:.ey d* ::ai break -,*he r*i."e *f q*a*..*uxs :xi*grity *</p>
+<p>-i,h&amp;t</p>
+<p>ie, +* lr:ng e* th*:*+s:*.11 *f ttr* i:"ansJtiex ls rtrr:sis*;eFt b,tjt*} fu\e eirg:i-anqm ef arg"*iar r,r;.,-,+ijll-E l:*</p>
+<p>=</p>
+<p>&amp; (pi+-:,ckrs ior,s'-&amp;,it C:v:d+d by :g)</p>
+<p>if s*eh t3:let*** i+apsE frrm t.h* ak*r:e gr:r-i:rd*i*r*1 esr*a '*aui'c haFlf.n la be r*.de by i?rc e.l,*eir*n? ?* ans:"**r 'Lh-is s{e kr* *nl{r io lt +ok ei t"he rt.rac,;x.:.e d?:st</p>
+<p>cf f*ru:r:le {1}* a-!,*'."*. Fr-*rr *}:1s id is *-r:dent "=?-</p>
+<p>"}:s+-</p>
+<p>*:ie</p>
+<p>t--:x-**qiti*ns f;"cre tJre</p>
+<p>nariex:e ievel,s:'r t,e h3d.r*gen5,: grru:'C*ierei rele*.-+e ens:"Sr ac**:-dl*g io t"he</p>
+<p>$*riss *f, po*iti";e s*l::es g3.vea 3-E: iAJ "*;r*h*r ti"a&amp;siii*Fes 5-n-r*3-v3xg €mggg"*:&amp;}</p>
+<p>* give s tr$€ij"gg res;lt, irr *t!:er w-*:"€s, eL*ctrm*f,,:reps .:lM**:*-e 6o fya*LJ-*m1 tr*vels n d+ x*t rel*a=e an*r#rr they abcg*=srerg * **:3*h, *f *m.r*e, ls esns'is*s.r*it vsj,th th* larger *ss e:f tlae ::*";tr*n,</p>
+<p>i*t'*.s, th*n, i*re*Iiy r***i* a-n fu1p*ihesie, er**l*h l-* ?h*t the ::*cttrm i-* a pr*'*,em ;*-t:s * r*1**iivistic el-*et:.*n * 5:1us .*he *.****qxj-=rala=i +f t&amp;e H.::*tic *rg*rry (K*</p>
+<p>"*t)</p>
+<p>*i i,het =ei*'i,l-v-i*if e eiee*r*n, ?bsus -*r* ?sve H</p>
+<p>Irl</p>
+<p>Yl</p>
+<p>n !</p>
+<p>.,',-2)t *= .-:1 :n - +,{ ' -''= . '1" '</p>
+<p>+</p>
+<p>*f,.;t* :i</p>
+<p>,'t,) \-,, -/l A'</p>
+<p>lt:</p>
+<p>Y iL</p>
+<p>"*</p>
+<p>(i) Hajcie8 aEpr*g:ri-aie er*betiiut"r*::s jrr i3) f=-oa {g} a_* {:i</p>
+<p>, t\</p>
+<p>il*n p::**:;aes</p>
+<p>l't 2r 2, ::-r:. '--:-,-?g' C-- I</p>
+<p>-rr</p>
+<p>=</p>
+<p>n</p>
+<p>J-{ + p</p>
+<p>.lrrZ *:.v4c) L a F*J-o*</p>
+<p>* iy+q *'?"J $*3-:r3-rg fer vu frm bh*.e *q**si,im ie kd*e;:*a"/r;g*d a*t b* isle3ji**d t*re.</p>
+<p>I</p>
+<p>*:-ffi*e it t-c ea;i that :he velr-re *i* e* =*i;i*h g'r+s ;he pr+cige Blirur,f *f e.sg *p*+s*ni+d by f!:e *mpi*x r,i6ht"*had ,..**:n js</p>
+<p>rli</p>
+<p>f</p>
+<p>4-^a.^a^</p>
+<p>e</p>
+<p>4":--.;-4trC.-ts X !\r</p>
+<p>3e*e:='u5:'.g t&amp;3s i.a3.*e f*r ***]**iiy j-:r: f*:=.-:r.e {:+i1*e* gi"r** ih* f*3-lro*,-*g:n&amp;ss-</p>
+<p>v*k*e f+r tli* r*.lgt,ivi*ii-e *1eet-:-*r:i* *J,</p>
+<p>*</p>
+<p>!n !</p>
+<p>;T</p>
+<p>L *i.vJ*</p>
+<p>(3)</p>
+<p>,</p>
+<p>iq)</p>
+<p>'i -i,- ',: ^e! v ]n :s ,''..''.-..iL'l J -\ -tv</p>
+<p>.\r-</p>
+<p>iT</p>
+<p>a</p>
+<p>.;":1</p>
+<p>3 :*4l</p>
+<p>*</p>
+<p>.2</p>
+<p>ii*) e.r:.d</p>
+<p>*21</p>
+<p>'-.^.-</p>
+<p>K: *^ -,1c-</p>
+<p>.-,'/ i.;l:-a-:,</p>
+<p>n I X :aU</p>
+<p>:ig</p>
+<p>the X*tatr :"ep+*enfed W t},ie ex* Eh* r*letlsistlc ej!-ec*,r***ee* is i jl)</p>
+<p>,-'.?) * *'-^</p>
+<p>r+li" '</p>
+<p>-i*J:i.eh 1* pr"*el*elg *&amp;i</p>
+<p>r</p>
+<p>:el-</p>
+<p>i:z)</p>
+<p>_</p>
+<p>-30 .':g</p>
+<p>/iAI</p>
+<p>i=,s* t*e b* *€d*d i+ t*;:* ps"e-t'e*** rs t* ".2-eke lbe -</p>
+<p>H*eei::g flhe ve.,i::,e* ef x* r*L #</p>
+<p>ru 5</p>
+<p>.</p>
+<p>t. " ; - i i. -/-l+ :4 *.u</p>
+<p>r v ai =e a</p>
+<p>*s of</p>
+<p>v*r ais* '*?:e e*g::.Le.r etw*iteq, *e*3"3rt +l</p>
+<p>^,s' ':lL, l--- --v</p>
+<p>v3</p>
+<p>_</p>
+<p>,1</p>
+<p>-.;g ll: s</p>
+<p>it ls e e:-wple :eetter f,e eaigr:lcte t-i=e re'fias e#rich erotl-d give tl"e*e r:+e;E+i'*se sf pa*,g arxS:rgl**i*.F f*r +::*gt:*er'ie *?*c'.:-f::,*tr'h1t. ft* r-ad*icis ls if.m ila)),</p>
+<p>2"*;=,?f3? y* iO -,.:*;-i.: :-s ,|,. -i---:::,.1;t:,:f</p>
+<p>', 1:E --':.,i:,</p>
+<p>L3</p>
+<p>-l-:;: ;:",-'t:: :; i.:,;:' j:r</p>
+<p>-;*</p>
+<p>C</p>
+<p>:1,.'l ;.i=.r:',':i.4 11.1i-'1-;t-:jl ='i-:r-1'r:-l +{:</p>
+<p>"+</p>
+<p>J</p>
+<p>level :: ' l-. },e :llAi</p>
+<p>::-::-;-:':i.-':"-;.--t</p>
+<p>E</p>
+<p>jr:e +-A ^-i'-S i-1.:'+-j</p>
+<p>,</p>
+<p>*</p>
+<p>lr</p>
+<p>'*e:fl</p>
+<p>'J</p>
+<p>lF *?'-,2</p>
+<p>ft</p>
+<p>jr</p>
+<p>K</p>
+<p>-.:'tpt ;n '-l.e</p>
+<p>;er.:'*u af</p>
+<p>the</p>
+<p>3 :=el</p>
+<p>"-:33 :rsY</p>
+<p>-**ltith 1* ?.be *::i*rry :=*]-+**ed is-</p>
+<p>=a-*a?i+d b**s*d**aF +f ;be fr*e</p>
+<p>L</p>
+<p>:re,;f.r#t.</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

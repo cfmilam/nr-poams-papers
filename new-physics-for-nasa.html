@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>'New Physics' for NASA</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>'New Physics' for NASA</h1>
+<div class="meta">N. Vivian Pope — 2008</div>
+<p>NASA’s ‘New Physics’ John Anderson, of the NASA Jet Propulsion Laboratory (JPL), says that, over the decades since the Pioneer anomaly was first discovered, just about every possible explanation, framed in standard Newtonian mechanics, has been tried, leaving a large portion of the anomaly a complete mystery. This has prompted Andrews to declare: ’In the unlikely event that there is new physics, one does not want to miss it because one had the wrong mind set.’</p>
+<p>Now, just supposing that what Andrews says here is true, what kind of ‘new physics’ might he be contemplating? In the first place, it would have to rethink the ‘gravitational’ factor, G, so long regarded as a constant in orbital equations, as possibly varying to some small extent. Together with this it would somehow have to take account of the spin angular momenta of the space-probes in relation to those of the earth, the sun and other bodies of the solar system. since this seems to have some effect on the trajectories of those spinning probes There is, of course, no place for this spin in the standard Newtonian orbital equations, since these are concerned only with the ‘gravitational’ attraction between the masses involved, the ‘forces’ of which are the same regardless of whether those masses are spinning or not. So that ‘new physics’ would have to include, within the total angular momentum of an orbiting body both its orbital angular momentum and that of its spin. Are there any historical precedents for this different, non-Newtonian physics? Indeed there are. During the early 1970s a project began at Keele university, U,K,. involving a rare, cross-disciplinary cooperation between a philosopher of science and a mathematician.. This has since become known as the Pope-Osborne Angular Momentum Synthesis (POAMS). The latest publications of this work are as described on the website www.poams.org and, especially in the very latest book (2008) entitled Light-Speed, Gravitation and Quantum Instantaneity, by A. D. Osborne and N. V. Pope. This work presents a new orbital equation which is uniquely different from that of the Newtonian tradition insofar as it includes terms for both orbital and spin angular momentum. According to this equation, if the spin of the earth, say, were somehow, miraculously, to stop, then, since angular momentum is a conserved quantity, that lost spin angular momentum of the earth would be added to its orbital angular momentum. This would increase the earth’s orbital kinetic energy, bringing it closer to he sun by about 0.0067 of an astronomical unit (AU) This predicted ‘poams effect’ applies, of course, not only to our earth in relation to the sun but also to all the various other spinning bodies of the solar system in relation to one another, including the probes. This thesis was not designed towards explaining the ‘Pioneer anomaly’, which was not known to these authors at the time of writing, far less at the time of inception of the idea, so there is no question of this ‘poams effect’ being an ad hoc theory designed towards that end. The idea was just standing there, waiting for empirical verification, which now seems to have emerged in the form of both the ‘Pioneer anomaly’ and the astronomical ‘missing mass’ anomaly which, in the POAMS formalism are not two anomalies but one. This POAMS prediction is the result of an almost heretical cross-disciplinary ArtsScience cooperation between the two academically separated departments, of Philosophy and Mathematics. All it now requires. in the interests of scientific progress, in order to consummate this long-awaited amalgamation of the disciplines, is for some other heretic to step over the voodoo ‘chalk lines’ and add Space Technology to the venture.- or is it, perhaps, too soon to anticipate that polymathic kind of merger?</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

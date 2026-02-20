@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New calculations - GPS</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>New calculations - GPS</h1>
+<div class="meta">N. Vivian Pope — 2018</div>
+<p>New calculations: Second set (Jan. 16th) (in response to Van Flandern’s new figures) c = 2.99792458e+8 G = 6.67259e-11 rO = 26560000 metres = height of orbit above Earth’s centre Formula to be tested:</p>
+<p>tR/t = 1/√1 – (GM/rc2) = POAMS time-dilation formula.</p>
+<p>Results (copied from calculator): GM/c2 0.0044367363641836335354498893488266 GM/rOc2 = 1.6704579684426331082266149653614e-10 1 - GM/rOc2 = 0.999999999832954203155736689177339 √1 - GM/rOc2 = 0.999999999916477101574380307307961 1/√1 - GM/rOc2 = 1.00000000008352289843259576725404 rG = 20187172 = = height of orbit from ground (= 26560000 – 6.372828e+6 m.) GM/rGc2 = 2.1977998523932096756543657269082e-10 1 - GM/rGc2 = 0.999999999780220014760679032434563 √1 - GM/rGc2 = 0.999999999890110007374301610977644 1/√1 - GM/rGc2 = 1.00000000010988999263777419950296 Proportional time-dilation (ground to orbit): .00000000002636709420297617611692 (recip. = 0.999999999973632905797719047539768) For comparison with V-F’s proportional dilation from ground to orbit: T . V-F says ‘The target value is (a gain of) +38,700 ns/day relative to ground clocks’. There are 86400000000000.0 nanoseconds in one day, so in one day the satellite clocks register 86400000000000.0 nanoseconds plus 38700 nanoseconds which is 86400000038700 nanoseconds. The proportional time-dilation for V-F is therefore 86400000038700 nanoseconds per 86400000000000.0 nanoseconds, which is 1.00000000044791666666666666666667.</p>
+<p>Conclusion: The POAMS formula therefore predicts, for the time-dilation of an average GPS satellite orbit 0.9999999996 times the empirical time-dilation on the basis of the ‘empirical’ data provided by V-F. Claims that ‘the size of these numbers is wrong by nearly a factor of three’ have not been substantiated. In fact, subject to any definite fault in these calculations being shown, the match of the philosophical formula to the practical data is as near perfect as can be reasonably expected.</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

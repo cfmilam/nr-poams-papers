@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theoretical egalitarianism</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Theoretical egalitarianism</h1>
+<div class="meta">N. Vivian Pope</div>
+<p>Theoretical Egalitarianism or ‘Gullible’s Trammels’. Jonathan Swift, disgusted with the society of his time, commented on it with his allegory of the Kingdom of Lilliput in his book Gulliver’s Travels. Let us imagine a modern version of Lilliput, an allegorical society organised on the principle of ‘political correctness’ to the extent that town–planning building regulations dictate that in the building of, say, a bridge or a skyscraper, no single architectural design is to be chosen above any of the others or, worse, that every building plan or proposal is to be regarded as equal, all to put into effect together, indiscriminately, with no plan or design to be excluded. In this way, engineers and construction engineers are presented with a huge batch of blueprints with the instruction not to select any particular one of them but to build according to them all, so as to be equally fair to all the designers and architects. Would it be possible to build anything of any worth according to that egalitarian principle? Of course not! So what could possibly be done with all those different plans except, perhaps, put them all into something like an art-gallery for aesthetic display only, abandoning any prospect of advancing any practical building project by means of them, outside that theoretical art-gallery. Now for this passage, substitute for ‘Lilliput’ the name ‘Modern Science’. For ‘plan’ or ‘design’, read ‘theory’ or ‘hypothesis. With these and one or two other substitutions the paraphrase reads as follows. Let us imagine a modern version of Physical Science organised on the principle of ‘political correctness’ to the extent that its regulations dictate that no single physical or cosmological theory is to be chosen above any of the others – or, worse, that every theory or hypothesis presented is to be regarded as equal, all to be put into effect, together, indiscriminately with no single theory or hypothesis to be excluded. All practical physicists and astronomers are to be presented with a huge batch of theoretical interpretations of phenomena with the instruction not to select any particular one of them as a foundation but to construct a world-view according to them all, so as to be equally fair to everyone. Would this be possible? Of course not! So what could possibly be done with all those different theories except, perhaps, to put them all into something like an art-gallery, for aesthetic display only, abandoning any prospect of advancing any practical advancement outside that theoretical artgallery?</p>
+<p>There is only one sensible way for the development of science to proceed, which is to select, on rational grounds, from among as many plans as possible, which, is the most suitable construction .</p>
+<p>Imagine a society in which….. discussed and evaluated for feasibility …practicality …… all purely theoretical … architects … blueprints… … putting them all together … issuing …. …. Can we imagine we are doing in proposing that …. Advancing physics … a New Physics … scrapping or demolishing old conceptual structures … Straight-jacketed by Health and Safety rules … lunatic legislation … democracy gone mad … same rules extended to theoretical physics and cosmology… to apply the same rules in science as are now</p>
+<p>applied to modern politics …. To ape the politicians… Impossible to build a New Physics on those lines. …. Extant failing Physics and Cosmology … all the same … egalitarianism gone crazy ….. equality among unequals ….quite obviously, completely unworkable …. feasibility … swap …. for Sociology ….. logic abandoned as being too coercive, too constraining of freedom to and construction engineers Think whatever one likes. …. No plan to be criticised, no ‘slagging off’ of other people’s theories…. Fear of being ‘railroaded’ by logic. … fear of the Socratic method … refutability … Society insulated against radical change of mindset …</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

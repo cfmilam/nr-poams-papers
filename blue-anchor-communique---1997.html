@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Anchor Communique - 1997</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Blue Anchor Communique - 1997</h1>
+<div class="meta">N. Vivian Pope — 1997</div>
+<p>i</p>
+<p>I 'Blue Anchor' communiqu6 February 26,1997 Subject: Marmet dialogue Dear Ken,</p>
+<p>A propos our discussion this afternoon (it is now 15.53 pm), I have just now sent off the following propositions in an e-mail to Marmet, asking him whether or not he agrees with the two following separate statements.</p>
+<p>1. If the action at A is SIMULTANEOUS with the reaction at B, then also the INTERACTION between A and B is INSTANTANEOUS - that is, thb time elapsed between the action of A upon B and the reaction of B upon A is zero in accordance, as you say, with the Webster dictionary defi nition of instantaneity.</p>
+<p>2. By the word 'transition' is NOT meant the DURATION of the signal at A and B (as of the length of time that the button remains pressed and the bell remains ringing) but the MOVEMENT of the signal between A and B, as in the time between the first pressure of the finger on the button and the first movement of the hammer of the bell.</p>
+<p>It occurs to me that in the quantum case, where the transition, as defined in 2, is proper-timeinstantaneous, then by the identity of indiscernibles (see the bottom paragraph of my Fri. 21 Feb e-mail to Marmet) if A is an atom in a perceived object and B an atom in the eye of the perceiver, then the quantum which is commonly described as 'leaving A' and 'arriving at B' are the same quantum. In other words, the quantum is an event common to both the object and the perceiver. In other words again, the world of the object and the world of the perceiver of that object are not two worlds, as in classical dualism, but one and the same? as I have argued in my expositions of Normal Realism. So now, the physics and the philosophy seem to have come together very nicely, and the difficulty we were discussing and for which I then had no answer (that is, of how to reconcile the cinematic model and the quantum interconnections between frames) is solved. So the way I now see it is this: when we look at the world in the ordinary way (i.e., macroscopically) it seems a complete mystery as to how the quantum gets proper-time-instantly from A to B. But since there is no way of discerning the beginning and end of a single quantum event, then by the principle of the identity of indiscernibles, what we call the 'beginning' and 'end' - of the quantum are not two events but a single event. This changes the whole picture. There can be no meaningful question as to how the quantum gets from A to B - how it can be in the two places at once, which is impossible. The question is that of what is it that enables us to distinguish between the objects A and B that we normally regard as the emitter and absorber, respectively, of the quantum energy. In other words, the question is not that of how the quantum gets from A to B but that of how, in a world (discretum) in which there is no motion as such but only instantaneous events, we can distinguish objects that are separated by distance and time.</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

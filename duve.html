@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duve</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Duve</h1>
+<div class="meta">Anthony D. Osborne — 2008</div>
+<p>Reply to George Duve on the ‘RoLev’ I have now had a chance to examine your e-mail more closely. From what you say, I gather that on a planet’s surface (the earth, say) if a rotational (spin) kinetic energy is imparted to your RoLev equal to that which it would need to orbit weightlessly at that distance from the earth’s centre – assuming that the earth’s mass was contained within something the size of a football, say – that apparatus would lie weightless on the earth’s surface. Any less spin energy will make it press on the earth’ surface (i.e., give it weight), and any more spin energy would make it levitate. Am I understanding this correctly? By the way, in our book which you bought, there is some question as to the validity of our reasoning in Chapter 7 as to what the ‘conservation of angular momentum’ truly means. What, exactly, is conserved? Is it i), the total magnitude of the angular momentum including both orbit and spin, or ii), is it the vectors only that are conserved (not the magnitude), or is it iii) that both the vectors and the magnitude (amount) of the angular momentum that are conserved? Most authorities choose iii), as I do, and on that basis both the Pioneer and Missing Mass anomalies are explained at a stroke (unfortunately, too late to include it in the book). However, Osborne sees some problem with this ‘official’ view iii), which I don’t understand. It is this irresolution between the views of us two authors which puts that Chapter seven in question. I think it’s only fair to warn you of that. So perhaps it is best for the moment if I give you the details of the very first formula on which POAMS was based. Here are some bits from a talk I gave at Imperial College, London, in August, 2008:</p>
+<p>Now angular momentum is an automatically paired and reciprocally balanced relation between masses. The simplest formula for force-free angular momentum (in space) is therefore that of a pair of masses m and M in an automatically balanced (i.e., immediately and instantly correlated) ideally circular angular momentum relation of magnitude L. The standard simple formula for this is as follows. Let M be the central mass, assumed for simplicity to be indefinitely larger than the other mass, m – like the earth, say, compared to a GPS satellite or the sun compared to the earth. With v being the orbital (tangential) velocity, the formula is then L = mvr = GMm/ v</p>
+<p>(1).</p>
+<p>In this formula, G is the usual empirical factor conventionally named the ‘Gravitational Constant’. It seems a strange oversight on the part of so many generations of physics students not to have noticed that this formula is sufficient in itself to represent simple orbital motion with no need whatsoever of Newton’s hypothetical ‘gravitational force’ – or, indeed, any other in vacuo force, call it ‘electric, ‘magnetic’, ‘nuclear’ or whatever.</p>
+<p>But, of course, orbital motion in general, as for example, that of the moon around the earth and the planets around the sun, is not circular but elliptical in the way Kepler described. Nevertheless, this basic formula for simple circular motion sufficiently illustrates the principle that remains at the root of all spatial motion, regardless of how</p>
+<p>complex and convoluted [1]. Note that in this elementary formula the size (radius) of the orbit is proportional to the magnitude, L, of the angular momentum. This formula for orbital motion is exactly the same as its Newtonian counterpart except for two vital differences. One is that there is no need to postulate any ‘gravitational force’ responsible for the orbit, and the other is that the empirical factor, G, has its standard textbook value only for orbiting bodies which are not spinning. For spinning orbiting bodies, G is a variable, as may be seen in due course. … angular momentum is also a directional (i.e., vector) quantity. Superimposed on these magnitude differences due to spin, therefore, are additions and subtractions in these amounts of angular momentum allocated to spin and orbit due to the direction of the spin with respect to that of the orbit. So miniscule, however, are these magnitude effects due to spin, compared to the magnitude of the orbital angular momentum of the probe orbiting, say, the earth or the sun, that the vectorial additions and subtractions in these miniscule amounts are even smaller, so small, indeed, as to be, for present purposes, practically negligible. … in the orbital equation, the so-called ‘gravitational’ factor, G, is a constant for all bodies regardless of spin. However, for spinning bodies … that factor G has to be a variable. For instance, in our above equation (1) we have:</p>
+<p>L = mvr = GMm/ v</p>
+<p>(1)</p>
+<p>G = v2r/M.</p>
+<p>(2)</p>
+<p>from which we obtain</p>
+<p>Now according to the standard kinetic energy formula K = ½mv2, v2 is K/m, whence (2) becomes</p>
+<p>G = 2Kr/Mm</p>
+<p>(3)</p>
+<p>(Note that in these equations all vector additions and subtractions are ignored since, on the statistical scale in question, they average-out practically to zero. In that case, the magnitude effect remains, here, the only effect to be considered,) So now let the orbital kinetic energy be signified by KO and the spin kinetic energy by KS. The formula for G thus becomes:</p>
+<p>G = 2(KO + KS)r/mM.</p>
+<p>(4)</p>
+<p>Plainly, with the same values for m and M as previously, in this formula (4) the value of G is greater than G in that previous formula, and the greater the value of G, the more closely the body orbits the centre of mass [2]. (From this equation) it follows that for … (fast spinning bodies) the average value of G must be greater than the standard value. …So far as these anomalies are concerned, then, there is no anomaly in nature, to be explained by theories of any tortuously intellectual kind, theories which are often as short on plain logic as they are long on esoteric mathematics. The only anomaly one can discern lies in the failure of</p>
+<p>For the details of these non-circular orbits, see Light-Speed, Gravitation and Quantum Instantaneity, by A. D. Osborne and N. V. Pope, (2007). www.poams.org</p>
+<p>Be it noted, in passing, that when KS in equation (4) is made equal to the spin kinetic energy ascribed to the ‘electron’ by Uhlenbeck and Goudsmit (in our case, the esoteric ‘charge’ in coulombs cashedout in mechanical units of joules), the proportion of spin angular momentum to orbital angular momentum, which is relatively small in the case of astronomical objects, becomes, in the case of the electron, extremely large, so that for the ‘electron’, G = 1.5141713 ×10 29 N m2 kg-2 (See Osborne and Pope, op. cit, Chapter 7, p. 152.). This dispenses with ‘electrostatic force’ in the same way as with ‘gravitation’.</p>
+<p>Newton’s ‘gravitational’ account of motion to include spin in the total angular momentum of an orbiting body. Extending Newton’s ingenious, seventeenth-century formalism to include spin brings him out of the age of falling apples and steam technology into our second-millennium space-age.</p>
+<p>From this excerpt it follows that the only way in which there can be levitation (increase in the orbit radius) is for minus KS in (4). In that case, G in that equation is reduced in value. Can that happen? What can minus KS mean? It can only mean that there is some vector orientation of the spin which detracts from the orbital angular momentum. The maximum negative effect of the composition of the vectors is when the spin of the orbiting body is co-planer with that of the orbit but in the directly opposite direction. Between that and the case of the body’s spin-direction and orbit direction being at right-angles, the vectorial effect goes from maximum to zero as (correctly) descried in Chapter 7, In that latter case, with the vectorial effect at zero, what remains is the magnitude effect alone, which is the reduced radius appropriate to the reduction in the orbital angular momentum LO = L – LS, where L is the total angular momentum and the suffixes o and s signify ‘orbit’ and ‘spin’, respectively. By this reasoning, for your RoLev to rest weightless on the earth’s surface its spin and orbital kinetic energy in (4) would have to be equal and opposite, so that equation (4) reverts to equation (1), for r in that equation equal to the radius of the earth (assumed spherical, of course). Any more of that negative kinetic energy, or spin rotation opposite to the orbital rotation should make the RoLev levitate. Does this or does it not accord with what you are saying? Best seasonal wishes, Viv Pope</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

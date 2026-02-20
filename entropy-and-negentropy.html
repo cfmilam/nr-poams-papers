@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entropy and Negentropy</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Entropy and Negentropy</h1>
+<div class="meta">N. Vivian Pope</div>
+<p>Physical causality is a function, not of single events but of statistical numbers of these events, in accordance with laws like the Second Law of Thermodynamics (Law of Entropy). This law is, in effect, that any higher than normal concentration of energy automatically disperses towards a lower, less concentrated – i.e., , more random and less improbable distribution. This automatic increase in randomness or probability is called entropy. The obverse of this law is, logically, what has been called negentropy (negative entropy), which is the increase in order and improbability of distribution. A concentration of air molecules in a bell jar is improbable, in the sense that it is unlikely that such a concentration could occur spontaneously among a normal distribution of air molecules in a room. To create such a concentration therefore requires some deliberate effort on the part of some agency which is external to the system – such as, say, by the deliberate design and operation of an air pump. The pump is a source of negentropy, and when the compressed air disperses back into the room it is by the automatic physical process of entropy, according to the Law. To create order, then, of any kind, among air molecules in a room, significant sounds against a background of ‘white noise’, characters in a news printer’s font, etc., requires some agency which is outside the Law of Entropy, hence a source of negentropy. A universe without negentropy would be uniformly random, hence completely unthinkable. Negentropy implies effort on the part of something not bound by the Second Law of Thermodynamics, and what else can that effort be but, by definition, some superior kind of what we experience empirically as an ‘effort of will’? Insofar as all physical causality is governed by the law of entropy, will, which is not so governed, is definitely non-physical. So if we admit, empirically, that the universe is, in fact, not entirely random, we must also admit – empirically – that will, or volition on the part of some non-physical, superhuman agency exists. This is something of which a</p>
+<p>truly logical, empirical science, of the Machian variety, must take account. Something else which needs to be mentioned, in passing, is the intimate logical connection, in the Second Law of Thermodynamics between entropy – or, rather, negentropy and information. Characteristic of classical science is a category distinction between –physical and mental or ‘mind’ and ‘matter’ in effect. Typical of this distinction was to regard energy as ‘concrete’ – i.e., physical – and information as ‘abstract’. In the Machian paradigm, supported by modern science and technology, that category distinction can no longer be sustained. Disorder, or maximum random motion of atoms or molecules is heat, and heat is disorder among those motions. Logically, then, an ordering of those motions is a loss of disorder, hence a loss of heat A concentration of heat is temperature. And by the Law of Entropy, the temperature of a collection of particles tends automatically to disperse towards maximum heat (bodies in a normal environment tend to ‘cool’, thus even-ing out their temperature with that of their environment). By the same token, when heat, or disorder, is concentrated into order temperature it is by a process of cooling When, ideally, an effort of will is absorbed in creating maximum order, the creation of heat is minimal, and vice versa. (Witness the ‘cool head’ and ‘fevered brow’ in the solving of mental puzzles. The same occurs in an information processor such as a computer, which produces heat in proportion to the difficulty of the task. … Information is an ordering of alphabetic characters, sounds or other symbols … which is why, if course, …</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

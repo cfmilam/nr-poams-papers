@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbital Time Dilation</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Orbital Time Dilation</h1>
+<div class="meta">N. Vivian Pope</div>
+<p>.-r</p>
+<p>rr+ ?</p>
+<p>i ii,i-{u.", i ;i;,:,,r';</p>
+<p>.'1</p>
+<p>ft: r{€arS,} o'; *' " r::,*'i</p>
+<p>L</p>
+<p>GA T,It EA N E L ECTRS f} 1i{,TfuIiC-S</p>
+<p>Month/M,onth qe*r</p>
+<p>Orbital Time Bilatian AnthonY B. *sb&lt;rrr*' D*partment of N.futhearatics, Keele universitl" Keele Skfrsfd-=hir€</p>
+<p>5T5 5BG' L\iITED Ki\cDo\f</p>
+<p>And</p>
+<p>N. Yir.ian Pope</p>
+<p>'Llys fl6v,r", 10 1{est Enr"l. Penclar,rl4 Slvanseo, 1{csiCl"'a'gun 5'\4 3YL The Popre4sbr;rne Angrrl.rr h{omentum svnthesls {foA$E!</p>
+<p>L\ffED KNGDO\{</p>
+<p>p:*t*!ate* a1;t all n*;Eon G natulaliv orb;tnl</p>
+<p>andthator.bitalangrrlarmomentunlisholisticallycon'sgn.ed.Thisp.apertlgrrran:tratesl+c.rtthestandardtime into er&lt;rior*ir*i }t/aY' (*t! t'e inic'rPorated dilafian formula ol Special RelativitV. here obtainerl isr a more by GenThese efler-ts ate sre same aJ th'l6e l'redicted IrtfAlv{S in orcler to predict orbital tinre dilation effectsthe prshorv shown als: lt i; quati*ns' fi{'ld eral Relativi$, but are obtainetl without reference to the Eirrstein is ef-</p>
+<p>ti:ne sli]*Ecqr efiests' crt1.: Ee r:-&lt;ecl td' derive l{hat tritates of POAMS. together with the-r,e precticte&lt;i ortrita] sl'rift e{L:ct otserred in tht m&lt;rtion of pl'anets' fer:-tively Schwarf-,schild space-time and lrence the 1:eriheliln rfiomentum' coLs€rn'aN*rm,e} Realism, IvliEh*$-ski. t:ttuital m*i.*:n' artgtr}'=r Ke1- l\rords: tinre dilatio}r' I{,rch,</p>
+<p>tion. Neu'ton, Einstein, Special Relati.-ity. C,eneral Re}aiil-il-1..</p>
+<p>Sc}ntarzschil;1. E*rihe]iarr shift</p>
+<p>resc'nkxJ is n$ iccger that n{ a flat gaph</p>
+<h3 id="sec-1-">1. Inlroduction Ap-</h3>
+<p>Fo11c.*ing the puhlic:rtion of ottr first joint paper'A New it p:o.rch to S;*;citrl Rel.rtivitl'' [1], the Citations Index described to omitted .:n ptv as 'a mr-delling a1'proach to Relativity'- This .r'.".,t-io., that ratht-r than bcing viewetl as simply a teaching aid'</p>
+<p>our geonetric 'modellirrg apprroach' did not require - int'leed' had-madelogicallyre,lundant-anvreferencetrrEinstein,sSecond Axitrm regarcling his 'constant spect of lighl it ua*a' '</p>
+<p>Theinitialaimofthls'NervApproath'rry'astode[ronstrate</p>
+<p>that there are t\tr') clifterent dimensional asPects to the phenomen.rn of phi'sical motion. These art' distinguished b-v the fact that' r'r-':.'.ttonaliv, there nle t}!o c{istinct measures of the'speett' oi</p>
+<p>:t,.,:-','enli,tion.Oncistheobservationaldist;rncet'''1'vs1'llrt'the the mo.-:---r:i j:,.:1..d b'.'tht hn-,c registcred bv the t-t'sen-er of</p>
+<p>r- I -,i.r ob.'en'a5or.,:1 time ' aLrl tit rrfrtr .' ''h':t -r'e dlsErrce :t-- : --- ::-- ---:-'--: &gt;--i::ii-:t--::'-j b"-:l' r''l'':-: -'' --:' --- -:---"lr0Fa:tlr.a -:-i --:</p>
+<p>.:- -i.,: : -:.</p>
+<p>-:'.-.- - i" - - -- - : '---r</p>
+<p>,-l-.r.</p>
+<p>-</p>
+<p>--'</p>
+<p>:r f--</p>
+<p>- :'-i '-</p>
+<p>'</p>
+<p>:-' .-----:.. :- ..-.: .</p>
+<p>-- --- ''-</p>
+<p>-:-' ---.</p>
+<p>l-.-</p>
+<p>__</p>
+<p>',-</p>
+<p>-+:l&gt;:-: :_</p>
+<p>r - ,,_!.</p>
+<p>but that af a conic sur-</p>
+<p>This can be demsrfuce - in fact, that of a rertaagular cone'</p>
+<p>l :-_::-'</p>
+<p>-</p>
+<p>:_-i</p>
+<p>-</p>
+<p>'</p>
+<p>-- :</p>
+<p>strated as foliolr=.</p>
+<p>velocitl" j'r' r+'ith</p>
+<p>C+n+irler a dcck X mcl'ing *'ith uniform pat[ relaunif+rrn spsd , fir€trcs IEr *cond along a rectilinear recordetl c seconds' tive t+ an abserter S. After passap of time the conversion Using met€rs' 11.' al. X rl:roves a distarrre s = u' f*t*r ., X rx*ves a distance-tirne slc measured in sr=onds- Let clock L'e I set-onds as the sarne tim* intefl'al as rel-arrled by Xs Pvt}ulgorrs's applr'ing br simplv {sl}orr.s ntrsenertr by $. lt thea lvith di'-rgiam [ire r!'i-o-dimensional *sserciated ir: the</p>
+<p>theorg;:</p>
+<p>r:oordinates sy'c anr-l t that</p>
+<p>t'=]-titsi' ri'l^cth:. tFJ 3:ii;tr(in tri a r'-&lt;tan*:lii !rr.i s -- I 1 11 fil'll1rr',-r thnt</p>
+<p>-ll= l' :-l---::-</p>
+<p>--</p>
+<p>L:</p>
+<p>t .,</p>
+<p>Asbsl,r'e</p>
+<p>L</p>
+<p>I ?*Fe: &amp;;fsg</p>
+<p>Exploring the logi.al and phlostphical implicatiorL:: ci this laterai thinking altemarire in tht- jnterpretation oi the cr.rrqtrnt ; has prcduced a nelr: aPProach tr-- nah:ral philosophv terrned 'Normal Realism'. [6] This takei its departu;e frorn cla:sical physics along the lrne= oi the iadjcal relat'r'isr::, or phenon:enalism - somelimes calle,l Engiish Empi:iosn'. - oi the philosophers</p>
+<p>Locke, Berkeler and Hume. [7] Der-etoped br- Kant, it rt-as artics^ latecl as a basis for mrxlem reladrisiir phrsics bl Eirrstein's rnentor, h{ach. [8] For \I.-:ch, a1l our knorslerlge of the *'orirl (especially in rience) is based on sense-impressions, lvhich he called</p>
+<p>'sense-data'. In Normal Realism, this iacludes nat cnly instrument data but also the intorrrational data transartecl tetween obsen ers in t hat is gsrerallv know-n as lanS-rage. Normal ReaIism is thereiore the prescntdav successor of thisplwnomenalist tine. Dr. lr{ichaei Duftl-, organizer of the PIRT {I&amp;-ysical lnteipretations o-f Relatirih) conlerences at lmperial College, London [9], refers to this phenomenalist approach as'the third alternativC. The others he sees as "either geometrical (or continuum) formr-rlations or some {orm of physical {mechanistic) analague"' Ncrr' in any phennmenalist aciount of physics, since;rllt*ttrar'r1fl are the fundamental starting-point of any scientific enqlriry, plainlv phenomenalism cannot be reconcjled *'ith Einstein's Sc'cond Posfulate, according to u'hich phenomena arc mcdiated h1' light travelling at a cr:nstant speecl in the void betw'een obiects antl our scientiJic olrservations of thear. This is douhtless lghat caused the notorious rift between the'Relativity' ol Einstein and its parent, t}e relsficriisrr of Mach" [10J Of particuliar relevance to thls present paper is the application of the Normal Realist prolgamme of phenomenalism to tlre nrechanical Iaw-s of Nelt-t*n, Newton's first law states tftat all bolies left to themselves, with no extemal forces acting upon ttrem either remain stationary or else travel is straight lines' Normal Realism regards this 'law' as unempirical, since no force-tree bodies are ever obse*'ed to stand in space or Lravel in that socalled 'inertial' way. Doubly unempirical, as Noranal Realism sees lt, ls Nervton's erplanation as to rvhv no bodies antrr-here obev that 'first lari, which is that all b+dies are universalll' attracted to one another bl inn inrisible ir r,l'::ll force.. so that they never either stand stil1 in space ot tratel in sn'aight lines in the n'a v Ne$'ton en risa ged, \Vhat is actualh'rrh.erced, thery according to Normal Realism</p>
+<p>are not txrtlies trareling in space with an 'inerdal' rectilinear momentum but bcdies traveling in orbie cf automaticaily paired and balartced angular momentum. Thi; idea may be srrmmariserl in the {ollortrng principle. [111 "The Principte ol Angular Inertia: AII t'odies move antSrlar-inerBallv. Arlg,rt* inertia is thc'resistance +f a b*dr to anv change in its angular m.omentur&amp; relatioas and is the natural tenden&lt;1' o{ a bo,ly tcr follows the path of least resistance (i.e- least action) in accordance r1.ith the ccnservation of rmgular momentum."</p>
+<p>}!e har-e *mred th;5 alternative appraach to the pbenornertan ci nohon PO.\\fS' (for PopeOsborne AngtrJar Momentum Srnthes:sl. in H-IAMS this is demonstrated to be sutlicient tr: ex;--Lair, the r;rbital moti*ns o{ m;*sses rr'ith*ut an1' refererrct- lthatHlever tc Ne*'ton's inldsible 'gravitationat force'- In similas lash:+n, PO,{\iS also disperses nith othc'r lorce's, canceived br anal-</p>
+<p>":e</p>
+<p>*if*ii't=s</p>
+<p>*51' a{th Ner'.tr.rn's 'Sraritational iorce , scrh a. ::: ': - :': electrcs!.=tic'i*rcd. p ?j The rult phil*s*phical l,ackground ta PO'|\'IS i-:; :*- :- : - :Iished safiicienth' r'-ide!: elsen-here jor that sutl*n : : r - :t -</p>
+<p>labar:rerl here. !3.11] S*fJice it to sar', ior nolt. th;t tj":' :';--: ' :-' a natur*l l*5ica: propess!+r af di=overie'' put'iishai --' rr: ri c-rn&lt;i'L' tiat in I\lAi{S 'ners rr'-are' suclr it rep:rsertt= a =-- tr''r::E'':!-1: angr:lar its into l':rrlrula di1"ttion tirne rying' the i1'1) synti:eds- The p*g'er sr:cressfully coalesces the lrtc as'r€at' :1-=: .onsr:rr:rnates t*is marriage by predicring knon'n crb;taj t;:-: dilation effer:ts ia agreeal€rrl with the predictions oi Ein-'tern = C,ener*E Theor-i af Relatir"i+ in the manner aireadY des'iL'&lt;ir More*vs, in predicting the lsrow'n effects in such a sjrnpie ir-e-''</p>
+<p>FG&amp;16 aLE* p'Grticts the +bsen-ed perihelion shi'it efl'e'-^t oi \te:cury-a*.1 *therplarets as in General Relativif, u-ithout the n*i for tlre Iinsteivr fietd equatir:ns or dirc'ct use of tensor caicr:lus' lr' fact. FCIA&amp;IE is abte trr c*nstruct the Schwarzschild space-tir'e metrir ratithoutdere"nr:e ta the field equations'</p>
+<p>?. Ti*e Dilation In Nan-Uniform Motion As rt-'monstrat*d in the inkoductiorL the usual time Cilal'':</p>
+<p>{+rra*la f.'ti # Spedat Eelativify can te deduced usins ti-</p>
+<p>Normal fieatist apprcach in a more economical t'ar' ln sri'mary, d a c}.:ck X mr:vel along a lectilinear path at 'Lrr-!:ri:: -: : :' spree,S e relatiqr: tc: i:r.*. otaerver O, then in passage ct t- i pro--: : :'-::-' recorrled h.r O, K's clcck records a passage oi grl'en *.r,'.</p>
+<p>*{vl c)2 t</p>
+<p>-</p>
+<p>: Accr.rrding tt I?OAi\{S. all motion Ls natu:'ir.' bits being deterrnin*J by c*nsen'ation of arr:,:l': r- -- -this s&lt;--&lt;na::i&lt;:. ia r*nkast tr New'tonian 1fps1' 1:"--' -: -</p>
+<p>thing a* irteaQ r.tctilinear n.lotion- He'Ilr€ r-:: I ' generall"- apprupriatc in I}()A\{5, e\Le:i : .: '-</p>
+<p>- :- - - '' tivelv*traiSht^li*eseg:xents. Horr'er'.: ''':-Relativift. for*rala Q.1j can L'e gene;al:. -' in ntm-rrniform mohon rt'lahve t(\ dr . :\. - :X *r*ving, r*.ith a**{oastaftt vel.r.--lt"' r.: i: : - : ':-' ' : -l derx-rte the ':e': tJ and let *ltl =slt) I -': '--{tfo!}r:rxi --:- rt?,li arrd the dett-rr:t'-^ '' "}* ' :";* "' in tkis case, the relaEvel'; r.:rcl-,i': -:':1 ments o{ crbits of exlrenr€lY large r:,ea:. :' : - - '</p>
+<p>-</p>
+<p>-'</p>
+<p>given br' t I</p>
+<p>Of c*trr=, a tetati=e{7 rorug rrr* 156a b*t slilt lrarse #E#r* ryml, r lr *etx ciicular lrrbit r*ttr aa.L:-:. :::: -rnt-*iftg aitdl- -s :iq,.=:: :-r -</p>
+<p>i</p>
+<p>:</p>
+<p>. Monthfivlanth yetzr</p>
+<p>GA LIL EA},I E L ECTRO I} !?*E 5{IilS</p>
+<p>as in (2.1). In *ther words, lormula i2.1l hotds not onl=r. ior recdlinear motior; but also for any non-uniform molion far rr.hich the</p>
+<p>speerl is constant.</p>
+<p>Let pcsitions in space tre descritcd bv Cartesian coordinates (r,y,z). Then, as in classical kinematics, the r.elxitr of a mor.ing obiect is given by</p>
+<p>for :r:r:a: tol-lsi?ni L: ie il-];. e\aatl.,- a. tn thi: \e*.tcrnian appro*cft fiIj. In gereml, th+ n:gs,:tuie , L . t..i the oibital angular r:rllmei-ihlEt of i. u-]-u.i, i: a crrnsi:li. ^s ii'=-;r b,-,-</p>
+<p>(x) ir :.'-,.,;..:=j: i : ar', .1.-=:,: r,:i:r,'-1 c:nLc rrrittgn a:</p>
+<p>a{tl:{dxl dt, &amp; I dr. dz t dtt</p>
+<p>d.-' i:t - L r,i2r" = GM l r2</p>
+<p>so that its speed satisfies</p>
+<p>uagl =</p>
+<p>ft**</p>
+<p>r</p>
+<p>J</p>
+<p>Equdionp5, ae beirtregraled in *re sarrdard way tostuw ilrd tte riib ifrd are ded snrst be dlr'p6es. f6j 1-Eis is, d c+r:r-, rrtaf is prediced $ f+e*a:aa tf**ry ald aln&amp;ret agrees **i*r</p>
+<p>arf + kty t ef +(e t df</p>
+<p>lttlrenfollows by t2.4 thx {dz I dtf :t-*tt},'</p>
+<p>*re *eers# eddenae regardiftg the motions d tle plarelsCo*sider Ee FiaI ese *f a cke*lar orbit, so f:at r is *rr-</p>
+<p>? irdies</p>
+<p>stant. In tl':is =se, t}r= orAi+al spee{ r,{t}, of P rela€ve to G is</p>
+<p>e{e\' t.drl --i -,?rtt=a-{4</p>
+<p>Eit €n</p>
+<p>[d,</p>
+<p>so that</p>
+<p>-c-dT = (- .::- .-..-</p>
+<p>- -:-</p>
+<p>i:.tl</p>
+<p>Equation (2.3) is the men:. i-: ...1 .. .....- ::j,-:-;e, tie underlying mathematical sLi-uct-.:-: I - .:----, i=.-:,::.- il,, :n rvhich</p>
+<p>the elementan, sepalah..- :, - :---,. --- i-.\ - :-,.ents is defined</p>
+<p>by (ds I dt)z: -c2 . \l,r: ---ir -=r: - -: ;. ier,,-sl using only</p>
+<p>the time dilation ft,rr-,ui.-r ;..'----': :- i,=.. :i aerir-eri r.ithout reference to the Sp+=ial I-:,::_-.= ::-::- ::*l:rn. Tl-rs is a sigrrificant result: the tin.,e cllati:'r. i_- _'. 'I :_. e.:*:nt:allv equivalent to</p>
+<p>the met ic fo: \i:r,\,,*'.r.- :: j::-:-:,-.. &gt;r t r2.2) holds, then, just *,. -::-:.:r.. -:-i r_:themadcal structureis lr{inkon sl.d s!a:rtx€ as in Special Rel::.,':i.</p>
+<p>The purrt'se li ::r-i .:::&lt;: j ti_a -fl\-€-stigate the time dilatior.r in the natu:al c:b:- .-i I1l,-i\,ii ir: srr.plicitr,, r.r'e only consirter the ca-..: oi an :s.:,b:.:: :., r:::-. -.al&lt;t:hns of a particle pof mass lr orbitinq a b.rl', ,:"i r:-ss .1.1 s::tr:t€.1 at the origin 0 of some frlme of referen:e. FC'{,f-i :,:rsti.ilates ihat angular n.rcnentunr is al!\'i\-s uirrli€t-,'+; -, f,-al :: t:r: :solated sr.stem, the Orbital angulai r:.ornenL';;:. c,i i :tLai.i'r to O is constant. It follor+'s that the orbit of F 1:es :r : :Lai-,r a_nii ti-rat the acceieration of p acts in the opposite direct.-n t.- *re pcsiCcn vector of P relative tcr O. It tlren follorr-s that thr siuahcn u.i noHon of P relatrlve to {) takes the {orm</p>
+<p>d.r,dt2 -r Cetrtttz =-htr)</p>
+<p>(?.4)</p>
+<p>for some iunttron tutr) [12]. Here, plane polar coordinates r and 0 a:e rr.&lt;.t1, rrhete r(f ) is the radial ciistance of p from0 at anr- time r and &amp;ii is the angle e-hich the posihan vector of p makes with siure fired radial line from O at any time f . For iniEal sir.,a}:r:t".-. rt i&gt; assumed that the orbit of P about 0 is cI*sed. Then Bertrani s thcr-rlem [15] shon's that</p>
+<p>htr)=G&amp;{1rz</p>
+<p>(26)</p>
+<p>+</p>
+<p>t::rtd*/ dtj</p>
+<p>{L4</p>
+<p>and then i?,t; rttlh iirl = GM I r sirnpliFies to</p>
+<p>i=GMlr</p>
+<p>(28)</p>
+<p>Ei, p8? gr'ves t}* equafon of motion oI a{reely ,iloring partjde P in a rirtxlar trt'it about a tentral mass M, i.c. the equation of an]. cilEr:iar geedesic. ln POAtvfS, the orbit of P is circular not because of *onre unseen'6pavitational force' acting on P due to the presence af the mass ;}'f . but rather, simply because of the fact that t}e orbital angular momenLum of P is constant. Notice ftaf *r€ -&lt;peed *f F is corr;stnnt along a circulat geodesic, s.irre G .8f anqJ r are.*nstants, ;:nd that for any particular value of r tlrere is anirr orre circular g*rdesic orbitIt tr-:llnws by {a8} arrd (2?) that since the speed of P is cc,i-,stant, the tin're &lt;lilation dehrmined by the effect of relatrle :.:r=; alore is .</p>
+<p>,</p>
+<p>t*</p>
+<p>*tlM /le2 t</p>
+<p>In (?-93. e is llreproper timeasrecarded byPsdo&amp;and f is dE satne pa!frege tf tirue af recorded by arr'exterrral' ofuerser, far awa}a *carn tlre €rbitof P. The time f is re{erred toas dqr ry time {D5Il i* ICAMS. f { It fotlows by {23)- ftat *re dc€r P is ts tle *tars Jlf , the greater the tir:re dilatiur etred In otle ward*" cloc-&amp;s aEI circ-ul*r geodesics f*rfrs array fomr tire *s ;}f rux fs$+r than d{d&lt;s nearer b.r}f, relative b ET- Cteslr, r</p>
+<p>*anrx**5ryraal; t! in {t$} it is lr€ctssary Erat r &gt; Gf i c! - T}e cortstartt CN f 3 is cruch suller *tat *e radius d e1t. {*le $lar or ;:la{et, s8 *rat *€re is re grofo{o. in app{r;ng (2-9} in g*rrer*L Ttris eqaati*r i=, ef csrse, etr*f l:}E rEslih ot*airEd *y Spedel Relativity inhe* agplied b Flelrbrirr circdr ortix. Car$i{errcwt}:ega*=a1ree of apatift f at*ttrg abodr ef m**s fraf , sitEEled at tl* +rigin O of a flae pcla rrmtinare syEE*- As il ?rlsrrybrr:s: Sre{FI, $e first fuhgrd d Ps eq.udio-r rrf reatiwr, tL6], !s</p>
+<p>td"i*i-t</p>
+<p>-..--=:,j{</p>
+<p>--j-'</p>
+<p>-i</p>
+<p>, r-_t I 1:r</p>
+<p>Osb*rxe * Pape: Gr*iJri ?iffie *ig*#*t3</p>
+<p>:'r"i::a:li :i:'r'':''i ::a : ::''.-i' - ' ' t :-' :' :-: ::- :--: i: ':.: -: =::'--i '' -rlI . ii r: r::-,r;5.1: l: &gt;ill' - .. : -li i:" --- - -. -:l -.tiir-rtr-i.;l :,, 1:f r .;=-*, :. l---:-' I l-- i-'-r : ---.. aa..a,aa ii-- r l'-- -- .:l i: il-ta :: :: :':-,. Ii-,'-l :' :'. - '-- -'- - : '- :-' ::::E: Ii:r</p>
+<p>lr'here K is a r.:onstant i:f integratir:n, and the orbital speed of P</p>
+<p>sphrrralii</p>
+<p>is given by</p>
+<p>hfan *fi-tt a.:n !il.1;Ei:i r':J'. 1'. -1-I :i:</p>
+<p># =tdr/drle +'z{del*P</p>
+<p>?11}</p>
+<p>Then substituting fi.1l) and {2.5} int* p3} aa{ *S:g p1G} gi:€s</p>
+<p>dt '=J -zGMlr2"?-Kir?</p>
+<p>,</p>
+<p>s1-r.I:--ta. a:ii st::-i</p>
+<p>r,i]</p>
+<p>Equation (2-1:) gives the proper tiare as re,:o;'je.ci b'" a ri :u r:</p>
+<p>-</p>
+<p>eling with a freely rn*r.'ing particlc P in ils clixed i'rb.l ;'rr,ut ti-: nrass M, relative to DST, only taking into account erfr-= iui :the relative speed of P. Since the orbit r-f F i. a=-'i:nc--j tr' i= closed, K is necessarily negative in {? 1r; It ir'lhvr-. that ihe maximum possible lime diLrtion etterl lierli.-ied b"' il-1lt at-ui: as I{-&gt; 0 " This extrene ra5l- reFresents 'u: a:r.i tl-ttln not'ement'along a straight line and here the prediction oi 12.121 is supported by etidence prorided bl the Pound-Rebka experirr-rents. p7]</p>
+<p>3- True Orbital Time Dilation The preceding section essentiill,v adtfresses tlme dilation e{fects in orbital moti*n &lt;lue to velocity effects alone and the r+ sults, at least mathematically. are the same as thcse prtrdicted by applying Special Relativity to Newtonian orbits. Hoa'ever, equations (2.9) and (2-12) cannot provide the complete answer. For although at first sight these equations se€m take account of the fact that P is in a particular orbit around the mass M dut'to consiclc'rations o{ consrrr.-ation oi angular momentutn, the results only directly depend on the speed of P in its orbit and u'ould applv equaliy well if F were kavelin6 in a straiSht line with the sa.me speeel a. Heoce, these equatioas r1o not takt- into account the fact thtrt the geod*its in POAN{S ate nol straight lines. This can been seen mathematicallJ-, sirae (2-9) and (r 12'1 are' e,luiralent to (2.2) antl it r+'a-c shou'n in the last section that {2.2) in tum is equivalent to (2.3), the metric fo: lvlinko.*ski space-time. The p;eode'sics in lr{inkowski space-fime a;e skaight }int=. Ij i2.9) and</p>
+<p>(2.12; are applir:d to the cleed orbils in POA\Lc, the implicalion is that those orhts are constrainrr] ln some x ar- and are not the geodesics of the underlving mathen:Latical structure. Hence, POA\{S predicts that t-ue orbital Ecre dilation is due not on}y to velocitv effeu-ts but also to effetls determinetl ty the nature of the pattr-s o{ ireelr, n-roving. particles. Consider once again an isolated.s\,-stem consisting of a parti cle P orbiting a mass M situated at the origin of a plane polar coordinate svstem- fhe key to unrierstimctirtg the true time r{ihtion effect in the orbit of P comes irorn consideration of the simple case oi a circular orbit. Recall that in rcAMS, if F is fr*ly mcving in its clrt-utar orbit about ,}f , then the proPer time, - m recorded bv a clock traveling u'ith P, relative to DST l, taking onll velocit-r, elfects into account, is giv'en by {2.9), i.c.</p>
+<p>'t-t? t 8 t=</p>
+<p>-GM lr?i t =t*GM !Zrcz</p>
+<p>lvhere t' is the .onstant speed of P. r is the radir:s of the arbit ancl G is a constant. 1\-e sha1l suPpose that tht' mass &amp;I js</p>
+<p>Thtn using ir 7l *us equeLcn b+-::'r-."=</p>
+<p>-2dr2 - -.czii- c ,Ll rc;: -</p>
+<p>idl)</p>
+<p>i 3.1,</p>
+<p>Qu*t*mt {3-Z} is *rerrt*kfsr a tw+disrerrsional rye-ti*e*et aray *e tueated as a sperial ese of the thediarer:sio*al s1ro+ tirne:*'irfu me,trit</p>
+<p>*{p{r.lc =-dt:.-a Nl bwf +E{r}d} :d/hetl</p>
+<p>+fa*</p>
+<p>Pi)</p>
+<p>r is * c+tl*!rnlt. !*etas {3-2} isequivalart to tte tie dla-</p>
+<p>tion fatrra:la frrrcircular g=odsics, sB {33) utustbe eqrriratret* rc ttte tir*e *titeti*a forr*ela f*: geodesics in Eensrat It foItcn* &amp;ra the caeffici*nt *t d* , i,e. &amp;r1 , mu*t be a ftm(titrr of r alue. *irre theentral{*ass &amp;/ isspheriolly ry:rffit and shrir hr ortter f*r d*lg* serrd!'krg p"8] to ae geode:*:s in spxe' xne rF quire *:at t*ese ciacle* are podesics in *re Ri:rqrrim n:mItld with r*etrir {3.33. It fa}l+x's by stardad ditrerctial Eemerr1 {using tte Er:ter&amp;pa; -rge quatiote of Yariailiqd €rx all geodesicr in ihi* ttr.u*ure mxst sdi+</p>
+<p>affi</p>
+<p>ettfdz:*tiJtr*"1'*.;, dat&amp;:firl</p>
+<p>(f, *yn, rqtltvrtl + {1</p>
+<p>c'&amp;-t't</p>
+<p>t-</p>
+<p>t-</p>
+<p>z, {r*\z</p>
+<p>L-</p>
+<h2 id="e-">E- ,'</h2>
+<p>B{l"}Ld.j</p>
+<p>: : ': - ' - -:: r.r'itlrr+::pecttr'-:r.lnthl .:'or:-'.' --:-+-; -"- - -:</p>
+<p>a'lx'x' ca ::r'rd S .'rre f{}I1::!.rlLa :::</p>
+<p>'::-- : --</p>
+<p>rer,iuces lo</p>
+<p>icrl !J 2,-' . :: -: - - -: and s* i- indert'n,i.-i:i ,:: :</p>
+<p>*rl,it, :-i;-o:e r la i-:rr=ta::: ''.1-.-l</p>
+<p>.: ---.- : ^-</p>
+<p>Eqi</p>
+<p>- -:</p>
+<p>- ---'</p>
+<p>- :-</p>
+<p>?</p>
+<p>Month/M*ttth y*r</p>
+<p>CA L IL E.4 N" E LECI'RLID i'\A A. iICS</p>
+<p>{ttg I d;}! = rz L2 = oc l-7l2rz .+ ,.?</p>
+<p>i3.5)</p>
+<p>:"f i4€r:eG i,t&amp;r</p>
+<p>r.Irea. I-f- Ctt ; tJ , i is fET, r is the rarlius of lvs orbit anr{ I is the a*p:la; crr-,rdinate :r beiore, This meh ic, in flrri, is a s;:e</p>
+<p>Hence, in lrrder ibr circular oibits gir:en b1. {2.8) tr"r be geodesics, a = 2 . Then br {3.1), the true proper time recr-.rded by Ps rlot-k in its circular ort'it relative to DST, taking into acrount not only</p>
+<p>effects due to relafite speed but als* the lact that P folloli-s a geodesic, is gir.en br.</p>
+<p>1-\GM f r?cz t</p>
+<p>{3.6)</p>
+<p>Note that it then follow's that (3.4aJ and (3.4b) are autcmatically satis{ied- Equation i3-6} is the formula 1':redicted by Gene'ral Relativiry- for time dilation on a circular geodesic, ex{ept that r does not measure exactly the radial distance from the origin in that case. In General Relativity {3.6J is derived using a special case of the geodesic equations for the 'equatorial plane' of Schwarzschild space-time. [19] Hor*'evc-r, it should be appreciated here that in POAI,IIS, {3.6) is derivetl only by atiapting the time dilation formula of section one to circular geodesics in three-dime'nsional space and using classical differential geornetn-. This derivation does not rlepencl on the exi-stencc of the Einste'in fiekl equations In General Relativity it is often stated that by compaing (3.6) and (2.9), it follows that even if P is stationarr-, the prt'rper time as</p>
+<p>cial cese r-ri tL*: *-,r'tric</p>
+<p>-"2,Jf ---"!il-2 l4ir.irJtt' Btrldr? +.rd€z</p>
+<p>{4.1)</p>
+<p>for a &amp;t*dilretrsisral sFce-Snte, wtere r is ao loager rwrstard. Tte re&amp;i€r* Hr) deperds ontJr on r if ttre ce*tral m**r "tf i;* sptm*alty symeEfcauil statk. The furxtion &amp;r)</p>
+<p>isnorv detelanirfd by 6re.fu Arat dE ge*ics in tl'tisEisre* nian*arrifetdmrs girredEe fo geode$s ia qnce &amp;at are eltip ses, or stlesst olgl*tdlipeel as dictihd by l*ewmr*m tlHry/ f&amp;Aad$arrd c}oert alio*. fte geode*csfc trre manifold rrith *retrir (€t! are gfenbf P-,9 wirh a:2- lt abo fotlows fxrmt&amp;e rxtric {4.1}thtXoqgary geodesfo;</p>
+<p>&amp;*.-z^{i,}fgl'-e.)f+f ' 'L.r"J " tdtj -r{+f (dtl =? + 8 tr -z c,t+*t{*l</p>
+<p>(*l - xasl - *</p>
+<p>=d{azt def ??e,r frwr fiqsts"€s] srd {3-4b} itfolloo'sttd</p>
+<p>recorrled on Ps clock is</p>
+<p>t</p>
+<p>-t:r1;l , -c!,1-2l-llr)dtz ,rZdOZ</p>
+<p>l-ZGM irzcz t</p>
+<p>so that this is the time dllarion effect due to the 'gravitational effect' of the presence of the rnass llf alone. fhis makes no sentr in POAN{S, since the spr-d of P is zero if and only if r,-+ * and then t = f . Ratht-.r, in PO,{MS. thc fornula (3.6) comes as a single package and is due simph. to the iact that P is lolkxving a circular geodesic. Nen ertheless, equations (3.6) and {2"9) taken together form the basis of calculations rvhich ciearly demonstrate that clocks in the Global Positiorung Satellites in orbit arourld Earth run faster relative to Earth clcx-ks [' an amount that ffSees</p>
+<p>rli th olsen'ations, [?0]</p>
+<p>4. The Schwarzschild Metric as a Consequence of Time Dilation It was shounr in Section 2 that the dme dilation fo:rnula {2,2) is equivalent to the metric for lr{inkort'ski space-timg the underlving mathematical structure {or Special Relativitl. This SeeAon dermonstrabes that, in the same warv, it is possible to .onstru.t the Schw'arzschjid metric in General Relatiritv, w-hich describes the space-time surrounding a sp':lrerically synnetric a-rrd statir brldy, {rom consideration of the proper time recorded by clocks trarelling along the geodesics in ICAMS. It r.'-as demonskated in the Last Ssction that (3.6), i.r. (3.1] lr-ith a = 2, r,rhich giver the proper tia"re r as recorded {' a clock Eaveling with a particle P orbiting a central mass *f on a circular geodesic. is equivalent to {3.2) wirh a = 2 , i.e.</p>
+<p>&amp;rxr- r,r+lf*l - I&lt;t -zutrt=E o-ru,,, # p \do) Fzf E</p>
+<p>f.e*ting r - L I y *o ttlat dr I dB = -a-2fu1 6=, rrsr giws</p>
+<p>'.Ee;n=rH#{'H:' +* =f</p>
+<p>*Zr*f,-zxr s</p>
+<p>whg,,g .d -tgx t I - *lt1'. F.+ (4:D b tu qt{in gesd€ric irr F0Ail{9for w}tidr r ad O isdffird</p>
+<p>dser&amp;er any w&gt;circular gsodesto Ih 62Hd</p>
+<p>d ry</p>
+<p>s</p>
+<p>in FA ir</p>
+<p>atmg negfu&amp;,f+r plaetary offs a.*.:ifntpl-ctn; rh Erft r e ets. F*c ejraat*r" i* lfte re d a rft dishlstr r=*:aXff sr#s, 2Hrl -txt0ra- IhEq LlliDE f,* =xua? lLft wd ?t =r? l7.',(rSiswyrla'+y</p>
+<p>&amp;uy:-zte*t{*l -[eJ *} =Y</p>
+<p>L2</p>
+<p>.*rJ tt2</p>
+<p>(rr}</p>
+<p>Aell ihat in ]OA]q, &amp; foroar if rr.td at-a Er't be ftry, Hitqg *Ili?*e* de*erarined bf e.q- As in lkunr a=1/ e. in(ZlqEite</p>
+<p>t*l ,J=+t*ElrL' t.{)</p>
+<p>, J</p>
+<p>9*l ?,Itfu. ?</p>
+<p>Osbarrrr' &amp; P*pe: &amp;brl*f T?nle llif*iir:li</p>
+<p>L3</p>
+<p>Equation (4.3) reduces to {4.41 if and onlvi} Blu) = t1 -2 l4l]-1 and hence the metric {4-1} must read</p>
+<p>-"2d* =-"2(1 *214/fvhtz +{1-2l,1lr}-1dr? +rzdd</p>
+<p>{4.5)</p>
+<p>Ttris is the nrr'tric ft-rr the 'equatoriai pl*ne' of Schwarzschild space-time as derived in General Relativilv. [21] Hor'*'ever, again in contrast to General Relativitl', {4.5} is ilerived here ultimatelv as a natural consequence of conservation cf angular momenlum together with considerations'o{ tirne dilatiort rather than as a solution o{ the Einstein field equations. Also, it must be remembered that in I{AM$ it makes no sense to talk about'null 6eodesics' as'paths of light signals'. The metric (4'5) reters onlv to the paths of material ;:articles; there is no corresponding metric for'paths of light signals'. Notice also that since (4.Q is derived from the time dilation (ortrula tor circular motiorL i.t. \3.7], il follows that r &gt; 3 M in {a.5). Hence, in contrast to General Relativity, in POAMS it is not possible to extraFolate and appl1' $-5) to 'grar.'itational collapse' to obtain pathological 'space-time singularities'.</p>
+<p>With B{u) = (1 - 2 Ma}-1 , the associated equation for gerreral frec.ly rnoving partic-le motion (4.2) trr:omes ( au\'</p>
+<p>Ide ]</p>
+<p>+o2=X*+214*u/p2-2MuB</p>
+<p>{4.6)</p>
+<p>whiclr, of cowse, is the same as in General Relativit;--' It is this equation that provides a simplified model of planetary and sateilite orbits, ra'ith the terrn in ZMue predicting a perihelion shift in planetary motion, which agrees with all observational evidence. t111</p>
+<p>It must be rememberecl that POAMS does not begin by postuIating that all geodesic orbits are elliptical. Rather, POAlvtS postuLates that all motion is orbital and that angular momentum is</p>
+<p>consen'ecl. For initial simplicity, if it is assumed that in any isolated hvo-bodl- system orbits are closed, then Bertrand's theorem gves (?.t') as the equation ot motion and, as a consetluence, getl. rlesic o:'bits arc ellipses. However, once time dilation effests are</p>
+<p>taken into ,-onsideration, ICAMS predicts, just as in General Relatrvitr, that the gt'odesic orbits are given by (a.6). In this casc, the corresponr,ling geodesic orbits are approximately ellipses with a small pe-ihelion shifl and so are no longer closed. Letting</p>
+<p>u=lir,</p>
+<p>K' =Km2 iL2 and $2 --I] /*2 in (a.6) and using</p>
+<p>(2-51 g:,ves</p>
+<p>5" Cr:aclusiaxs Ali tls kE-s, it is said, haag not at onc man's Sirdle' Science</p>
+<p>tras ahe'a1's beea a seartk {or coateptual keys to fit nature, rrith the ideal e:rd-air!- a-q soare stientists have projected it, of firrdrng</p>
+<p>*r p:*decing i*st +ne rftaster key &amp;at will lit all the lcrcks' Scl</p>
+<p>rnur--h brgee t?rarr *an" hcr+'ever, is nafure that ttre aim of prrrduting ju* r*e'Ke}- to tlre Unir-erse' - or 'Theory of Everything" as</p>
+<p>it has bcarn calted - is undaubtedl)' a l'ain hope af scientitic</p>
+<p>achie*'anerrt during ma:lkiad's stay on this planet- Neverthelest</p>
+<p>there have teee keys that have been superior to others in the sense that drer open far r*are doors into an understanding of</p>
+<p>natuie iharl otte:s do. This historic door-opening gror-ess has pror{uted thearies such a-c those of Galileo, Newtoa, Faradal', Ma{!i-e11. Larentz Einstein .-' et aL; and the fact that these illustrious gt'*ple kar-e so spetacularly done what they did canft'rt mean tlrat tlrsr:e is na mare ta clo. So tfue seardr {or nert; ke1's n'rust continue; and if that search is</p>
+<p>not t* shrltifr intc obliri*n, then it is plain that no }ocksmith, howel'er sucr-'essful hls efforts in opening-uP some particular s&lt;r-tor o{ xrtierst*nr.{ing; sh*uld be allowed to monopolize the over*il *l*erati+* by restricting the use of any key but his o*-rr paticulaa oru. Gthcrs mugt be allowed to contlnue the I'enlule in their +x'n partic*lar \.irays, and thete is more than enou5fi room ialriatu:e for many l,ery dif{erent lateral-thinking effott. In ttre same ltay, tlret that Eifistein s and Bohr's tlreoredcal key= {itteri t}re sep*rate lor:ks of Relativity and Quantun tll+rn. but'vrtre not atde to be used on each other, fJrOA'\{S seek-s to a} sance tlu cau* af scierlte by pmviding a kel'' desigrreJ t':' it tr'th t'' i't l'L'€ 112]. lrl this paprer, this fflAMS key has been found lockr *f phenormnr inar**-c of both Sp*.iul and C'*r-*=i Rer'at'-;;t)', by pure ryrll:rgistic in the anti-metaphvsical r-'ar'=: cie-</p>
+<p>**rit€A</p>
+<p>Tleway P*A:t,t-c dries this is to adop't' a-&lt; e ;':-:--: :"':': wtrat Dutfy identifies as tte 'third alternative Ii-' r' i--r::'</p>
+<p>stated, is a radic*l empiricisrru the str-and of s''-€'1: ii : :-:r--:i ; that h;u* beea historica\ labeled 'rrherrurne:-;- '= l--' '-:proach eschews tlreoretical approaches trr 1--:rt: :-c- r'-:-- --:</p>
+<p>-:' t :--:": -::i:-: :t= !:.-:--: purel:'irnaginary or metaph-l'sical :*':----: ;\ -' it r-:-*': --:rer'finer --Hewri:ttt"sstraight-line -'-'- :::-:-: obsen-etl; the rmrierillng aruj:'-.r----: = | -'---: - '- . :-': : -:-':resporsftrle for tle ptrenrr:=:-*: -' -::'-'':::- : - - ! ; '1-complPtell'- tll}r}!:1:e=s,al1-'rc'r-&lt;-i-.: ':-: causat influe*ces and process€s gomq cr -:</p>
+<p>UUm'- AcS;-C5nSr.-e.rl-.r-t---- -------:--n-</p>
+<p>imel it-.s ccnrecd*n'n-.'-ir :i:-!-i</p>
+<p>Cr, dt2 -rt.do I dt't! - -G?IIL2 I c2m2r1 Thi-s i. ax eJ:jaiJn oi the forr:: i2.4i, rrhich a=ees rr-it'h the l-un-</p>
+<p>damental ::.:t-:latts oi PC-{\{S. and ri. ::t----:ia: :n j;',a: r:.:-</p>
+<p>='- ::-:.</p>
+<p>:: -'- f;- ; a 1-: -</p>
+<p>-</p>
+<p>lls:</p>
+<p>-t;--: :t:'i+:</p>
+<p>---r -, --'. -;---'- --.-'' rr.i.-r tOthe LJLItlrat atie:.: -. -e .r .*:. -1 :-..':.rJ-' such kevs te'--alrr: f=-" l-= :.: :-F-' :; ': : - :a-stanJi;rg rli\c:-, l:..'i-: ^ ::e:.:rr:l t. -:-:i.- .- l:- -*- :---</p>
+<p>- --:</p>
+<p>-- -- --' :r: : - -- '' :i:\:</p>
+<p>In€htUll J a-_a.__:_,.ad bu: l* ht:: l_,:..</p>
+<p>and n.rt i," = Gj{ closed o;b:t--- Ii't- -'tr':</p>
+<p>recCon tern thtrt talt+ f.r-.- 1, ,:, -: '--:.</p>
+<p>:</p>
+<p>:..'i</p>
+<p>t</p>
+<p>CA LILEA N ELECTRCD}'\.4:!{i{5</p>
+<p>lvlanthlMantlz qeur</p>
+<p>Notes and References I1]</p>
+<p>N.V. Polx and A.D Osbcne. '.:\ \r.11 :\plrcach tc Spe,:ial RelaliriB*". tnt. i. L{ath. EClr. t</p>
+<p>Te;h..18. l, 191-198 (1987i. The pairr is also accessible in the Sen..:rai i'ub[cations section of the Ir(-)Ail,{S</p>
+<p>B.elrs ite lYrr*' - Llc*lIrL&lt; or :. -</p>
+<p>[ 2 ] See for e-ramp]e, ]\'- Rindier. InkoJuction to Sperial Rel*tirity (Clarendon Press. L\Joro, 19dll. {3I</p>
+<p>For thcse to uhcm this tern-i mav be unf.rmiliar, a syllogism, in. t}re</p>
+<p>simpiest ca-se, L&lt; a raliil &lt;ieductive argunlent having t*-r: premises</p>
+<p>linked br a middle term, ieading ia a conciusion thnt it is impssible tc rieriv ir-i:hcut r-onh'adictirrn.</p>
+<p>Ia ] In coresponder,ce rvith th-e second authcr in 1985, B*n&lt;li stated',qs</p>
+<p>regard vorir "\err .Approarh ta Sp.,cial Relativity", I anr in br*rrl s_r'mpath-\, . Lr:th rrith ,r'our argun-rents and your concl-tsion.'</p>
+<p>I 5 I H Bonili, Assumption and Myth ia Physiral Theary, p.?8 {Cambridge Umversiti- Itess, 1965).</p>
+<p>[ 6 ] This ne*' philoso]rh-r. is descrilrcd it full cir the l$Ail{S *.et:site \9}\ar.I\]ail}_Org_</p>
+<p>I 7 I f llauinei, The Penguin Dictionary of Philosophy, pp. 1f'{:167 (Perg-uin 199f .</p>
+<p>i 6 ] N \r. Popc antl A. L). Clshorne" "[nstantaneous Rclativistic r{ctir;nat-a-Distance", Ftrv-s. Es-says 5, 409'r:l (f?9:)</p>
+<p>[ 9 I fhe PIRT conferences are hek] unrler the auspices of BSPS {fhe British Sccietv fi:r the Philosopl'ry oi Scielrce).</p>
+<p>f10l E. illach, Lrreface ttrDie Prinzipien der physikalisthen Optik. Historich und erkennhris-psychoi ogisch enfwickelt- ( Barth, 1 921 )-</p>
+<p>ilfl l::i-:pria=pl*rra-siir-;tir:mrulatedi::tfu:itri;l-.Lr..-:rt'-t:;-: Jrx: Sla-r.</p>
+<p>i1:l</p>
+<p>A. Il, tltrorrp and N- 1'. irr:pe, 'An A-ngnlar llocrcntun', Sr::::-- ' aed "'E}etirostatic" Forces', Ca }il ea;i El e: rr': r-</p>
+<p>.-rl "{:ravita&amp;-*:1*}*</p>
+<p>*a;:ti*. 1{ 5ietjai lsrr:a:s1. }19, {2L)03j.</p>
+<p>11''I X. 1r. ?*pe ared A. D. {lhlorne, *ri. tif, {}9-412 (1992i.</p>
+<p>i"t.tl H Y. Pr:pr* +r:.*. t\- t]" *sb;rne, "lnstar:ta*eous Grauibtionai a:,-' Ir:rrti*l Ar:tin*-at-a-Di;Lrnre", Ph-v-s. Essay.s 8, 38+397 {1995)- *c-+lse-: the S*mir'.al llahlitations s*tlicn of the POAI{S rr-et's',:t rEral'-!,*I tll$-if rt-</p>
+<p>i15l Y, TiS,cdrh:;L5., Ar:ner-.lr:r:rnal rd Ph1s., 56, 12 {1 9881 1161 5. 1*, LfcC-t:'Iry', A:r Inknductio;t to Advaated D,rrramics. pp. i-&gt; *J {A,Jdi-&lt;rn-1Yesle,r., B*ading, 1959) f-i{ !iir. F&lt;rpe, the Eye d the Beholdet: The Role of the Obsen-er i-n</p>
+<p>*lc*ern Fltysics. p:: {fhi Philos:phical Enterprisa;, Sn':m=a, r*B{}</p>
+<p>trIe; 5e"-. fe:r ex,:ntpie. B- S.p:"1i1i, Tensor Calcului p:p. 3l1i-1', {Oliver ar:d fi*:1'd, 19.133</p>
+<p>i19l J" Ftx;-tr arr:3 !. D. lrightingale, A Short Caurse in Ceneral Relalivif5r, pp.&amp;6*l*7 1c]5-.111 {Ltrngrnan, 1979)</p>
+<p>1][I C, {J- Alle1, ;:nd T- !'an Fiandem, Brieiing Dr:cuoent; "Ab-s{rlxte GPS tr-: be*t*r **rt ctr:e lrtettr"', al.ailable at }rttlr:./,/ nretarcsearcl'r.r:r;;.1 sr:larS, 20srstem/ gps/absolute-g1:s-</p>
+<p>trtet*r-asp €211 Qt r':'i refe-r*:t-e 19, gg &amp;-*S9 lnl *p rir ret=rer*-* 19, p1: 114117</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

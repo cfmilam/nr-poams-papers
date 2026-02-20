@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadow over Gravity</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Shadow over Gravity</h1>
+<div class="meta">N. Vivian Pope — 2000</div>
+<p>D:\Shadow over Gravity.doc</p>
+<p>Last printed</p>
+<p>Page 1 of 2</p>
+<p>‘Shadow over gravity’ Dear Alan, Anthony et al., Thanks, Alan, for sending me the New Science piece ‘Shadow over Gravity’ (27th Nov. 20004), which I found most interesting. Keith Hewitt also sent me the same article some time back. (By the way, Keith, I've still got that meeting at Bristol in mind). My thoughts on this anomaly are as follows. It is usually thought that the pendulums swing and gyroscopes orientate themselves, not with respect to the earth but with respect to ‘the universe’ or ‘space itself’ (or ‘ether’, as some might say). In POAMS, these instruments are an integral part of the overall angular momentum nexus involving all the planets, satellites and other bits of matter in the solar system and beyond. These reported anomalies are therefore not necessarily so according to POAMS. They are effects that, in general, are to be expected with changes in the distributions of these astronomical objects. It seems to me that in an angular momentum system involving huge numbers of massive objects – in a galaxy, say – it would be the centre-of-mass of the system as a whole that would predominate over the local effects that bodies would have on one another in close proximity, like that of the earth and the moon – or even the sun. In that case, it should be more towards that central mass that pendulums and gyroscopes point, in preference to the much smaller masses of the closer bodies. This answers to the independence of those terrestrial instruments on the diurnal rotation of the earth. However, that should not rule out all local effects. If, in the angular momentum ‘balance-arm’ between two bodies, some other body of comparable mass is interposed, then there is bound to be a displacement in the centre of moment of that system, which is at a maximum when the three bodies are in line. This displacement should then, to some extent, affect all other angular momentum systems in that local nexus, such as gyros, pendulums, etc., on those bodies. Given, then, that angular momentum is the ruling factor, and that angular momentum is overall-conserved, some such effects, both local and non-local are to be expected. The question is, why aren’t these anomalous effects (on pendulums and so on) evident in ordinary motions of objects within the solar system? Why does the alleged effect reveal itself so suddenly only when the sun, the moon and the earth are in direct line? In the angular momentum terms of POAMS, what could explain that phenomenon if, indeed, it is a fact? Certainly, as the article stresses, there’s no way of explaining it in terms of standard ‘gravitational’ theory. either Newtonian or Einsteinian. Can POAMS, then, perhaps do it? Anyway, that’s my line of thinking at the moment. Any comments will be gratefully received. Any other thoughts on it, anyone? Best Christmas wishes to all,</p>
+<p>Viv</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

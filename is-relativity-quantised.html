@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is Relativity Quantised</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Is Relativity Quantised</h1>
+<div class="meta">N. Vivian Pope</div>
+<p>l+</p>
+<p>a)(o</p>
+<p>hco !o) UF ()u</p>
+<p>fr.</p>
+<p>€s)</p>
+<p>1_ EE</p>
+<p>rm</p>
+<p>to .fE'P T :</p>
+<p>N</p>
+<p>{c F kr.uat-</p>
+<p>(j</p>
+<p>co</p>
+<p>o\ &lt;f</p>
+<p>o</p>
+<p>z o. !</p>
+<p>lo</p>
+<p>o o</p>
+<p>ts .R</p>
+<p>ts-P</p>
+<p>s td q)* { SP E \) h\</p>
+<p>sB ?:s iE.=oQ</p>
+<p>u</p>
+<p>'*d</p>
+<p>q</p>
+<p>tU)</p>
+<p>t dn E t\</p>
+<p>:E :b $i 'e", i: =E ffi i(o E i$t ut E isJ E I !</p>
+<p>o^.=</p>
+<p>d b! --s</p>
+<p>-;:</p>
+<p>(} + e'+B UU</p>
+<p>{., dr H 3E q</p>
+<p>ffi d b.</p>
+<p>co orI</p>
+<p>{d .;k E E* A 5 EH</p>
+<p>Ir 5 : ^E* av,</p>
+<p>&gt;\.9 () Ol.O</p>
+<p>du</p>
+<p>F€ E</p>
+<p>o.l )</p>
+<p>o:* H t9 d &gt;r 0., I HBO</p>
+<p>a</p>
+<p>tsd obr)</p>
+<p>E,E c-32 €ts8 tr_o L*</p>
+<p>C)</p>
+<p>cf, C)</p>
+<p>I</p>
+<p>l&lt;</p>
+<p>C)</p>
+<p>bo</p>
+<p>cd</p>
+<p>0)</p>
+<p>o</p>
+<p>E: *</p>
+<p>o</p>
+<p>(i()9Q o.l"&amp; t= ctr ai c)</p>
+<p>"38</p>
+<p>o &amp;H</p>
+<p>aJ</p>
+<p>B o</p>
+<p>,.q</p>
+<p>d</p>
+<p>i-1</p>
+<p>{_: a 6C)</p>
+<p>N</p>
+<p>T;:</p>
+<p>{,) CT</p>
+<p>F</p>
+<p>i.! ?*</p>
+<p>.?</p>
+<p>L</p>
+<p>c)</p>
+<p>o tA (L!</p>
+<p>O</p>
+<p>€,</p>
+<p>r</p>
+<p>a.z i-'J= L{)</p>
+<p>ruL</p>
+<p>o</p>
+<p>C)</p>
+<p>a</p>
+<p>(4</p>
+<p>rc &gt;' r$ ii-i bo</p>
+<p>(J</p>
+<p>;d</p>
+<p>EI</p>
+<p>d F l.r o ri oo () rii a_) t&lt;</p>
+<p>s o U'@ iti</p>
+<p>I</p>
+<p>i)</p>
+<p>i)</p>
+<p>rll</p>
+<p>,t U .J</p>
+<p>-(bo</p>
+<p>9: d E</p>
+<p>al</p>
+<p>o o</p>
+<p>6*;.4 Hv-9</p>
+<p>$E'EE</p>
+<p>C)</p>
+<p>6S6;.</p>
+<p>o</p>
+<p>(J</p>
+<p>€.J</p>
+<p>.D i,</p>
+<p>.)</p>
+<p>E</p>
+<p>o</p>
+<p>(r L</p>
+<p>ov</p>
+<p># *&lt;€ .3'' tr.ioJ t</p>
+<p>a)</p>
+<p>oH :sa</p>
+<p>(6</p>
+<p>a ()</p>
+<p>O\</p>
+<p>o ;J ,5 o ci a,l )</p>
+<p>E-</p>
+<p>o': &lt;E .-C &gt;</p>
+<p>H</p>
+<p>e.i</p>
+<p>o o</p>
+<p>v_og qE 6 -\ooUd&amp;^</p>
+<p>e</p>
+<p>'t?.</p>
+<p>{t"i</p>
+<p>ho</p>
+<p>o</p>
+<p>H;i./,</p>
+<p>(}</p>
+<p>B</p>
+<p>&gt;l</p>
+<p>&gt;il9 Y t.-c</p>
+<p>&gt;-. r!i</p>
+<p>.J</p>
+<p>o-u Euil (Joo-</p>
+<p>t</p>
+<p>i4</p>
+<p>L</p>
+<p>U</p>
+<p>dE.-</p>
+<p>;,&gt;</p>
+<p>1)</p>
+<p>a!</p>
+<p>€; oi -- -q I5.s? B0(</p>
+<p>td (J</p>
+<p>X</p>
+<p>bo</p>
+<p>'t .J</p>
+<p>i.-)</p>
+<p>o () rJ .:4, 0) t) ii, ,30) o E !.) o J. U1</p>
+<p>5i tr;</p>
+<p>o-</p>
+<p>&gt;l L.! J]</p>
+<p>a</p>
+<p>o)</p>
+<p>(d</p>
+<p>(i I:</p>
+<p>E o o a a</p>
+<p>€</p>
+<p>;&gt;</p>
+<p>s</p>
+<p>0)</p>
+<p>(.!</p>
+<p>" E&gt; gt.;</p>
+<p>o</p>
+<p>6J</p>
+<p>-fi</p>
+<p>(i.,1</p>
+<p>l&lt;</p>
+<p>ti</p>
+<p>Lll</p>
+<p>o ()</p>
+<p>{x</p>
+<p>fl C)</p>
+<p>H</p>
+<p>tfl</p>
+<p>o</p>
+<p>C)</p>
+<p>o</p>
+<p>U)</p>
+<p>E</p>
+<p>\:i ($</p>
+<p>i4</p>
+<p>C)</p>
+<p>.(J</p>
+<p>'\l -tll O\{ (/ ll</p>
+<p>o" a</p>
+<p>la</p>
+<p>&amp; X</p>
+<p>fi{} tr o</p>
+<p>o</p>
+<p>F</p>
+<p>JJ</p>
+<p>;&gt;</p>
+<p>!*l</p>
+<p>() (!</p>
+<p>{}</p>
+<p>,-r-.)</p>
+<p>,J:i</p>
+<p>o o (,) o</p>
+<p>}r</p>
+<p>3€u O</p>
+<p>L</p>
+<p>6)</p>
+<p>i.=*;</p>
+<p>ir-r</p>
+<p>C)</p>
+<p>&gt;^.</p>
+<p>(d</p>
+<p>0):</p>
+<p>a-_ 2</p>
+<p>q) l-. ia</p>
+<p>o Lr o o L]</p>
+<p>o</p>
+<p>:i</p>
+<p>bo</p>
+<p>o.</p>
+<p>.F5g</p>
+<p>..= E .0</p>
+<p>ta I</p>
+<p>L</p>
+<p>o</p>
+<p>-o () ()</p>
+<p>.J fl3</p>
+<p>o o }r a</p>
+<p>2,</p>
+<p>bo</p>
+<p>tr</p>
+<p>q)</p>
+<p>oiDtr o o-,. :i'C)d .X</p>
+<p>*.2</p>
+<p>() O</p>
+<p>bo</p>
+<p>L).</p>
+<p>$.1:!</p>
+<p>l&lt;</p>
+<p>tr&gt; 0)</p>
+<p>&gt;._d :</p>
+<p>50.C d 6'=</p>
+<p>i:l</p>
+<p>!h</p>
+<p>o u o o D. eJ 6) a. iil</p>
+<p>J.i:l</p>
+<p>F</p>
+<p>ta</p>
+<p>t"J</p>
+<p>o.</p>
+<p>a ()</p>
+<p>s</p>
+<p>()</p>
+<p>o 3 a o a ti</p>
+<p>a. 0</p>
+<p>E;</p>
+<p>{)</p>
+<p>o L</p>
+<p>k C)</p>
+<p>ti</p>
+<p>k 'cd o l-. &gt;. o(d o</p>
+<p>.2 8"y, cg5</p>
+<p>E}E iao c6* CO bD</p>
+<p>€)o aco</p>
+<p>"1.,,1</p>
+<p>o</p>
+<p>AN</p>
+<p>ua</p>
+<p>() {) 'i:] ()</p>
+<p>&gt;.'rd {)</p>
+<p>:)</p>
+<p>(,</p>
+<p>g,</p>
+<p>8,99F 4d</p>
+<p>sjj:</p>
+<p>g *:?E a isgH</p>
+<p>-d t, o</p>
+<p>o o U</p>
+<p>u)</p>
+<p>o</p>
+<p>.o</p>
+<p>o.</p>
+<p>.16</p>
+<p>:s qH a,</p>
+<p>g c</p>
+<p>tr# lr) O</p>
+<p>tc</p>
+<p>OL tD5 o o^</p>
+<p>l't</p>
+<p>Es I</p>
+<p>o</p>
+<p>os E# oor L(Y</p>
+<p>o rtg</p>
+<p>qO</p>
+<p>Ur€ are</p>
+<p>&lt;o ur 3t, o=o dA o</p>
+<p>G. !l t orF</p>
+<p>!o</p>
+<p>LO #c o,</p>
+<p>s.H a</p>
+<p>E q-,</p>
+<p>n +: .'.1 - C)</p>
+<p>*</p>
+<p>or</p>
+<p>,u '"</p>
+<p>P "'E-i 0.3 ? il;-* - o ;j-: t+ ( &lt;u+ o o-Y E *- i.tr, E ;otrltrH;"'ocr. . v D r i r\.J ,a 9lH -5'- * 3 ",R F'*EI=*P,:'sr.3</p>
+<p>*aEIpH "=;</p>
+<p>&lt;E 3 6z I G</p>
+<p>? fiE"gE E:r$ E, !f E; H y=: xx E</p>
+<p>)r-</p>
+<p>li&gt;F{ Eo</p>
+<p>F.</p>
+<p>o"*E 0-;</p>
+<p>F 6 C jf;.g</p>
+<p>e</p>
+<p>j 4 -6'fry E Pj H;E I g,j *ij tgUE ZiSiE; E sE</p>
+<p>l-l</p>
+<p>l-{</p>
+<p>E</p>
+<p>E] -o i</p>
+<p>frd</p>
+<p>gE</p>
+<p>[; Cr-. frt :l ; iI</p>
+<p>s H 'C</p>
+<p>ao t{</p>
+<p>ld o' aL Ht{ F&lt;o. &gt;t,-atr *=</p>
+<p>l-1 Z</p>
+<p>E:itt:ic=u</p>
+<p>.u 5 [1.rrr 8....</p>
+<p>]o</p>
+<p>oA</p>
+<p>f,ttil:i, u;;g; 'Es</p>
+<p>cD O O . a rjt, A (6 c-t,4 .: &gt;. ^ d = = -q(ggB"i*:5*I +r c x.5 " or !* qD9'= .-'i &gt;.T</p>
+<p>G,</p>
+<p>Gt</p>
+<p>---O.--'o\t, ! X..c 17 , cr oC( :</p>
+<p>fi</p>
+<p>E</p>
+<p>-(tlo,q tr^ &gt;.C.; f &gt;--q E</p>
+<p>o o-g-oq: c '':</p>
+<p>&gt;ij</p>
+<p>r)</p>
+<p>C ii</p>
+<p>c</p>
+<p>s iiPI r)H,E a! (/) ..( .='.i .=i'E#"'.</p>
+<p>3g</p>
+<p>+, !{,</p>
+<p>j*q</p>
+<p>E9</p>
+<p>Ol</p>
+<p>.-o '(, Lt</p>
+<p>eo</p>
+<p>i! ;</p>
+<p>o</p>
+<p>-5</p>
+<p>,:</p>
+<p>[j; =.:I; 6 H"</p>
+<p>' q Uq.r-:'tfi t k &gt;-C ci</p>
+<p>t5</p>
+<p>.J qi --Q cJ &gt;</p>
+<p>.\I</p>
+<p>do o(, OL Ld</p>
+<p>&gt;_V..J</p>
+<p>o- Or.</p>
+<p>5 T(H r:. irf O</p>
+<p>iiiiilffirili 3.b?:Irj:tf,ilrE</p>
+<p>l: e i= rI;i jilr</p>
+<p>t;is{r:;itx:l i{q*+Ef:qfisl ti;sl i:if ;;r IE !,.9'I.i I I 6,? c</p>
+<p>E</p>
+<p>lifl;;initifill E;;i</p>
+<p>r a if</p>
+<p>rr: I ;+</p>
+<p>:E;u:'ii!i'!g::l (i Oo O .cq.i q O an o a E o r q</p>
+<p>r-</p>
+<p>I</p>
+<p>O&lt;t O m ve</p>
+<p>:!D&gt;.r olol, *! oo'roE o!!!gr qnO</p>
+<p>,at</p>
+<p>Lr.9' ro5</p>
+<p>P r'€ f I X " gHEE;'*L*g olttraI'I.&lt; 3;€ E r3^' e SErr(n &lt;</p>
+<p>o*::.</p>
+<p>$50 d o-i.rn, rlo!O .</p>
+<p>: O-'cA da r', F. p. }l..| B ^ g. E B # EE =</p>
+<p>p[' n,v:</p>
+<p>r{</p>
+<p>fl[rii;iilr r:=P--i- .'d</p>
+<p>-o fr (If'</p>
+<p>e</p>
+<p>Xco!..: x.o d ,r</p>
+<p>E&lt;r'</p>
+<p>"lf.,e'"-'$f</p>
+<p>.5 r'ex.oJl F'-!el-{rco P" r , +0a F li</p>
+<p>o-d</p>
+<p>trrrl EO</p>
+<p>tDr'"fr4^.N-Oe *6-'o.-;.d</p>
+<p>*TEf6"..83 F g t.rp' * i',5 5' B[.'6.xEs'5 g ld iE s'lB.; 1F# g'q. '.,o I d it;.l. r 6dr;e09?es</p>
+<p>:'r!r</p>
+<p>;8;. ca&gt;I</p>
+<p>7i</p>
+<p>3.6.P;9s9-</p>
+<p>E.</p>
+<p>!+d f * -"o re.</p>
+<p>iEllillli}iil}l irrf r;i=.[; tir't: ri;*;[iiitIirr;</p>
+<p>a!'oo{6 :irj.o6ao.l i / [ I a * " 3o</p>
+<p>io3 5ooH'5 o +9!o e.tsts</p>
+<p>\q</p>
+<p>iE.* fi.e"fi*rEE*iE</p>
+<p>OOOHoAt{r(, O o o iD I O +'I Ht!, 5. o H3 I1.+o-&lt; N l,.O F.OiOrO6O Ft xr F. O O _ O sv lOBFltfrrO* tsotsO!-t-F.EIx.</p>
+<p>( I</p>
+<p>?N</p>
+<p>l, o- " Q * --3 ll s P- ^ ? -;.:r 3 E fr "-q u 3 T f I J.3 I</p>
+<p>l'</p>
+<p>"E.*,i..H:l*3H:'85'a</p>
+<p>\</p>
+<p>s</p>
+<p>o</p>
+<p>G</p>
+<p>il</p>
+<p>.oll</p>
+<p>n</p>
+<p>o*</p>
+<p>o</p>
+<p>; :t oa \ s.l N:</p>
+<p>o</p>
+<p>;:;lIg;i;i{*[il</p>
+<p>N</p>
+<p>It</p>
+<p>H</p>
+<p>F</p>
+<p>a</p>
+<p>I</p>
+<p>v</p>
+<p>gJ</p>
+<p>B</p>
+<p>l</p>
+<p>.ic</p>
+<p>r,r</p>
+<p>.</p>
+<p>g p.c Sosid OT.aOODTCH 60e rt I \</p>
+<p>o</p>
+<p>-o</p>
+<p>gns;;i ;r ' ;t o A</p>
+<p>d.L</p>
+<p>s.ur o c oo oo tr Cl'o :o a-i</p>
+<p>.t</p>
+<p>t</p>
+<p>(!</p>
+<p>ll</p>
+<p>= *1,</p>
+<p>d</p>
+<p>w</p>
+<p>= o</p>
+<p>E+nYor 06€r''Dr</p>
+<p>E[ :'dB':.i4</p>
+<p>-B &gt;</p>
+<p>o;,i:f;,1rlL aaiF.frn:rC FtdONoOO C O 7av o o. 3 n</p>
+<p>g*f ro€ G.</p>
+<p>{ i { r o0Q</p>
+<p>'Or</p>
+<p>ur</p>
+<p>Eilgi;Elillr[1</p>
+<p>;iI Erirrrria$</p>
+<p>+</p>
+<p>o,</p>
+<p>t\)</p>
+<p>ili t[arrall$; !ro'_t6&lt;(!ts. i]ogErC='o-ol56€d 6('5bo5t/,F'F.F. Crd'ov.oF.OGE.+t, a + , la sC 3 q P</p>
+<p>!t O I' ts</p>
+<p>qrJ</p>
+<p>'r.t 46</p>
+<p>t= r</p>
+<p>! oe</p>
+<p>ro</p>
+<p>*</p>
+<p>Nq</p>
+<p>o=o o* :t NE =-3 nf</p>
+<p>o-o</p>
+<p>:\ '\ =e</p>
+<p>vv</p>
+<p>o</p>
+<p>Ill</p>
+<p>=</p>
+<p>ooQ -\o</p>
+<p>\\ .\ vv ==</p>
+<p>o-o</p>
+<p>=g vo \1</p>
+<p>rf</p>
+<p>H-</p>
+<p>€ '\</p>
+<p>0!</p>
+<p>I</p>
+<p>.t</p>
+<p>e</p>
+<p>e o</p>
+<p>NO vrn</p>
+<p>co</p>
+<p>@</p>
+<p>{</p>
+<p>liii</p>
+<p>iiliiiii</p>
+<p>E1{l11ilii tli</p>
+<p>Iiiililiiililtilili i</p>
+<p>iiiiil li'</p>
+<p>I ;:i s a IE Ir ffi ii , i e * : - 3 ': I [;] f f $ -; + J ] l. I r r I ; slis li F,.</p>
+<p>z</p>
+<p>;iiIilIfl liirilIigiiiitliiri[1i i i[la; iiiiilii triIii Iilr iffillii i lirrirtlisgii }tttiltliii[ili}li i r:*irl;i[1]ii</p>
+<p>[r' I $[1f,[iii il*iirl*fi .:c i f=rri*: ;r? [i r; [;; il; iilffil</p>
+<p>|J</p>
+<p>,rEdprrO.!)5 O X r i rrO FF.!DoOoF.5 oOiLPl|rQ!)-r d!F.tsni.pDI</p>
+<p>{</p>
+<p>nO</p>
+<p>:';r.38'rLa;';9;':-p II</p>
+<p>5'rESIri;"</p>
+<p>T\5',?3oE*B l,:,rT ;'s-{ r 6 &lt; o Y o p.o</p>
+<p>!</p>
+<p>SiEiglYiZ 5's;I6E*I.I a'frid+!p-b-</p>
+<p>f</p>
+<p>;*"</p>
+<p>PE B sB 5' -o.36-r "6li o Jg 9O o u 6</p>
+<p>Ed,D3ts.;c!r -9otaog}5ilicfo HpvE'-cr,. h! o xl: d i D 3 F F.O F. o vJ Fo :lurrD-tstrd:t</p>
+<p>-;337,4.'1A F.fO - X X F. F. =o!o'-lrood</p>
+<p>H'15';9q73 i?-"qi'5'ie'</p>
+<p>flxsriiIas .Ir;;rt;[g</p>
+<p>e 1 5'i " 3 I h.f 'o.gT.-;B o,.R * -l.oh.od;o i-.o ^ a</p>
+<p>9-</p>
+<p>sBs55r;s OFOilrrl6</p>
+<p>r</p>
+<p>r':;'</p>
+<p>it*,t</p>
+<p>GI</p>
+<p>o n</p>
+<p>Or+-D</p>
+<p>c</p>
+<p>B',;5' :E s *</p>
+<p>A)</p>
+<p>E</p>
+<p>D</p>
+<p>n ts.</p>
+<p>o</p>
+<p>n o D</p>
+<p>o o</p>
+<p>o o</p>
+<p>5oo€</p>
+<p>, B':E i</p>
+<p>='N</p>
+<p>o p-</p>
+<p>O Hts,</p>
+<p>a$ tY" ? t;rz,::*38</p>
+<p>vc*v voo</p>
+<p>*</p>
+<p>sr</p>
+<p>o</p>
+<p>5'h</p>
+<p>'o !,</p>
+<p>c o</p>
+<p>c</p>
+<p>s</p>
+<p>14 r.</p>
+<p>Ol</p>
+<p>Crp. OO</p>
+<p>H</p>
+<p>ll</p>
+<p>G</p>
+<p>o o</p>
+<p>ts</p>
+<p>O)</p>
+<p>o</p>
+<p>t\)</p>
+<p>o</p>
+<p>U</p>
+<p>&gt;t</p>
+<p>T</p>
+<p>F</p>
+<p>s</p>
+<p>F</p>
+<p>U</p>
+<p>I r</p>
+<p>u,</p>
+<p>I</p>
+<p>I</p>
+<p>T</p>
+<p>et]</p>
+<p>: b" IJ f</p>
+<p>o a</p>
+<p>tEt fr</p>
+<p>olJ</p>
+<p>td I F.</p>
+<p>Ou lo</p>
+<p>\,</p>
+<p>Fj :t OO i!)</p>
+<p>:- t4 a)</p>
+<p>DO a! Or Q.V oo 7o I</p>
+<p>orr o-</p>
+<p>Fl o o o</p>
+<p>I</p>
+<p>a €</p>
+<p>0)</p>
+<p>f a o</p>
+<p>!)</p>
+<p>SF r. ld &lt;0) Or Ef</p>
+<p>r.t</p>
+<p>d,</p>
+<p>oo X= o0)</p>
+<p>g$ oo DJ</p>
+<p>o</p>
+<p>v</p>
+<p>F6:BA!as. g: t" fl i x e:: r 3q FIr.r".g 5'=i'EgEBE, -"1=fr ] 9al Ehlsu"i*E' E r e ! -9"'l-</p>
+<p>v9</p>
+<p>G</p>
+<p>5E</p>
+<p>vo</p>
+<p>a)</p>
+<p>o</p>
+<p>*l t e</p>
+<p>n d o o</p>
+<p>r o A)</p>
+<p>B o o</p>
+<p>GI</p>
+<p>-l O4</p>
+<p>3* (aF.</p>
+<p>ol O-h Eo JH</p>
+<p>ou F' Oo!r )a o</p>
+<p>9F F.,E}</p>
+<p>o o</p>
+<p>.rJ</p>
+<p>'aJ n= OF:</p>
+<p>P</p>
+<p>)</p>
+<p>o:f</p>
+<p>=</p>
+<p>o-</p>
+<p>0e</p>
+<p>;ha</p>
+<p>Ol 5d r.(! &lt;f</p>
+<p>s6 x3' o od</p>
+<p>oo h6</p>
+<p>:E TTJ CH .Fn tso -.d</p>
+<p>o</p>
+<p>Its. o</p>
+<p>FJ</p>
+<p>F.</p>
+<p>o o t F. I</p>
+<p>s</p>
+<p>I.o</p>
+<p>e,o (!x</p>
+<p>rr9 oL Ed</p>
+<p>Ia</p>
+<p>OF 5(D 0! o 0'q o</p>
+<p>C,o</p>
+<p>J</p>
+<p>oI</p>
+<p>trh o Ijg OJ !O al</p>
+<p>to. o o o</p>
+<p>6'o :I</p>
+<p>U</p>
+<p>N</p>
+<p>o &gt;. o</p>
+<p>o</p>
+<p>Ut,</p>
+<p>ttst</p>
+<p>HE</p>
+<p>d Et</p>
+<p>"*</p>
+<p>rGlel -F..\0! A&lt;O Hov \glNlO t..vrv</p>
+<p>o</p>
+<p>6I</p>
+<p>-.'r</p>
+<p>\r+i-n.-*da.O --p5' I 5' q B ftr&lt;&lt;r--,tn ;1E,€ [ a a</p>
+<p>tr</p>
+<p>t</p>
+<p>.-:"</p>
+<p>''</p>
+<p>::*: Ir xolr f</p>
+<p>^\g,rd;F.E.</p>
+<p>tt</p>
+<p>?</p>
+<p>a-</p>
+<p>ot</p>
+<p>i 11 F'.t 9 r\O eEGlofif..</p>
+<p>o</p>
+<p>ts5</p>
+<p>=^Go</p>
+<p>i'1 I3o</p>
+<p>o</p>
+<p>tQd</p>
+<p>!^ll</p>
+<p>B</p>
+<p>aog.'oHil</p>
+<p>o</p>
+<p>o-o</p>
+<p>{S.o\o'</p>
+<p>65=\ oftNt[-[o</p>
+<p>l-'0qO'-iD</p>
+<p>I</p>
+<p>o a o</p>
+<p>I r a il- r</p>
+<p>o9orraE</p>
+<p>G</p>
+<p>O6 Do Fo</p>
+<p>A'</p>
+<p>a.:ir</p>
+<p>I r r *r i {Erlasqr ott 1, "a B [i;'H ** x't I 5'E E;9</p>
+<p>END f)clo(! vts+</p>
+<p>56*;-D</p>
+<p>o</p>
+<p>oo ol,</p>
+<p>oI q€ Ee TJ F.;</p>
+<p>€</p>
+<p>0ro</p>
+<p>oO il' t</p>
+<p>Nts(,l</p>
+<p>t-!to</p>
+<p>..orD"t,\:'o gE</p>
+<p>{F.</p>
+<p>iDo^</p>
+<p>3v</p>
+<p>ct</p>
+<p>oo o 5oq</p>
+<p>,o oi) fo</p>
+<p>t</p>
+<p>ooa F ts' !o</p>
+<p>F.(,</p>
+<p>th</p>
+<p>)-</p>
+<p>r</p>
+<p>HE'</p>
+<p>,lt &lt;o o3 r.t</p>
+<p>x</p>
+<p>r 6 g, s'{.' E $ 6 *o- '!Y^o r</p>
+<p>G</p>
+<p>l,</p>
+<p>11 hO</p>
+<p>P. l!</p>
+<p>fO IO rp. o 'r pO o</p>
+<p>op,iJo)=-5d F'! o Q O60-lrZ ocl Y F. &lt; ld 6 tr - y. o O F' t r. i !f a. = ?,i,P.naP.sAh</p>
+<p>AP. d{</p>
+<p>E</p>
+<p>a.|</p>
+<p>Ifi',sg[.]edr</p>
+<p>Da oo</p>
+<p>HA^</p>
+<p>'</p>
+<p>F. F</p>
+<p>trtrI ts.</p>
+<p>r.r6 0</p>
+<p>o</p>
+<p>o</p>
+<p>&lt;]r $F tscL oF.</p>
+<p>BJ &gt; 3</p>
+<p>o</p>
+<p>o</p>
+<p>F ; $ [ r [q ; I TE g r.r-eE ";',;[ 3I s; -oao*o</p>
+<p>oFt, o\'tst</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

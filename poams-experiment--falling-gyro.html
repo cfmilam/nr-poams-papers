@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POAMS experiment  falling gyro</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>POAMS experiment  falling gyro</h1>
+<div class="meta">N. Vivian Pope</div>
+<p>4. Changes in the ‘gravitational constant’ G for a ground-based spinning gyroscope If these calculations are correct, or even partly correct, then it becomes plain that the textbook factor G, commonly conceived as a constant, cannot be the same for orbiting bodies that spin as for those which do not. As we shall see, the fact it appears constant only because on the scale we are discussing the effects of spin on orbiting bodies the size of planets etc., are practically negligible. For such bodies the standard formula for G in terms of orbital angular momentum which pertains is; G = Lovo/mM For instance, with the standard values of Lo, vo, and M, where M is the earth’s mass [5.976e+24 kg], the mass of our gyroscope [m =0.25 kg], vo its low-level orbit speed [vo = 7315.52052 m/s], and the orbital angular momentum, Lo = 13626985847.956 kg m2/s, G has the standard value of G = 6.67259e-11 m3 kg-1 s-2. On the other hand, the orbiting spinning gyroscope G, according to our calculations, has the value G* = 6.67259338757531523e-11 m3 kg-1 s-2,</p>
+<p>Lo*vo* /Mm, which is</p>
+<p>which is approximately 1.0000005077 times standard G. This, of course, is for that theoretical gyroscope spinning in a low-level earth orbit. Our next task will be to makes similar predictions for changes in G for ground-based experiments of the kind carried out by researchers such as Hayasaka and Kozyrev. Now our textbooks tell us that an object's weight is the product of its mass m and the local gravitational acceleration, g. That is to say, weight (symbol W) in units of force (newtons) is W = mg, where g = GM/r2 and m is the mass of the body in question. We know that M is the mass of the earth (M = 5.976e+24 kg.), and that standard G = 6.67259e-11 m3 kg-1 s-2. We know, also, that the rotational speed of the earth at the equator is ve = 465.1 m/s, and that its equatorial radius re is 6.371e+6 metres. The angular momentum of the ground-based gyroscope of mass m = 0.25 kilogram, due to the earth’s rotation, is thus Le = mvere, so that Le = 740788025 kg m2s-1. Meanwhile, we know that the spin angular momentum of the gyroscope itself is Ls= 0.57715 kg m2s-1. The total angular momentum of the groundbased spinning gyroscope is therefore, LT = Le + Ls, which is LT = 740788025.57715 kg m2s-1, That is, 1.000000000778 times Le. From the above Fig. 4, for the best-positioned experiment we have LT = Lo + Ls, where Lo is the free orbital angular momentum, and Ls is the amount of spin angular momentum that is added to or subtracted from that fixed amount signified by the vertical hard-dotted line. Plainly, then, this provides the largest amount of change in weight to be expected from our proposed experiment, that is, with the apparatus grounded on the equator and the disk spinning counter to the earth’s rotation. In this best of cases, the orbital angular momentum, Lo is replaced by the earth-rotational angular momentum Le. This, as we have seen, is Le = 740788025 kg m2s-1. In this case, since G = Lv/mM, we have GT/G = LTve/Leve = LT /Le =</p>
+<h3 id="sec-1-0000000007791027669487502852115-">1.0000000007791027669487502852115. So we have</h3>
+<p>GT = 1.0000000007791027669487502852115 × 6.67259e-11, whence GT = 6.6725900051986333317145616655993e-11 m3 kg-1 s-2 In that case, the weight of our 0.25 kilogram mass would be We* = mg, = GTMm/re2</p>
+<p>= 2.4560082873772542599185726053613 newtons.</p>
+<p>Now 9.80665 newtons = 1 kilogram of force, therefore 2.4560082873772542599185726053613 / 9.80665 = 0.25044314698467409970974518366224, which is an increase of 0.0004.431469846741 kg in the weight of the gyroscope, due to its spin. = 0.4431469846741 of a gram, or 443.1469846741 milligram. -------------------------------------------------------------------------------------------------------------Changes in g. From We* = mg, = GTMm/re2, Solve for g. g = GTM/re2 = 9.8240331495090170396742904214451, which is an increase of 0.017383149509017039674290421445123 in gravitational acceleration. Compare Newman’s 1/7000 = 0.000142857142856 of a change in weight. Note that this is always an increase in acceleration. According to our POAMS analysis, there is no vector orientation whatsoever of the spin of the gyroscope and that of the earth that can decrease the acceleration of fall of a spinning object. This is manifest in the case of NASA’s space-probes which</p>
+<p>fall always towards the sun – or the earth or some other planet – never away it. This calls into question the claims of negative acceleration, or ‘antigravity’, by the likes of Kozyrev and Hayasaka.</p>
+<p>In the London Sunday Telegraph of 21 Sept. 1997, reporter Robert Matthews writes; A team of Japanese scientists have spun up a gyroscope to 18000 rpm and dropped it through a distance of 63 inches in vacuo. The time taken to fall this distance was 1/25000 sec. longer than when the gyroscope was not spinning, corresponding to a weight reduction of 1 part in 7000. How does POAMS account for this The only answer that is consistent with our POAMS synthesis, is that it has to be a misinterpretation of the fact of weight-change with spin. For instance, assume, just for the sake of argument, that the change in pressure of water with depth might be discovered by a highly intelligent abyssal fish. That fish might assume that the datum level of that pressure change was the level it was at when it made the discovery. In that case, it might report, not that water pressure increases with depth but that it decreases with height. It is only when it discovers that those decreases in pressure with height terminate, high above, at sea-level, which it never knew about, that it realises its mistake in thinking that the reference-zero for water-pressure was at the depth it had assumed, and that there were pressure increases with depths far below that assumed reference level. In that same way, those who report instances of ‘levitation’ in their spin experiments might well be mistaken in assuming that ordinary ground-level is the datum zero for changes in the measure of g, and that they are unaware that the limit of g is not at ground-level but in space where the weight of the body reduces to nothing. If you live in the Northern Hemisphere (such as Japan) you will observe that as water travels down a sink drain it will rotate ANTICLOCKWISE. And in the Southern Hemisphere you will observe that such draining water rotates CLOCKWISE. Those vortices rotate, not in the plane of the earth’s rotation, but in planes set at various inclinations up to ninety degrees north and south of the equator. At the very least, the obvious connections of these angular spin systems with the earth’s rotation confirms the POAMS thesis that all such spins and rotations take place within an overall-conserved angular momentum nexus in which every such motion is connected with each and every other. If we imagine that these vortices, instead of being horizontal occurred in a vertical plane above the earth’s equator. As our diagrams show,</p>
+<p>the Well-known Coriolis forces.</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is Logic.</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>What is Logic.</h1>
+<div class="meta">N. Vivian Pope</div>
+<p>WHAT IS LOGIC? Far too many people, when they argue or try to reason, use the words ‘logic’, or ‘logical’ without having a clue as to what those words mean. So, what does ‘logic’ it mean? Look at it this way. Suppose I tell you two things:</p>
+<h3 id="sec-1-">1. The biscuits are in the tin, and 2.</h3>
+<p>The tin is in the cupboard.</p>
+<p>Have I now told you just two things? No, I’ve told you three things. The third is,</p>
+<p>3. The biscuits are in the cupboard. But I never actually said that, did I? Did I say that the biscuits are in the cupboard? Certainly not! Yet that conclusion is inescapable, given the truth of those first two statements. Now suppose I were to tell you these two things: i) All electrons are fermions. and ii) All fermions are particles with spin-half, I’ll bet you don’t know what a ‘fermion’ is or what ‘spin-half’ means. But it doesn’t matter whether you do know or you don’t. From just these two things you have now been told, if you accept that I am not lying, then you will know that I have also told you a third thing, which I have not actually stated but is nevertheless true, that iii)</p>
+<p>All electrons are particles with spin-half.</p>
+<p>Now how do you know that? For the same reason that you know, from what I have told you, that the biscuits are in the cupboard. So you see, it doesn’t matter whether or not you know what the words mean in these arguments - for arguments is what they technically are – he fact us that if you are assured that those first two statements are true, then you know that the third statement, in both arguments, has to be true also. So, since it doesn’t matter what these words mean, you might as well just replace them with plain Xs and Y’s. It makes no difference. So both of these above arguments, as well as any similar ones, can be represented by the following: All X are Y. and Therefore</p>
+<p>All Y are Z, --------------All X are Z</p>
+<p>In logic these are called predicates, and what we are talking about here is predicate logic (There is also propositional logic, but we needn’t talk about that right now) [1]. Not that any of this matters, because all that this predicate logic is, basically, is plain</p>
+<p>Predicate logic was developed by Aristotle. Propositional logic (propositional calculus) was developed by Bertrand Russell and Albert North Whitehead.</p>
+<p>commonsense. But, you may say, if that’s all it is, then why make a fuss about it? Why complicate the issue? The reason is as follows. These arguments, so far are very simple ones. There are other arguments which are just as valid but more complex, sometimes far more complex – so complex, in fact that it is far from easy to track their validity through a virtual labyrinth of Xs, Ys, etc., without losing one’s way and getting derailed. Here, for instance, is an argument which is just this little bit more complex.</p>
+<h3 id="sec-7-">7. The biscuits are not in the tin. 8.</h3>
+<p>But the tin is in the cupboard.</p>
+<p>9.</p>
+<p>So the biscuits are not in the cupboard.</p>
+<p>Is this argument valid? No. In logic it is called a false argument, or a fallacy. This is because, when you think of it, the biscuits may be in the cupboard whether or not they are in the tin. In other words, in this case, whether or not the biscuits are in the cupboard is – in logic-speak – undetermined. But you have to think about it just a bit more. And as arguments become more complex, that burden of having to think it out becomes heavier and heavier. This is why logicians have developed rules whereby that burden may be alleviated and arguments made firmer and more reliable. For instance, take the easily remembered sequence of letters AEIO. Now let A, here, stand for the phrase ‘All are (call this Affirmed) and let E stand for ‘None are’ (i.e., negated). Then let I stand for ‘some are’ and O stand for ‘Some not’. Now that’s easy enough, surely. So now take a look at the diagram below. This is a mnemonic – a means of making something easily remembered.</p>
+<p>premise</p>
+<p>conclusion</p>
+<p>.</p>
+<p>A</p>
+<p>E</p>
+<p>I</p>
+<p>O</p>
+<h2 id="a-t-e">A T E</h2>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>I</p>
+<p>O</p>
+<p>F</p>
+<p>T</p>
+<p>O</p>
+<p>O</p>
+<p>F</p>
+<p>O</p>
+<p>O</p>
+<p>T</p>
+<p>The way it works is this. First, write ‘FOOT’ in the four cells along the row at the foot of the diagram and the abbreviation FT in the two middle cells on the top row. Then, repeat these letters diagonally into the remaining empty squares in the directions shown by the arrows, as in the game of drafts. Next, write the easily remembered sequence of letters AEIO down the left-hand side of the square. These letters signify A for ‘affirmative’, E for ‘negative, I for ‘particular affirmative’, and O for ‘particular negative’. Each of these letters stands for the premise of any particular argument. Then, across the top write same sequence of letters AEIO for the conclusions of the argument. The letters T, F and O in the cells are located, down and across in the same way as with a crossword puzzle. These letters T and F stand for the truth or falsity of the conclusion and O stands for undetermined (that is, not decidedly true or false). You now have, in effect, a mnemonic calculator. Let’s see how it works. Here are some samples: Sample 1. All swans are white (A-down). Some swans (such as, say, this particular one) are white (I-across).</p>
+<p>conclusion A</p>
+<p>E</p>
+<p>I</p>
+<p>O</p>
+<h2 id="a-t-e">A T E</h2>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>I</p>
+<p>O</p>
+<p>F</p>
+<p>T</p>
+<p>O</p>
+<p>O</p>
+<p>F</p>
+<p>O</p>
+<p>O</p>
+<p>T</p>
+<p>Sample 2:</p>
+<p>premise</p>
+<p>Given the truth of the premise, this conclusion is true, as signified by the ‘T’ in the appropriate cell.</p>
+<p>No swans are white (E-down). Some swans (such as, say, this particular one) are not white (O-across). This argument is true (T), as shown in the cell. Sample 3: No swans are white (E-down). Some swans (such as, say, this particular one) are white (I-across). This argument is false (F), as shown in the cell. Sample 4: No swans are white (E-down). Some swans (such as, say, this particular one) are white (I-across). This argument is false (F), as shown in the cell. Sample 5: No swans are white (E-down). Some swans (such as, say, this particular one) are white (I-across). This argument is false (F), as shown in the cell. Sample 6: No swans are white (E-down). Some swans (such as, say, this particular one) are white (I-across). This argument is false (F), as shown in the cell. Sample 7: No swans are white (E-down). Some swans (such as, say, this particular one) are white (I-across). This argument is false (F), as shown in the cell.</p>
+<p>Sample 3:</p>
+<p>No swans are white (E-down). Some swans (such as, say, this particular one) are white (I-across). This argument is false (F), as shown in the cell. /</p>
+<p>Sample 8: No swans are white (E-down). Some swans (such as, say, this particular one) are white (I-across).</p>
+<p>This argument is false (F), as shown in the cell. Sample 9: No swans are white (E-down). Some swans (such as, say, this particular one) are white (I-across). This argument is false (F), as shown in the cell.</p>
+<p>By syllogistic reasoning:</p>
+<p>premise</p>
+<p>Now these particular examples if truth-functions may seem to be just trivial instances of reasoning,</p>
+<p>conclusion which can be done intuitively. Here, however, are some more serious examples Aof E true Iand Ofalse arguments in modern science. T F T A F T E</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>I</p>
+<p>O</p>
+<p>F</p>
+<p>T</p>
+<p>O</p>
+<p>O</p>
+<p>F</p>
+<p>O</p>
+<p>O</p>
+<p>T</p>
+<p>All velocities are distances divided by time (uP + pM) [TRUE] in both. Constant c is a distance divided by a time. (uS + pM) --------------------------------------------------------Constant c is a velocity. (uS + pP) False: undistributed middle term. No, his doesn’t work. Back to the drawing board!</p>
+<p>ABANDONED NEW TRY (for syllogisms)</p>
+<p>Conclusion P . S</p>
+<p>Premise S . P</p>
+<p>A</p>
+<p>E</p>
+<p>I</p>
+<p>O</p>
+<h2 id="a-t-e">A T E</h2>
+<p>F</p>
+<p>F</p>
+<p>T</p>
+<p>O</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>I</p>
+<p>O</p>
+<p>F</p>
+<p>T</p>
+<p>O</p>
+<p>O</p>
+<p>O</p>
+<p>O</p>
+<p>O</p>
+<p>O</p>
+<h2 id="this-seems-okay">THIS SEEMS OKAY</h2>
+<p>NOW TRY THESE: If all velocities are distances divided by time (S a P), then: No distances divided by time are velocities (P e S) Some distances divided by time are velocities (P i S) some distances divided by time are not velocities. (P i S)</p>
+<h2 id="false-true">FALSE TRUE</h2>
+<h2 id="not-sure">NOT SURE</h2>
+<p>PARALLEL If all swans are white, then: All white things are swans is FALSE No white things are swans FALSE Some white things are swans TRUE Some white things are not swans NOT SURE</p>
+<p>If no swans are white, then: All white things are swans FALSE No white things are swans TRUE Some white things are swans FALSE Some white things are not black swans TRUE</p>
+<p>If some swans are white, then All white things are swans NOT KNOWN No white things are swans FALSE Some white things are swans TRUE Some white things are not swans NOT SURE</p>
+<p>If some swans are not white, then All white things are swans NOT SURE£ No white things are swans NOT SURE Some white things are swans NOT SURE Some white things are not swans NOT SURE</p>
+<p>THE MNEMONIC On he bottom row write OOOO. Then, on the top row write FT in the middle two squares.</p>
+<p>In the two middle columns write, from the top FT, TF. FT. OO; Fill-out OOOO on the bottom row. Then</p>
+<p>Remake of argument in predicate logic.</p>
+<h3 id="sec-1-">1. All [swans] are [white] (A-down). −S a ~M</h3>
+<h3 id="sec-2-">2. Some [swans] are [white] (I-across) ~M i ~P</h3>
+<h3 id="sec-3-">3. Therefore some [white] things are swans ~P i ~S</h3>
+<p>[A] [I] [T]</p>
+<p>False (undistributed middle term). Syllogisms (rules of) Major term; minor term. Nomenclature: Subject (S), Predicate (P), Middle (or linking) term (M). The sign ‘−’ before a term means distributed; ‘~’ means undistributed The Middle term (M) must be distributed at least once. Illicit progression means that in the conclusion an undistributed term has become distributed. Rules of distribution Subject of a universal term is distributed. [subunidist] Subject of a particular term undistributed [subpartundist] Predicate of an affirmative term is undistributed [predafundist] Predicate of negative term is distributed [prednegadist] Mnemonic jingle: (Subunidist, subpartundist; predafundist; prednegadist) SAMPLE 1: A = All swans are white (−M a ~P) I = This thing is a swan, (~S i ~M) T = Therefore this thing is white. ~S i ~P</p>
+<p>True on both counts</p>
+<p>Sample 2: A = All swans are white (uM + pP) O = This thing is not a swan (pS - uM)</p>
+<p>Sample 2: A = All swans are white (uM + pP) O = This thing is not a swan (pS - uM) Therefore this thing is white (pS + pP) [true in syllogism false in diagram].</p>
+<h2 id="new-rules">NEW RULES</h2>
+<p>Given proposition 2</p>
+<p>Therefore this thing is not white. pS – uP [False on both counts (illicit progression of major term].</p>
+<p>Given proposition 1 A1ANTECEDENT E I O A T</p>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>E</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>I</p>
+<p>O</p>
+<p>F</p>
+<p>T</p>
+<p>O</p>
+<p>O</p>
+<p>F</p>
+<p>O</p>
+<p>O</p>
+<p>T</p>
+<p>One of the premises contains a comparison of the major term (P) with the middle term (M), and the other premise contains a comparison of the minor term (S) with the middle term M).</p>
+<p>A valid standard-form categorical syllogism must contain exactly three terms, each of which is used in the same sense throughout the syllogism. Furthermore, the middle term may not appear in the conclusion. The general rules governing categorical syllogisms can be divided into two sets: the first set refers to the terms of the categorical syllogism, while the second set refers to the quantity of a sentence (rules of distribution) and to the quality of a sentence (whether it is affirmative or negative). The general rules regarding terms are:    </p>
+<p>(1) Only three terms may appear in the syllogism, each of which is used in the same sense throughout the argument. (2) Neither the major nor minor term may be a universal in the conclusion, if it was only a particular term in the premises. (3) The middle term may not appear in the conclusion. (4) The middle term must be distributed at least once in the premises, that is, used as a universal</p>
+<p>The general rules of quantity and quality are:   </p>
+<p></p>
+<p>(5) If both premises are affirmative, the conclusion must also be affirmative. (6) Both premises may not be negative; one at least must be affirmative. (7) If either premise is negative, the conclusion must be negative; if one of the premises is a particular proposition, the conclusion must be a particular proposition. (8) No conclusion can be drawn from two particular premises; one at least must be a universal proposition.</p>
+<p>An understanding of and familiarization with the above rules will enable you to judge the validity of any categorical syllogism you may encounter. The Eight General Rules are a direct product of the very idea and nature of the categorical syllogism. To facilitate understanding them and perceive their necessity as rules of correct thinking, each one will be explained and proved separately. We will use various symbols to represent the parts of the categorical syllogism: M = middle term S = minor term (subject of conclusion) P = major term (predicate of conclusion) pM = particular (undistributed) middle term uM = universal (distributed) middle term pS = particular minor term uS = universal minor term pP = particular major term uP = universal major term + = an affirmative proposition - = a negative proposition</p>
+<p>Given proposition 2</p>
+<p>------------------------------------------------------------------------------------------------------Given proposition 1 1ANTECEDENT A E I O A T</p>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>E</p>
+<p>F</p>
+<p>T</p>
+<p>F</p>
+<p>T</p>
+<p>I</p>
+<p>O</p>
+<p>F</p>
+<p>T</p>
+<p>O</p>
+<p>O</p>
+<p>F</p>
+<p>O</p>
+<p>O</p>
+<p>T</p>
+<p>According to this diagram: ‘All swans are white’, (A) therefore ‘no swans are white’ (E)is false; ‘some swans are white’(I) is true, and ‘some swans are not white (O) is false. According to the syllogistic:</p>
+<p>1. All swans are white therefore no swans are white (from the diagram). Here, ‘swans’ is the subject (S) of the conclusion, and ‘white’ is the Predicate. So we have All swans (uS) are white uP, What is the Middle term (M)? Is a middle term necessary? No swans (uS) are white (uP)</p>
+<p>Antecedent, Consequent. One of these rules is that …affirming the consequent … the antecedent … Perhaps it is best to give some real examples of arguments that are true or false. Take this one, for instance:</p>
+<h3 id="sec-1-">1. If it rains, then we will get wet.</h3>
+<h3 id="sec-2-">2. It rains, ---------------------------------------3. So we get wet. This is obviously true. But now look at this one:</h3>
+<h3 id="sec-4-">4. If it rains, then we will get wet.</h3>
+<p>5. We get wet, ---------------------------------------6. So it rains. This is false, because we might get wet by some other means, such as falling into a pond or walking by a lawn sprinkler, say. So this identifies a fallacy, which is that of affirming the consequent. O tat argument is invalid. Here is another form of that same argument:</p>
+<h3 id="sec-7-">7. If it rains, then we will get wet.</h3>
+<h3 id="sec-8-">8. We don’t get wet, ---------------------------------------9. So it hasn’t rained.</h3>
+<p>This is known as negating the consequent, which makes the argument perfectly valid.</p>
+<p>-------</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>
