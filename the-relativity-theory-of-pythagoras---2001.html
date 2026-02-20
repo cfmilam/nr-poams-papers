@@ -39,25 +39,28 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 <button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
 <main>
 <a class="back-link" href="index.html">← Back to Papers</a>
-<h1>The Relativity Theory of Pythagoras - 2001</h1>
+<h1>The Relativity Theory of Pythagoras</h1>
 <div class="meta">N. Vivian Pope — 2001</div>
-<p>E :\AMIPRO\AMIPRO\DOCS\PROJECTS\SLOGAN3</p>
-<p>-</p>
-<p>SAM</p>
-<p>The Relativity Theory of Pythagoras Viv Pope What would you say if you were told that the Theory of Relativity could have been discovered by the Greek philosopher and mathematician, Pythagoras twenty-six centuries before Einstein? Incredible? No, because, logically speaking, if only it had occurred to Pythagoras that motion adds a fourth dimension to ordinary three-dimensional space, then the hypotenuse of his right-angled triangle could have produced, immediately, the time-dilation of Lorentz and Einstein.</p>
-<p>What has prevented this realisation for all those centuries is the false assumption that space and time, the dimensions of motion, are independent measures. However, there is no way in which those dimensions of motion can be independent. The operation of measuring travelling-distance always involves time, and as the astronomer Roemer discovered in 1676, the units we customarily employ in measunng the time of a motion bear a fixed relation to those we use in measuring its distance. This is in the constant ratio now established as c, of 3.3 nanoseconds to the metre. So if you measure, in units of 3.3 nanoseconds, the time t a body registers in travelling a distance measured in metres, the resultant, by schoolboy Pythagoras, of those two co-exclusive or geometrically orthogonal measures is precisely the 'relativistically dilated' time (or space-time) of Relativity Theory.</p>
-<p>You don't believe me? Then look at this. Here is the ordinary Pythagorean formula for the hypotenuse, or resultant, r* of those two time-components of motion s.'c and r:</p>
-<p>ro : {J1src)'* fl</p>
-<p>(1)</p>
-<p>Now s in this formula is the distance travelled by a body relative to the observer of the motion in the relative time ro. The relative speed v is therefore s,/lR. From this it follows that s, in (i ) can be replaced by vl*, which produces</p>
-<p>ro: rl;1rr*'c12+Pl</p>
-<p>(2)</p>
-<p>Simplifying this equation we then have: rR</p>
-<p>: /ifl -{i'r'))</p>
-<p>which is Einstein's formula for relativistic time-dilation. QEO.</p>
-<p>(3 ),</p>
-<p>r</p>
 
+<p>What would you say if you were told that the Theory of Relativity could have been discovered by the Greek philosopher and mathematician, Pythagoras, twenty-six centuries before Einstein? Incredible? No, because, logically speaking, if only it had occurred to Pythagoras that motion adds a fourth dimension to ordinary three-dimensional space, then the hypotenuse of his right-angled triangle could have produced, immediately, the time-dilation of Lorentz and Einstein.</p>
+
+<p>What has prevented this realisation for all those centuries is the false assumption that space and time, the dimensions of motion, are independent measures. However, there is no way in which those dimensions of motion can be independent. The operation of measuring travelling-distance always involves time, and as the astronomer Rømer discovered in 1676, the units we customarily employ in measuring the time of a motion bear a fixed relation to those we use in measuring its distance. This is in the constant ratio now established as $c$, of 3.3 nanoseconds to the metre.</p>
+
+<p>So if you measure, in units of 3.3 nanoseconds, the time $t$ a body registers in travelling a distance measured in metres, the resultant, by schoolboy Pythagoras, of those two co-exclusive or geometrically orthogonal measures is precisely the 'relativistically dilated' time (or space-time) of Relativity Theory.</p>
+
+<p>You don't believe me? Then look at this. Here is the ordinary Pythagorean formula for the hypotenuse, or resultant, $t_R$ of those two time-components of motion $s/c$ and $t$:</p>
+
+$$t_R = \sqrt{(s/c)^2 + t^2} \tag{1}$$
+
+<p>Now $s$ in this formula is the distance travelled by a body relative to the observer of the motion in the relative time $t_R$. The relative speed $v$ is therefore $s/t_R$. From this it follows that $s$ in (1) can be replaced by $v t_R$, which produces</p>
+
+$$t_R = \sqrt{(v t_R / c)^2 + t^2} \tag{2}$$
+
+<p>Simplifying this equation we then have:</p>
+
+$$t_R = \frac{t}{\sqrt{1 - (v/c)^2}} \tag{3}$$
+
+<p>which is Einstein's formula for relativistic time-dilation. Q.E.D. ■</p>
 </main>
 <script>
 if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
