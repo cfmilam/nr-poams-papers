@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Descartes Fallacy</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Descartes Fallacy</h1>
+<div class="meta">N. Vivian Pope</div>
+<p>Descartes’ fallacy. Descartes, the father of Western science, was seeking a solid foundation for all scientific knowledge of truth and reality. Is there anything, he wondered, of which we can be absolutely certain. His answer was, yes. No matter whether what one thinks is true or false, the fact that one is thinking is true, no matter what.’ That, he concluded, is the very basis of all certain knowledge, namely, that oneself, the ‘I’ who is doing the thinking, definitely exists, since to deny it is self-contradictory. So far, so good, he reflected. But does anything else exist, in itself, independently of one’s thinking, or is there nothing but just oneself and one’s own thoughts, with nothing existing other than as a figment of one’s own imagination? Is everything, perish the thought, no more than just a dream! This calamitous consequence defines the position that, in Philosophy, is called Solipsism, the view that oneself is, in the end, the sole observer, the one, unique and ultimate being. Plainly it is not a view that can serve as a firm foundation for objective Science. But how was that consequence to be avoided? The answer, Descartes reasoned, was that oneself could not be the sole and ultimate being. There had to be at least one other. This, he decided, was God. And in what we would now regard as no more than a ‘rush of blood to the head’, he took his contemporary definition of ‘God’, as The Ultimate and Absolute All-Over Observer of the Universe, including, of course, ourselves. This ubiquitous Cartesian ‘God’s-eye-view’ became the basis of all subsequent science – in particular, physical science, or Physics. In classical Physics, therefore, as contrasted with our finite human ideas of things, all true matter, space and time, all the real properties, qualities, measures and dimensions of things, are regarded as absolutely real, in the way God is supposed to perceive them. This is the ‘God’s-eye-view Realism’, or absolutism, on which Western Physics is founded and which remains very largely the view of physicists even today. In short, then, in our traditional Physics, although ‘God’ is not mentioned explicitly, all matter is as ‘God’ sees it in its entirety, all space is implicitly ‘God’s’ space and all time is ‘God’s time’ – the same everywhere, with everything enduring at the same universal rate. All this, however, existed independently of our human thoughts and perceptions</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

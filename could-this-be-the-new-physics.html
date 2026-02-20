@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Could This be the New Physics</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>Could This be the New Physics</h1>
+<div class="meta">N. Vivian Pope — 2008</div>
+<p>Could This be the ‘New Physics’? One of the most disturbing developments in modern experimental physics is the discovery that, virtually, the ‘gravitational constant’, G, long regarded as sacrosanct in its dependability, is not a constant but a variable. This means that some of the planets, satellites, spaceprobes, etc., are not where they should be according to the standard Newtonian equations. This has prompted physicists, particularly those connected with space-probes, such as Pioneers 10 and 11 and others, seriously to contemplate the necessity for a ‘new physics’. As NASA scientist, John Anderson puts it: In the unlikely event that there is new physics, one does not want to miss it because one had the wrong mind set [1]</p>
+<p>Unfortunately, to flip from one ‘mindset’ to another, as radically as may be necessary, is not easy. Indeed, as history attests (witness Galileo, et al.) it may even be socially traumatic. In any case, if there is such a new physics in the offing, it is obviously not something that can be just ‘plucked out of the air’ or manufactured, ad hoc on the spot. Fortunately, over the last half-century there has been developed a radically new paradigm of physics, based on the ideas of relativity’s originator, Ernst Mach, who was Einstein’s Philosophy mentor. This Machian relativism differs from Einstein’s in that instead of opposing quantum theory in the way Einstein’s theory so notoriously does, it actually incorporates it as part and parcel of its physics. Also, in its predictions of varying G, not only does it propose a natural solution of the Pioneer anomaly, but also of the anomalous ‘missing mass’ in current astrophysics, that is, without having to postulate the completely undetectable ‘dark matter’ that mystifies modern physics. The full account of this radically new approach to modern physics is presented in a recent (2008) book entitled Light-Speed, Gravitation and Quantum Instantaneity, by A. D. Osborne and N. V. Pope. This book describes the neo-Machian philosophy of Normal Realism and its Physics spin-off, POAMS (the PopeOsborne Angular Momentum Synthesis). The book is available from some bookshops, such as Borders, as well as in some libraries and from the distributors listed on the website www.poams.org .</p>
+<p>Phys. Rev. D 65, 082004 (2002) ‘Study of the anomalous acceleration of Pioneer 10 and 11’</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

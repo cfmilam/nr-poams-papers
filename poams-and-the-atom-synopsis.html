@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POAMS and the Atom (Synopsis)</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>POAMS and the Atom (Synopsis)</h1>
+<div class="meta">N. Vivian Pope — 2013</div>
+<p>POAMS and the Atom There has been quite a lot written concerning the POAMS view of the ‘atom’. The underlying philosophy behind POAMS is Normal Realism and this has been described in several publications. You may like to read the following papers, which provide a good introduction: ‘Instantaneous Relativistic Action-at-a-Distance’, Physics Essays, 5, No. 3, 1992. ‘Instantaneous Gravitational and Inertial Action-at-a-distance, Physics Essays, 8, No.3, 1995. The Normal Realist approach to POAMS is fundamentally observational, so that we begin with the phenomena at the empirical level of reality, that is, with things we actually observe. Then ‘the ultimate parts, or observational elements, into which those things may be sensibly or instrumentally analysed are simply events that have no qualities or characteristics other than in the contexts of those observational wholes of which they are the analysed parts.’ In this approach, ultimately, we do not talk of determinate systems of matter acting ‘behind the scenes’ as it were, but, rather, ultimately discrete indeterminate systems of information. According to POAMS, the universal underlying ‘substance’ (building block) is not mass but angular momentum. This measure is ultimately quantised in irreducible units of h/2π. This quantum of angular momentum is essentially the fundamental ‘atom’ of POAMS. Hence, the ‘atom’ is a transitory element of the true substance of angular</p>
+<p>momentum, which includes motion as well as mass an integral part of its character. In its simplest, most reduced form, for convenience, this angular momentum quantum can be conceived as a pair of balanced orbiting masses equivalent to the traditional, so-called ‘electron’ and ‘proton’ as in the Bohr atom. More generally, the Normal Realist atom is a configuration of pure angular momentum in which the component masses may be conceived, simplistically, as particles orbiting a common barycentre. However, it needs to be stressed that although it may be convenient to think of atom in this way, so that the mass and motion elements of the angular momentum are ascribed a meaning analogous to their counterparts on the macro-scale, POAMS does not imply that this is the physical structure of the atom. Indeed, at the quantum level, there is no continuous motion in the classical sense. In other words, the ‘proton’ and the ‘electron’ are convenient labels for the particle equivalents of the measures constituting the angular momentum as a whole. Hence, in POAMS, it makes no sense to investigate the ‘physical nature’ of these labels. Having said that, it is certainly often convenient to think of the POAMS atom as analogous to the Bohr atom except for one important and fundamental difference. In POAMS, the ‘proton’ and ‘electron’ are devoid of their traditional ‘electrostatic charge.’ The ‘electrostatic charge’ on these masses is replaced by an equivalent spin kinetic energy analogous to that ascribed to them by Uhlenbeck and Goudsmit. Hence</p>
+<p>the POAMS ‘atom’ is therefore a combination of orbital and spin angular momentum. The POAMS atom is perhaps best thought of as a stored form of lightenergy. It is an angular momentum quantum accumulator insofar as it serves as an assemblage of bits of transactable energy in hierarchical echelons of integer multiples of the action unit h. These increments of energy in the quantum accumulator are stored in accordance with the Normal Realist equivalent of the Balmer-Rydberg step formula. As that store of energy gets larger, so the internal orbit levels of its mass components increase in ‘radial amounts’ nr where n is an integer and r is the so-called ‘ground-level radius’ of the lowest energy state (equivalent to the classical Bohr radius).</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>

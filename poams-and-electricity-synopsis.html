@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POAMS and Electricity (Synopsis)</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 18px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>POAMS and Electricity (Synopsis)</h1>
+<div class="meta">N. Vivian Pope — 2015</div>
+<p>It is to be recalled that in Normal Realism, all this ‘electrical’ talk, like ‘gravitational’ talk, is redundant, being basically, about angular momentum, not ‘electricity’ or ‘gravitation’, as customarily conceived. This means that in Normal Realism the traditional ‘electrons’ and ‘protons’ are replaced by plain masses in the same measure as those traditionally named particles but without the esoteric concept of ‘charge’ which, as we have seen, is replaced by angular momentum in the form of intrinsic positive or negative spin. The meaning of that word ‘charge’ is retained, however, as appropriate to macro-level collections of either positive or negative ions in the usual electrician’s sense, or the sense in which a cannon may be ‘charged’ with gunpowder. As applied to ‘electrons’ and ‘protons’ themselves, however – or grains of gunpowder – those words are inappropriate since they suggest (in the ‘electronic’ case) some unexplainable property possessed by the particles whereby they ‘pull’ or ‘push’ one another. The real force required to ‘ionize’ neutral atoms is traditionally called ‘electromotive’ force (e.m.f.) measured in volts. This is the force which moves these ions along wires, etc., in currents, measured in amperes (amps). Charge is the measure, in units of coulombs, of whole static collections of ions of one sign or the other, as in a capacitor. The capacity of an entity to hold or store a charge is measured in units of farads. In Normal Realism this language is virtually the same as in standard textbook physics. We must not, however, lose sight of the fact that, in the last analysis, all this ‘electrical’ language is about phenomena and that those measures described in the above paragraph are measures derived from the analysis of phenomena on the ordinary macro-scale. We must recall, also, that all interactions between particles are ultimately quantized in irreducible quantum jumps of action in units of Planck’s constant h. As already discussed, it is from our interpretations of observational patterns and sequences of these quanta that we obtain all our knowledge of nature, from microphysics to cosmology. The phenomena which have been traditionally interpreted as ‘electrical’, are manifest, for example, in rubbed amber, lightning, currents in wires, ‘static’, as in coronal discharges around high tension alternating current conductors, and so on. Certainly, it was never the case that we first saw things labelled by nature as ‘atoms’, ‘electrons’, ‘protons’ ‘neutrons’ and the like, and then built up all that we know about the natural world from there.</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>
