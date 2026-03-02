@@ -39,6 +39,26 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 }
 mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
 @media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+.appendix { margin-top: 3rem; }
+.appendix h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+.appendix h3 { margin-top: 2.5rem; }
+.interactive-panel { background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+.interactive-panel canvas { background: #0d1117; border-radius: 8px; border: 1px solid #222; display: block; }
+.interactive-panel .controls-area { margin-top: 1rem; }
+.interactive-panel label { font-size: 0.85rem; display: block; margin-bottom: 0.3rem; }
+.interactive-panel input[type=range] { width: 100%; accent-color: var(--accent); margin-bottom: 0.3rem; }
+.interactive-panel button { background: var(--accent); color: var(--bg); border: none; padding: 0.4rem 1rem; border-radius: 4px; cursor: pointer; font-family: Georgia, serif; font-size: 0.85rem; margin-right: 0.5rem; }
+.interactive-panel button:hover { opacity: 0.85; }
+.interactive-panel .exhibit-row { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1rem 0; }
+.interactive-panel .exhibit-col { flex: 1; min-width: 260px; }
+.interactive-panel .info-box { background: rgba(0,0,0,0.2); border-radius: 6px; padding: 0.7rem 1rem; font-size: 0.85rem; line-height: 1.5; margin-top: 0.8rem; }
+.interactive-panel .clock-row { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; margin: 0.8rem 0; }
+.interactive-panel .clock-card { background: rgba(0,0,0,0.2); border: 1px solid #444; border-radius: 6px; padding: 0.8rem; text-align: center; flex: 1; min-width: 180px; }
+.interactive-panel .clock-card h4 { font-size: 0.8rem; color: var(--accent); margin-bottom: 0.3rem; }
+.interactive-panel .clock-time { font-family: 'Courier New', monospace; font-size: 1.2rem; }
+.interactive-panel .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 0.82rem; }
+.interactive-panel .stat-val { font-family: 'Courier New', monospace; color: var(--accent); }
+.interactive-panel .explain-text { font-size: 0.88rem; line-height: 1.55; color: var(--fg); opacity: 0.85; margin: 0.8rem 0; }
 </style>
 </head>
 <body>
@@ -317,6 +337,492 @@ $$h(r) = \frac{GM}{r^2} + \frac{3GML^2}{c^2 m^2 r^4}$$
 <p>[21] Op cit reference 19, pp 86–89.</p>
 <p>[22] Op cit reference 19, pp 115–117.</p>
 </div>
+
+<!-- ===== INTERACTIVE APPENDICES ===== -->
+<section class="appendix">
+<h2>INTERACTIVE APPENDICES</h2>
+<p style="font-style: italic; color: var(--accent2);">Editorial additions — not part of the original paper. Interactive visualizations exploring the mathematics and physics of orbital time dilation in POAMS.</p>
+
+<!-- ========== APPENDIX A ========== -->
+<h3>Appendix A: Circular Orbit Clock Comparison</h3>
+<div class="interactive-panel">
+<p class="explain-text">A particle <b>P</b> orbits a central mass <b>M</b> on a circular path at radius <i>r</i>. Compare <span style="color:#4fc3f7">Deep Space Time (DST)</span> with the <span style="color:var(--accent)">orbiter's proper time τ</span>. Toggle between velocity-only dilation (Eq 2.9) and true orbital dilation (Eq 3.6).</p>
+
+<div class="exhibit-row">
+  <div><canvas id="circCanvas" width="360" height="360"></canvas></div>
+  <div class="exhibit-col">
+    <div class="clock-row">
+      <div class="clock-card"><h4>Deep Space Time (t)</h4><div class="clock-time" style="color:#4fc3f7" id="circDstClock">00:00:00.0</div></div>
+      <div class="clock-card"><h4>Orbiter Proper Time (τ)</h4><div class="clock-time" style="color:var(--accent)" id="circProperClock">00:00:00.0</div></div>
+    </div>
+    <div class="info-box">
+      <div>Mode: <span id="circModeLabel" style="color:var(--accent)">True Orbital (Eq 3.6)</span></div>
+      <div>Dilation factor: <span id="circFactorVal" style="color:var(--accent);font-size:1.1rem;font-weight:bold">—</span></div>
+      <div>Radius: <span id="circRadiusVal">—</span> km &nbsp;|&nbsp; Δτ lag: <span id="circLagVal">0.0</span>s</div>
+    </div>
+    <div class="controls-area">
+      <label>Orbital Radius <i>r</i></label>
+      <input type="range" id="circRadiusSlider" min="10" max="200" value="80" step="1">
+      <button id="circToggleBtn">Switch to Velocity-Only (Eq 2.9)</button>
+      <button id="circResetBtn" style="background:transparent;border:1px solid var(--accent);color:var(--fg)">Reset Clocks</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(function(){
+  const canvas = document.getElementById('circCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height, cx = W/2, cy = H/2;
+  const GMc2 = 5;
+  let mode = 'orbital';
+  let angle = 0, dstTime = 0, speed = 1, lastTs = null;
+
+  const radiusSlider = document.getElementById('circRadiusSlider');
+  const toggleBtn = document.getElementById('circToggleBtn');
+  const resetBtn = document.getElementById('circResetBtn');
+
+  function getDilationFactor(r) {
+    const k = mode === 'orbital' ? 3 : 1;
+    const val = 1 - k * GMc2 / r;
+    return val > 0 ? Math.sqrt(val) : 0;
+  }
+  function formatTime(s) {
+    const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = s%60;
+    return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+sec.toFixed(1).padStart(4,'0');
+  }
+  function updateUI() {
+    const r = +radiusSlider.value, f = getDilationFactor(r);
+    document.getElementById('circFactorVal').textContent = f.toFixed(6);
+    document.getElementById('circRadiusVal').textContent = (r*100).toLocaleString();
+    const properTime = dstTime * f;
+    document.getElementById('circDstClock').textContent = formatTime(dstTime);
+    document.getElementById('circProperClock').textContent = formatTime(properTime);
+    document.getElementById('circLagVal').textContent = (dstTime - properTime).toFixed(2);
+    document.getElementById('circModeLabel').textContent = mode==='orbital'?'True Orbital (Eq 3.6)':'Velocity-Only (Eq 2.9)';
+  }
+  function draw() {
+    const r = +radiusSlider.value;
+    const orbitR = 20 + (r-10)*1.3;
+    const colHex = mode==='orbital'?'#c9a84c':'#4fc3f7';
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='#1a2240';ctx.lineWidth=1;
+    for(let i=40;i<W;i+=40){ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i,H);ctx.stroke();ctx.beginPath();ctx.moveTo(0,i);ctx.lineTo(W,i);ctx.stroke()}
+    ctx.beginPath();ctx.arc(cx,cy,orbitR,0,Math.PI*2);ctx.strokeStyle=colHex+'55';ctx.lineWidth=1.5;ctx.stroke();
+    const massR=18,grad=ctx.createRadialGradient(cx,cy,0,cx,cy,massR);
+    grad.addColorStop(0,'#667');grad.addColorStop(1,'#222');
+    ctx.beginPath();ctx.arc(cx,cy,massR,0,Math.PI*2);ctx.fillStyle=grad;ctx.fill();
+    ctx.strokeStyle='#888';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle='#ccc';ctx.font='11px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('M',cx,cy);
+    const px=cx+orbitR*Math.cos(angle),py=cy+orbitR*Math.sin(angle);
+    ctx.beginPath();ctx.arc(cx,cy,orbitR,angle-0.6,angle);ctx.strokeStyle=colHex+'88';ctx.lineWidth=3;ctx.stroke();
+    ctx.beginPath();ctx.arc(px,py,6,0,Math.PI*2);ctx.fillStyle=colHex;ctx.fill();
+    ctx.fillStyle='#000';ctx.font='bold 8px Georgia';ctx.fillText('P',px,py+1);
+    const f=getDilationFactor(r);
+    ctx.fillStyle='#e0e0e0';ctx.font='12px Georgia';ctx.textAlign='left';
+    ctx.fillText('r = '+(r*100).toLocaleString()+' km',8,20);
+    ctx.fillStyle=colHex;ctx.fillText('f = '+f.toFixed(4),8,36);
+  }
+  toggleBtn.addEventListener('click',()=>{
+    mode=mode==='orbital'?'velocity':'orbital';
+    toggleBtn.textContent=mode==='orbital'?'Switch to Velocity-Only (Eq 2.9)':'Switch to True Orbital (Eq 3.6)';
+    updateUI();
+  });
+  resetBtn.addEventListener('click',()=>{dstTime=0;lastTs=null;updateUI()});
+  radiusSlider.addEventListener('input',()=>updateUI());
+  function frame(ts){
+    if(lastTs!==null){const dt=(ts-lastTs)/1000*speed;dstTime+=dt;const r=+radiusSlider.value,orbitR=20+(r-10)*1.3;const omega=80/(orbitR*Math.sqrt(orbitR))*speed;angle+=omega*(ts-lastTs)/1000;}
+    lastTs=ts;draw();updateUI();requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+<!-- ========== APPENDIX B ========== -->
+<h3>Appendix B: Elliptical Orbit Time Dilation</h3>
+<div class="interactive-panel">
+<p class="explain-text">In an elliptical orbit, time dilation varies continuously. The proper time integral (Eq 2.12) captures this — clocks tick slowest at periapsis (closest approach) and fastest at apoapsis. The orbit is color-coded by local dilation strength.</p>
+
+$$\tau = \int \sqrt{1 - \frac{2GM}{rc^2} - \frac{v^2}{c^2}}\; dt$$
+
+<div class="exhibit-row">
+  <div><canvas id="ellipCanvas" width="400" height="400"></canvas></div>
+  <div class="exhibit-col">
+    <div class="controls-area">
+      <label>Eccentricity: <span id="ellipEVal">0.60</span></label>
+      <input type="range" id="ellipESlider" min="0" max="90" value="60">
+      <label>Semi-major axis: <span id="ellipAVal">1.00</span></label>
+      <input type="range" id="ellipASlider" min="20" max="100" value="50">
+      <label>Speed: <span id="ellipSVal">1.0×</span></label>
+      <input type="range" id="ellipSSlider" min="1" max="50" value="10">
+      <button id="ellipPlayBtn">⏸ Pause</button>
+      <button id="ellipResetBtn" style="background:transparent;border:1px solid var(--accent);color:var(--fg)">↺ Reset</button>
+    </div>
+    <div class="clock-row">
+      <div class="clock-card"><h4>Coordinate Time</h4><div class="clock-time" id="ellipClockDST">0.000</div></div>
+      <div class="clock-card"><h4>Proper Time τ</h4><div class="clock-time" style="color:var(--accent)" id="ellipClockProper">0.000</div></div>
+    </div>
+    <div class="info-box">
+      <div class="stats-grid">
+        <div>Speed v/c: <span class="stat-val" id="ellipSpeed">—</span></div>
+        <div>Distance r/a: <span class="stat-val" id="ellipDist">—</span></div>
+        <div>Dilation: <span class="stat-val" id="ellipGamma">—</span></div>
+        <div>Δτ/orbit: <span class="stat-val" id="ellipDelta">—</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(function(){
+  const cv = document.getElementById('ellipCanvas');
+  const ctx = cv.getContext('2d');
+  let e=0.6,aFrac=0.5,speedMul=1.0,playing=true;
+  let coordTime=0,properTime=0,meanAnomaly=0;
+  let orbitProperTime=0,lastOrbitDelta=0;
+  const schwRatio=0.15;
+
+  document.getElementById('ellipESlider').oninput=function(){e=this.value/100;document.getElementById('ellipEVal').textContent=e.toFixed(2)};
+  document.getElementById('ellipASlider').oninput=function(){aFrac=this.value/100;document.getElementById('ellipAVal').textContent=(aFrac*2).toFixed(2)};
+  document.getElementById('ellipSSlider').oninput=function(){speedMul=this.value/10;document.getElementById('ellipSVal').textContent=speedMul.toFixed(1)+'×'};
+  document.getElementById('ellipPlayBtn').onclick=function(){playing=!playing;this.textContent=playing?'⏸ Pause':'▶ Play'};
+  document.getElementById('ellipResetBtn').onclick=function(){coordTime=0;properTime=0;meanAnomaly=0;orbitProperTime=0;lastOrbitDelta=0};
+
+  function solveKepler(M,ecc){let E=M;for(let i=0;i<20;i++)E=E-(E-ecc*Math.sin(E)-M)/(1-ecc*Math.cos(E));return E}
+  function trueAnomaly(E,ecc){return 2*Math.atan2(Math.sqrt(1+ecc)*Math.sin(E/2),Math.sqrt(1-ecc)*Math.cos(E/2))}
+  function rFromTheta(a,ecc,th){return a*(1-ecc*ecc)/(1+ecc*Math.cos(th))}
+  function dilationFactor(a,ecc,th){const r=rFromTheta(a,ecc,th),rs=schwRatio*a,v2c2=(rs/2)*(2/r-1/a),grav=rs/r,val=1-grav-v2c2;return val>0?Math.sqrt(val):0.001}
+  function dilationColor(f,minF,maxF){if(maxF<=minF)return'rgb(100,180,200)';let t=Math.max(0,Math.min(1,(f-minF)/(maxF-minF)));let r,g,b;if(t<0.25){let s=t/0.25;r=255;g=68+s*68|0;b=34}else if(t<0.5){let s=(t-0.25)/0.25;r=255-s*200|0;g=136+s*68|0;b=34+s*100|0}else if(t<0.75){let s=(t-0.5)/0.25;r=55-s*40|0;g=204-s*4|0;b=134+s*66|0}else{let s=(t-0.75)/0.25;r=15+s*53|0;g=200-s*64|0;b=200+s*55|0}return`rgb(${r},${g},${b})`}
+
+  let lastTime=0;
+  function frame(ts){
+    requestAnimationFrame(frame);
+    if(!lastTime){lastTime=ts;return}
+    let dt=(ts-lastTime)/1000;lastTime=ts;if(dt>0.1)dt=0.1;
+    const rect=cv.getBoundingClientRect(),W=rect.width,H=W;
+    const dpr=window.devicePixelRatio||1;
+    if(cv.width!==W*dpr){cv.width=W*dpr;cv.height=W*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+    const cxC=W/2,cyC=H/2,a=(0.15+aFrac*0.25)*W;
+    const n=0.4*speedMul;
+    if(playing){
+      const dM=n*dt;meanAnomaly+=dM;
+      const E=solveKepler(meanAnomaly,e),th=trueAnomaly(E,e),f=dilationFactor(1,e,th);
+      properTime+=f*(dM/n);coordTime+=dM/n;orbitProperTime+=f*(dM/n);
+      if(meanAnomaly>=2*Math.PI){lastOrbitDelta=(2*Math.PI/n)-orbitProperTime;orbitProperTime=0;meanAnomaly-=2*Math.PI}
+    }
+    ctx.clearRect(0,0,W,H);
+    const fPeri=dilationFactor(1,e,0),fApo=dilationFactor(1,e,Math.PI);
+    const minF=Math.min(fPeri,fApo),maxF=Math.max(fPeri,fApo);
+    for(let i=0;i<200;i++){
+      const t0=(i/200)*2*Math.PI,t1=((i+1)/200)*2*Math.PI,tM=(t0+t1)/2;
+      const r0=rFromTheta(a,e,t0),r1=rFromTheta(a,e,t1);
+      ctx.strokeStyle=dilationColor(dilationFactor(1,e,tM),minF,maxF);ctx.lineWidth=2.5;
+      ctx.beginPath();ctx.moveTo(cxC+r0*Math.cos(t0),cyC-r0*Math.sin(t0));ctx.lineTo(cxC+r1*Math.cos(t1),cyC-r1*Math.sin(t1));ctx.stroke();
+    }
+    const massR=Math.max(6,W*0.02),grd=ctx.createRadialGradient(cxC,cyC,0,cxC,cyC,massR*3);
+    grd.addColorStop(0,'#c9a84c');grd.addColorStop(0.3,'#c9a84c88');grd.addColorStop(1,'transparent');
+    ctx.fillStyle=grd;ctx.beginPath();ctx.arc(cxC,cyC,massR*3,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#c9a84c';ctx.beginPath();ctx.arc(cxC,cyC,massR,0,Math.PI*2);ctx.fill();
+    const Enow=solveKepler(meanAnomaly,e),thNow=trueAnomaly(Enow,e),rNow=rFromTheta(a,e,thNow);
+    const px=cxC+rNow*Math.cos(thNow),py=cyC-rNow*Math.sin(thNow);
+    const fNow=dilationFactor(1,e,thNow),col=dilationColor(fNow,minF,maxF);
+    const grd2=ctx.createRadialGradient(px,py,0,px,py,14);grd2.addColorStop(0,col);grd2.addColorStop(1,'transparent');
+    ctx.fillStyle=grd2;ctx.beginPath();ctx.arc(px,py,14,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(px,py,4,0,Math.PI*2);ctx.fill();
+    // labels
+    ctx.font='11px Georgia';ctx.textAlign='center';
+    ctx.fillStyle='#ff664488';ctx.fillText('P',cxC+rFromTheta(a,e,0)+12,cyC+4);
+    ctx.fillStyle='#4488ff88';ctx.fillText('A',cxC-rFromTheta(a,e,Math.PI)-12,cyC+4);
+    // readouts
+    const rNorm=rFromTheta(1,e,thNow),rs=schwRatio,v2c2=(rs/2)*(2/rNorm-1),vc=Math.sqrt(Math.max(0,v2c2));
+    document.getElementById('ellipClockDST').textContent=coordTime.toFixed(3);
+    document.getElementById('ellipClockProper').textContent=properTime.toFixed(3);
+    document.getElementById('ellipSpeed').textContent=vc.toFixed(4);
+    document.getElementById('ellipDist').textContent=rNorm.toFixed(3);
+    document.getElementById('ellipGamma').textContent=fNow.toFixed(5);
+    document.getElementById('ellipDelta').textContent=lastOrbitDelta>0?lastOrbitDelta.toFixed(4):'—';
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+<!-- ========== APPENDIX C ========== -->
+<h3>Appendix C: The \(a = 2\) Geodesic Proof</h3>
+<div class="interactive-panel">
+<p class="explain-text">The constant <em>a</em> in Eq 3.1 is determined by requiring circular orbits to be geodesics. Slide <em>a</em> to see that <strong>only \(a = 2\)</strong> makes the geodesic speed match the orbital speed — producing the GR result.</p>
+
+$$v^2_{\text{geo}} = \frac{a\,GM}{2r}, \qquad v^2_{\text{orb}} = \frac{GM}{r}$$
+
+<div class="exhibit-row">
+  <div>
+    <canvas id="geoBarCanvas" width="280" height="200" style="background:#0f0f23"></canvas>
+    <div id="geoMatchLabel" style="text-align:center;margin-top:0.5rem;font-weight:bold;color:var(--accent)"></div>
+  </div>
+  <div>
+    <canvas id="geoOrbitCanvas" width="280" height="280" style="background:#0f0f23"></canvas>
+  </div>
+</div>
+<div class="controls-area" style="text-align:center">
+  <label style="font-size:1.1rem">Constant \(a\): <span id="geoADisplay" style="font-size:1.3rem;font-weight:bold;color:var(--accent)">2.0</span></label>
+  <input type="range" id="geoASlider" min="0" max="4" step="0.1" value="2" style="max-width:400px">
+  <br><button id="geoSnapBtn" style="margin-top:0.5rem">Snap to \(a = 2\)</button>
+</div>
+</div>
+
+<script>
+(function(){
+  const slider=document.getElementById('geoASlider'),aDisp=document.getElementById('geoADisplay'),matchLabel=document.getElementById('geoMatchLabel'),snapBtn=document.getElementById('geoSnapBtn');
+  const barCv=document.getElementById('geoBarCanvas'),bctx=barCv.getContext('2d');
+  const orbCv=document.getElementById('geoOrbitCanvas'),octx=orbCv.getContext('2d');
+  const GOLD='#c9a84c',RED='#e74c3c';
+  let angle=0,radius=80,radVel=0;
+  const baseR=80,orbCx=140,orbCy=140;
+
+  function drawBars(a){
+    const w=barCv.width,h=barCv.height;bctx.clearRect(0,0,w,h);
+    const geo=a/2,orb=1,maxV=Math.max(geo,orb,0.1);
+    const barH=h-60,barW=50,gap=40;
+    const x1=w/2-barW-gap/2,x2=w/2+gap/2;
+    const isMatch=Math.abs(a-2)<0.05,col=isMatch?GOLD:RED;
+    const h1=(geo/maxV)*barH*0.85,h2=(orb/maxV)*barH*0.85;
+    bctx.fillStyle=col;bctx.globalAlpha=0.85;bctx.fillRect(x1,h-30-h1,barW,h1);
+    bctx.fillStyle='#5dade2';bctx.globalAlpha=0.85;bctx.fillRect(x2,h-30-h2,barW,h2);
+    bctx.globalAlpha=1;bctx.fillStyle='#aaa';bctx.font='11px Georgia';bctx.textAlign='center';
+    bctx.fillText('Geodesic',x1+barW/2,h-14);bctx.fillText('Orbital',x2+barW/2,h-14);
+    bctx.fillStyle='#e0e0e0';bctx.font='bold 13px Georgia';
+    bctx.fillText(geo.toFixed(2),x1+barW/2,h-34-h1);bctx.fillText(orb.toFixed(2),x2+barW/2,h-34-h2);
+    bctx.fillStyle='#666';bctx.font='10px Georgia';bctx.fillText('v² / (GM/r)',w/2,14);
+    matchLabel.style.color=isMatch?GOLD:RED;
+    matchLabel.textContent=isMatch?'✓ Perfect match — geodesic condition satisfied':'✗ Mismatch — orbit is NOT a geodesic';
+  }
+  function drawOrbit(a){
+    const w=orbCv.width,h=orbCv.height;
+    octx.fillStyle='rgba(15,15,35,0.15)';octx.fillRect(0,0,w,h);
+    octx.beginPath();octx.arc(orbCx,orbCy,8,0,Math.PI*2);octx.fillStyle='#c9a84c';octx.fill();
+    const isMatch=Math.abs(a-2)<0.05;
+    angle+=0.03;
+    if(isMatch){radius=baseR;radVel=0}else{radVel+=(a-2)*0.15*0.01;radVel*=0.999;radius+=radVel;if(radius<20||radius>130){radius=baseR;radVel=0}}
+    const px=orbCx+radius*Math.cos(angle),py=orbCy+radius*Math.sin(angle);
+    octx.beginPath();octx.arc(px,py,4,0,Math.PI*2);octx.fillStyle=isMatch?GOLD:RED;octx.fill();
+    octx.beginPath();octx.arc(orbCx,orbCy,baseR,0,Math.PI*2);octx.strokeStyle='rgba(201,168,76,0.15)';octx.lineWidth=1;octx.stroke();
+    octx.fillStyle=isMatch?GOLD:RED;octx.font='bold 12px Georgia';octx.textAlign='center';
+    octx.fillText(isMatch?'Stable geodesic':'Unstable — not a geodesic',orbCx,h-10);
+  }
+  function onSlider(){const a=parseFloat(slider.value);aDisp.textContent=a.toFixed(1);drawBars(a)}
+  slider.addEventListener('input',onSlider);
+  snapBtn.addEventListener('click',()=>{
+    const start=parseFloat(slider.value),end=2,dur=400,t0=performance.now();
+    radius=baseR;radVel=0;
+    (function anim(now){const p=Math.min((now-t0)/dur,1),ease=p<0.5?2*p*p:1-Math.pow(-2*p+2,2)/2;slider.value=(start+(end-start)*ease).toFixed(1);onSlider();if(p<1)requestAnimationFrame(anim)})(t0);
+  });
+  onSlider();
+  octx.fillStyle='#0f0f23';octx.fillRect(0,0,orbCv.width,orbCv.height);
+  (function tick(){const a=parseFloat(slider.value);drawOrbit(a);requestAnimationFrame(tick)})();
+})();
+</script>
+
+<!-- ========== APPENDIX D ========== -->
+<h3>Appendix D: GPS Satellite Clock Demo</h3>
+<div class="interactive-panel">
+<p class="explain-text">GPS satellites must correct for time dilation. POAMS predicts the same corrections as General Relativity — derived purely from conservation of angular momentum. Without correction, positioning errors grow by ~11 km/day.</p>
+
+<div class="exhibit-row">
+  <div><canvas id="gpsCanvas" width="360" height="360"></canvas></div>
+  <div class="exhibit-col">
+    <p class="explain-text" style="font-size:0.82rem">
+      Eq 2.9 (velocity only): &nbsp; $\tau = \sqrt{1 - \frac{GM}{rc^2}}\; t$<br>
+      Eq 3.6 (full orbital): &nbsp; $\tau = \sqrt{1 - \frac{3GM}{rc^2}}\; t$
+    </p>
+  </div>
+</div>
+
+<div class="clock-row">
+  <div class="clock-card"><h4>🌍 Ground Clock</h4><div class="clock-time" style="color:#4fc3f7" id="gpsClkGround">00:00:00.000000</div></div>
+  <div class="clock-card"><h4>🛰️ Velocity Only</h4><div class="clock-time" style="color:#ff9800" id="gpsClkVel">00:00:00.000000</div><div style="font-size:0.78rem;color:#999">Drift: <span id="gpsDriftVel">0.000</span> μs</div></div>
+  <div class="clock-card"><h4>🛰️ Full Orbital</h4><div class="clock-time" style="color:#4caf50" id="gpsClkFull">00:00:00.000000</div><div style="font-size:0.78rem;color:#999">Drift: <span id="gpsDriftFull">0.000</span> μs</div></div>
+</div>
+<div class="info-box" style="text-align:center;margin-top:0.8rem">
+  <div style="font-size:0.82rem;color:#999">Position Error Without Correction</div>
+  <div style="font-size:1.4rem;color:#ef5350;font-family:'Courier New',monospace" id="gpsPosError">0.000 m</div>
+  <div style="font-size:0.78rem;color:#888" id="gpsPosTime">after 0.0 hours</div>
+</div>
+<div class="info-box">
+  <div class="stats-grid">
+    <div>Velocity drift/day: <span class="stat-val" id="gpsStatVel">—</span></div>
+    <div>Gravitational drift/day: <span class="stat-val" id="gpsStatGrav">—</span></div>
+    <div>Net drift/day: <span class="stat-val" id="gpsStatNet">—</span></div>
+    <div>Position error/day: <span class="stat-val" id="gpsStatKm">—</span></div>
+  </div>
+</div>
+<div class="controls-area" style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;margin-top:0.8rem">
+  <button id="gpsStartBtn">▶ Start</button>
+  <button id="gpsResetBtn" style="background:transparent;border:1px solid var(--accent);color:var(--fg)">⟲ Reset</button>
+  <label>Speed:</label>
+  <input type="range" id="gpsSpeedSlider" min="0" max="6" step="1" value="2" style="width:120px">
+  <span id="gpsSpeedLbl" style="color:var(--accent);font-weight:bold;min-width:50px">100×</span>
+</div>
+</div>
+
+<script>
+(function(){
+  const G=6.674e-11,Me=5.972e24,c=299792458,c2=c*c,Re=6.371e6,Rgps=26.571e6,DAY=86400;
+  const rateGround=Math.sqrt(1-2*G*Me/(Re*c2));
+  const rateSatVel=Math.sqrt(1-G*Me/(Rgps*c2));
+  const rateSatFull=Math.sqrt(1-3*G*Me/(Rgps*c2));
+  const driftVel=rateSatVel-rateGround,driftFull=rateSatFull-rateGround;
+  const driftVelUsDay=driftVel*DAY*1e6,driftFullUsDay=driftFull*DAY*1e6;
+  const rateSatGrav=Math.sqrt(1-2*G*Me/(Rgps*c2)),driftGrav=rateSatGrav-rateGround,driftGravUsDay=driftGrav*DAY*1e6;
+
+  document.getElementById('gpsStatVel').textContent=(driftVelUsDay-driftGravUsDay>0?'+':'')+(driftVelUsDay-driftGravUsDay).toFixed(1)+' μs';
+  document.getElementById('gpsStatGrav').textContent=(driftGravUsDay>0?'+':'')+driftGravUsDay.toFixed(1)+' μs';
+  document.getElementById('gpsStatNet').textContent=(driftFullUsDay>0?'+':'')+driftFullUsDay.toFixed(1)+' μs';
+  document.getElementById('gpsStatKm').textContent=(Math.abs(driftFullUsDay)*0.3).toFixed(1)+' km';
+
+  let simTime=0,running=false,lastTs=null;
+  const speeds=[1,10,100,1000,10000,100000,1000000];
+  let speedIdx=2;
+  const speedSlider=document.getElementById('gpsSpeedSlider'),speedLbl=document.getElementById('gpsSpeedLbl');
+  const btnStart=document.getElementById('gpsStartBtn'),btnReset=document.getElementById('gpsResetBtn');
+  function updateSpeedLabel(){speedIdx=parseInt(speedSlider.value);const s=speeds[speedIdx];speedLbl.textContent=s>=1e6?(s/1e6)+'M×':s>=1e3?(s/1e3)+'k×':s+'×'}
+  updateSpeedLabel();speedSlider.addEventListener('input',updateSpeedLabel);
+  btnStart.addEventListener('click',()=>{running=!running;btnStart.textContent=running?'⏸ Pause':'▶ Start';if(running)lastTs=null});
+  btnReset.addEventListener('click',()=>{simTime=0;running=false;lastTs=null;btnStart.textContent='▶ Start';updateDisplay()});
+
+  function formatTime(s){const h=Math.floor(s/3600)%24,m=Math.floor(s/60)%60,sec=s%60,w=Math.floor(sec),f=(sec-w).toFixed(6).slice(2);return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(w).padStart(2,'0')+'.'+f}
+  function updateDisplay(){
+    document.getElementById('gpsClkGround').textContent=formatTime(simTime%DAY);
+    const dvUs=driftVel*simTime*1e6,dfUs=driftFull*simTime*1e6;
+    document.getElementById('gpsClkVel').textContent=formatTime((simTime+dvUs*1e-6)%DAY);
+    document.getElementById('gpsDriftVel').textContent=dvUs.toFixed(3);
+    document.getElementById('gpsClkFull').textContent=formatTime((simTime+dfUs*1e-6)%DAY);
+    document.getElementById('gpsDriftFull').textContent=dfUs.toFixed(3);
+    const posErr=Math.abs(dfUs)*1e-6*c,hrs=simTime/3600;
+    document.getElementById('gpsPosError').textContent=posErr<1000?posErr.toFixed(1)+' m':(posErr/1000).toFixed(2)+' km';
+    document.getElementById('gpsPosTime').textContent='after '+hrs.toFixed(1)+' hours';
+  }
+
+  const canvas=document.getElementById('gpsCanvas'),ctx=canvas.getContext('2d');
+  const cxG=180,cyG=180,earthR=50,satOrbitR=155;
+  const satAngleSpeed=2*Math.PI/(12*3600);
+  function drawOrbit(){
+    ctx.clearRect(0,0,360,360);ctx.fillStyle='#1a1a2e';ctx.fillRect(0,0,360,360);
+    ctx.beginPath();ctx.arc(cxG,cyG,satOrbitR,0,2*Math.PI);ctx.strokeStyle='#333';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);
+    const grad=ctx.createRadialGradient(cxG-10,cyG-10,10,cxG,cyG,earthR);grad.addColorStop(0,'#4fc3f7');grad.addColorStop(0.7,'#1565c0');grad.addColorStop(1,'#0d47a1');
+    ctx.beginPath();ctx.arc(cxG,cyG,earthR,0,2*Math.PI);ctx.fillStyle=grad;ctx.fill();
+    ctx.fillStyle='#fff';ctx.font='11px Georgia';ctx.textAlign='center';ctx.fillText('Earth',cxG,cyG+4);
+    const ang=satAngleSpeed*simTime-Math.PI/2,sx=cxG+satOrbitR*Math.cos(ang),sy=cyG+satOrbitR*Math.sin(ang);
+    ctx.beginPath();ctx.arc(sx,sy,6,0,2*Math.PI);ctx.fillStyle='#c9a84c';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke();
+    ctx.fillStyle='#c9a84c';ctx.font='10px Georgia';ctx.fillText('GPS',sx,sy-10);
+    ctx.fillStyle='#666';ctx.font='9px Georgia';ctx.fillText('r = 6,371 km',cxG,cyG+earthR+14);ctx.fillText('r = 26,571 km',cxG,cyG+satOrbitR+14);
+  }
+  function frame(ts){
+    if(running){if(lastTs!==null){simTime+=(ts-lastTs)/1000*speeds[speedIdx]}lastTs=ts}else{lastTs=null}
+    drawOrbit();updateDisplay();requestAnimationFrame(frame);
+  }
+  updateDisplay();requestAnimationFrame(frame);
+})();
+</script>
+
+<!-- ========== APPENDIX E ========== -->
+<h3>Appendix E: Perihelion Precession</h3>
+<div class="interactive-panel">
+<p class="explain-text">POAMS derives perihelion precession from the \(2\mathcal{M}u^3\) correction term in Eq 4.6 — identical to the GR prediction. Set precession to zero to see a closed Newtonian ellipse, then increase it to watch the perihelion advance.</p>
+
+$$\left(\frac{du}{d\theta}\right)^{\!2} + u^2 = K^* + \frac{2\mathcal{M}c^2}{\beta^2}\,u + 2\mathcal{M}\,u^3$$
+
+<div class="exhibit-row">
+  <div><canvas id="precCanvas" width="420" height="420" style="width:100%;aspect-ratio:1;background:#12121f;border:1px solid #2a2a4a;border-radius:8px"></canvas></div>
+  <div class="exhibit-col">
+    <div class="controls-area">
+      <label>Precession strength: <span id="precPVal" style="color:var(--accent)">1.00×</span></label>
+      <input type="range" id="precPSlider" min="0" max="200" value="20" step="1">
+      <label>Eccentricity: <span id="precEVal" style="color:var(--accent)">0.206</span></label>
+      <input type="range" id="precESlider" min="5" max="80" value="21" step="1">
+      <label>Speed: <span id="precSVal" style="color:var(--accent)">1.0×</span></label>
+      <input type="range" id="precSSlider" min="1" max="50" value="10" step="1">
+      <button id="precResetBtn">Reset Trail</button>
+      <button id="precPauseBtn">Pause</button>
+    </div>
+    <div class="info-box" style="margin-top:0.8rem">
+      <div>Precession per orbit: <span class="stat-val" id="precPrecVal">—</span></div>
+      <div>Mercury (observed): <span class="stat-val">43.1″/century ≈ 0.104″/orbit</span></div>
+      <div>Orbits completed: <span class="stat-val" id="precOrbCount">0</span></div>
+      <div>Current angle: <span class="stat-val" id="precCurAngle">0°</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(function(){
+  const cv=document.getElementById('precCanvas'),ctx=cv.getContext('2d');
+  const pSlider=document.getElementById('precPSlider'),eSlider=document.getElementById('precESlider'),sSlider=document.getElementById('precSSlider');
+  const pVal=document.getElementById('precPVal'),eVal=document.getElementById('precEVal'),sVal=document.getElementById('precSVal');
+  const precVal=document.getElementById('precPrecVal'),orbCount=document.getElementById('precOrbCount'),curAngle=document.getElementById('precCurAngle');
+  let paused=false,trail=[],theta=0,u,du,orbits=0,lastPeriTheta=0,measuredPrec=0,prevDu=0;
+
+  function getParams(){return{ecc:eSlider.value/100,precStrength:pSlider.value/20,speed:sSlider.value/10}}
+  function initOrbit(){const{ecc}=getParams();u=1+ecc;du=0;theta=0;orbits=0;lastPeriTheta=0;trail=[];measuredPrec=0}
+  function step(dtheta){
+    const{precStrength}=getParams(),epsilon=precStrength*0.01;
+    const f=(uv)=>-uv+1+epsilon*3*uv*uv;
+    const k1u=du,k1du=f(u);
+    const u2=u+0.5*dtheta*k1u,k2du=f(u2);
+    const u3=u+0.5*dtheta*(du+0.5*dtheta*k1du),k3du=f(u3);
+    const u4=u+dtheta*(du+0.5*dtheta*k2du),k4du=f(u4);
+    u+=dtheta/6*(k1u+2*(du+0.5*dtheta*k1du)+2*(du+0.5*dtheta*k2du)+(du+dtheta*k3du));
+    du+=dtheta/6*(k1du+2*k2du+2*k3du+k4du);
+    theta+=dtheta;
+  }
+  function resize(){const rect=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;cv.width=rect.width*dpr;cv.height=rect.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  function toScreen(r,a){const{ecc}=getParams();const rect=cv.getBoundingClientRect(),w=rect.width,h=rect.height;const maxR=1/(1-ecc)*1.15,scale=Math.min(w,h)*0.42/maxR;return[w/2+r*Math.cos(a)*scale,h/2-r*Math.sin(a)*scale]}
+
+  function update(){
+    if(!paused){
+      const{speed}=getParams(),stepsPerFrame=Math.max(1,Math.round(speed*20)),dtheta=0.003;
+      for(let i=0;i<stepsPerFrame;i++){
+        prevDu=du;step(dtheta);
+        if(u>0){trail.push([1/u,theta]);if(prevDu>0&&du<=0){if(orbits>0)measuredPrec=(theta-lastPeriTheta-2*Math.PI)*(180/Math.PI)*3600;lastPeriTheta=theta;orbits++}}
+        else{initOrbit();break}
+      }
+      if(trail.length>80000)trail=trail.slice(-60000);
+    }
+    draw();requestAnimationFrame(update);
+  }
+  function draw(){
+    const rect=cv.getBoundingClientRect(),w=rect.width,h=rect.height;
+    ctx.clearRect(0,0,w,h);
+    const[cxP,cyP]=toScreen(0,0);
+    const grad=ctx.createRadialGradient(cxP,cyP,0,cxP,cyP,12);grad.addColorStop(0,'#ffd966');grad.addColorStop(0.6,'#c9a84c');grad.addColorStop(1,'transparent');
+    ctx.beginPath();ctx.arc(cxP,cyP,12,0,2*Math.PI);ctx.fillStyle=grad;ctx.fill();
+    if(trail.length>1){
+      ctx.beginPath();const[x0,y0]=toScreen(trail[0][0],trail[0][1]);ctx.moveTo(x0,y0);
+      const skip=Math.max(1,Math.floor(trail.length/15000));
+      for(let i=skip;i<trail.length;i+=skip){const[x,y]=toScreen(trail[i][0],trail[i][1]);ctx.lineTo(x,y)}
+      ctx.strokeStyle='rgba(100,160,255,0.35)';ctx.lineWidth=1;ctx.stroke();
+      const recent=trail.slice(-600);
+      if(recent.length>1){ctx.beginPath();const[rx0,ry0]=toScreen(recent[0][0],recent[0][1]);ctx.moveTo(rx0,ry0);for(let i=1;i<recent.length;i++){const[rx,ry]=toScreen(recent[i][0],recent[i][1]);ctx.lineTo(rx,ry)}ctx.strokeStyle='rgba(140,200,255,0.8)';ctx.lineWidth=1.5;ctx.stroke()}
+    }
+    if(u>0){const[px,py]=toScreen(1/u,theta);ctx.beginPath();ctx.arc(px,py,4,0,2*Math.PI);ctx.fillStyle='#8cf';ctx.fill()}
+    precVal.textContent=orbits>1?measuredPrec.toFixed(1)+'″':'—';
+    orbCount.textContent=Math.max(0,orbits-1);
+    curAngle.textContent=((theta*180/Math.PI)%360).toFixed(1)+'°';
+  }
+  pSlider.addEventListener('input',()=>{pVal.textContent=(pSlider.value/20).toFixed(2)+'×';initOrbit()});
+  eSlider.addEventListener('input',()=>{eVal.textContent=(eSlider.value/100).toFixed(3);initOrbit()});
+  sSlider.addEventListener('input',()=>{sVal.textContent=(sSlider.value/10).toFixed(1)+'×'});
+  document.getElementById('precResetBtn').addEventListener('click',initOrbit);
+  document.getElementById('precPauseBtn').addEventListener('click',()=>{paused=!paused;document.getElementById('precPauseBtn').textContent=paused?'Play':'Pause'});
+  resize();window.addEventListener('resize',resize);
+  initOrbit();
+  pVal.textContent=(pSlider.value/20).toFixed(2)+'×';eVal.textContent=(eSlider.value/100).toFixed(3);sVal.textContent=(sSlider.value/10).toFixed(1)+'×';
+  requestAnimationFrame(update);
+})();
+</script>
+
+</section>
 
 </main>
 <script>if(localStorage.getItem('theme')==='light')document.body.classList.add('light');</script>
