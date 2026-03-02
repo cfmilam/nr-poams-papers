@@ -778,7 +778,7 @@ $$\left(\frac{du}{d\theta}\right)^{\!2} + u^2 = K^* + \frac{2\mathcal{M}c^2}{\be
     theta+=dtheta;
   }
   function resize(){const rect=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1,w=Math.min(rect.width||420,600),h=Math.min(rect.height||420,600);cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
-  function toScreen(r,a){const{ecc}=getParams();const rect=cv.getBoundingClientRect(),w=rect.width,h=rect.height;const maxR=1/(1-ecc)*1.15,scale=Math.min(w,h)*0.42/maxR;return[w/2+r*Math.cos(a)*scale,h/2-r*Math.sin(a)*scale]}
+  function toScreen(r,a){const{ecc}=getParams();const dpr=window.devicePixelRatio||1,w=cv.width/dpr,h=cv.height/dpr;const maxR=1/(1-ecc)*1.15,scale=Math.min(w,h)*0.42/maxR;return[w/2+r*Math.cos(a)*scale,h/2-r*Math.sin(a)*scale]}
 
   function update(){
     if(!paused){
@@ -793,7 +793,7 @@ $$\left(\frac{du}{d\theta}\right)^{\!2} + u^2 = K^* + \frac{2\mathcal{M}c^2}{\be
     draw();requestAnimationFrame(update);
   }
   function draw(){
-    const rect=cv.getBoundingClientRect(),w=rect.width,h=rect.height;
+    const dpr=window.devicePixelRatio||1,w=cv.width/dpr,h=cv.height/dpr;
     ctx.clearRect(0,0,w,h);
     const[cxP,cyP]=toScreen(0,0);
     const grad=ctx.createRadialGradient(cxP,cyP,0,cxP,cyP,12);grad.addColorStop(0,'#ffd966');grad.addColorStop(0.6,'#c9a84c');grad.addColorStop(1,'transparent');
