@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orbital Time Dilation (Osborne)</title>
-<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],tags:'ams'},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
 :root {
@@ -25,6 +25,11 @@ p { margin: 0.8rem 0; text-align: left; }
 a { color: var(--link); }
 blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
 .meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.abstract { background: var(--blockquote-bg); border-left: 3px solid var(--blockquote-border); padding: 1rem 1.5rem; margin: 1.2rem 0; font-size: 0.95em; }
+.abstract strong { display: block; margin-bottom: 0.3em; }
+.keywords { font-size: 0.9em; color: var(--accent2); margin: 0.8em 0 1.5em; }
+.references { font-size: 0.88em; line-height: 1.6; }
+.references p { margin: 0.4em 0; padding-left: 2em; text-indent: -2em; }
 .back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
 #theme-btn {
   position: fixed; top: 1rem; right: 1rem; z-index: 200;
@@ -32,6 +37,7 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
   width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
   cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
 @media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
 </style>
 </head>
@@ -39,171 +45,280 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 <button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
 <main>
 <a class="back-link" href="index.html">← Back to Papers</a>
-<h1>Orbital Time Dilation (Osborne)</h1>
+
+<h1>Orbital Time Dilation</h1>
 <div class="meta">Anthony D. Osborne &amp; N. Vivian Pope — <em>Galilean Electrodynamics</em></div>
-<h3>Abstract</h3>
-<p>The Pope-Osborne Angular Momentum Synthesis (POAMS) postulates that all motion is naturally orbital and that orbital angular momentum is holistically conserved. This paper demonstrates how the standard time dilation formula of Special Relativity, here obtained in a more economical way, can be incorporated into POAMS in order to predict orbital time dilation effects. These effects are the same as those predicted by General Relativity, but are obtained without reference to the Einstein field equations. It is also shown how the postulates of POAMS, together with these predicted orbital time dilation effects, can be used to derive what is effectively Schwarzschild space-time and hence the perihelion shift effect observed in the motion of planets.</p>
-<p><strong>Key Words:</strong> time dilation, Mach, Normal Realism, Minkowski, orbital motion, angular momentum, conservation, Newton, Einstein, Special Relativity, General Relativity, Schwarzschild, perihelion shift</p>
+
+<div class="abstract">
+<strong>Abstract</strong>
+The Pope-Osborne Angular Momentum Synthesis (POAMS) postulates that all motion is naturally orbital and that orbital angular momentum is holistically conserved. This paper demonstrates how the standard time dilation formula of Special Relativity, here obtained in a more economical way, can be incorporated into POAMS in order to predict orbital time dilation effects. These effects are the same as those predicted by General Relativity, but are obtained without reference to the Einstein field equations. It is also shown how the postulates of POAMS, together with these predicted orbital time dilation effects, can be used to derive what is effectively Schwarzschild space-time and hence the perihelion shift effect observed in the motion of planets.
+</div>
+
+<p class="keywords"><strong>Key words:</strong> time dilation, Mach, Normal Realism, Minkowski, orbital motion, angular momentum, conservation, Newton, Einstein, Special Relativity, General Relativity, Schwarzschild, perihelion shift</p>
+
+<!-- ===== SECTION 1 ===== -->
 <h2>1. Introduction</h2>
-<p>Following the publication of our first joint paper 'A New Approach to Special Relativity' [1], the Citations Index described it simply as 'a modelling approach to Relativity'. This omitted to mention that rather than being viewed as simply a teaching aid, our geometric 'modelling approach' did not require - indeed, had made logically redundant - any reference to Einstein's Second Axiom regarding his 'constant speed of light <em><em>in vacuo</em></em>'. The initial aim of this 'New Approach' was to demonstrate that there are two different dimensional aspects to the phenomenon of physical motion. These are distinguished by the fact that, observationally, there are two distinct measures of the 'speed' of relative motion. One is the observational distance moved by the object divided by the time registered by the observer of the motion (the observational time) and the other is that same distance divided by the time the observer sees registered by the moving body itself, usually called the proper time. Traditionally, the concept of 'speed' makes no such distinction between the times by which the distance is divided. This means that the motion may be represented in the usual, traditional way, by a simple two-dimensional flat graph in which the curve may be plotted against the distance and time axes in terms of an unrestricted choice of units. In the 'New Approach', this twodimensional representation is replaced by a geometrical - or, rather, a geometro-temporal - representation in which units of distance and units of time are relationally fixed in the constant ratio c of distance-units to time-units. In this case, c is no longer the conventional 'speed of light' but simply a scale-constant of observationally projected dimensions. The number of dimensions required for a true graphical representation of motion are therefore no longer the simple two, namely, distance and time, but three. These are, i) the observed distance (distance-time) of the motion, measured in seconds, ii) the proper time, i.e. the time of the motion as observed to be registered by the body itself, and, iii) the observational time, i.e. the time of the motion as registered by the observer's clock. Projected orthogonally, in the</p>
-<p>usual manner of geometrical dimensions, the surface on which the motion is represented is no longer that of a flat graph but that of a conic surface - in fact, that of a rectangular cone. This can be demonstrated as follows. Consider a clock X moving with uniform velocity, i.e. with uniform speed v metres per second along a rectilinear path, relative to an observer O. After passage of time t seconds, recorded by O, X moves a distance $s = vt$ meters. Using the conversion factor c, X moves a distance-time s/c measured in seconds. Let the same time interval as recorded by X's clock be τ seconds as observed by O. It then follows simply by applying Pythagoras's theorem in the associated two-dimensional time diagram with coordinates s / c and τ that t 2 = τ2 + (s / c)2</p>
-<p>which is the equation of a rectangular cone in three-dimensions. Since $s = vt$ it follows that $\tau = \sqrt{1 - v^2/c^2}\; t$</p>
 
-<p>Of course, this is the same time dilation formula as is derived in Special Relativity, and it implies that moving clocks run relatively slower. [2] The proper time τ as recorded by the moving clock (relative to the clock's own rest frame) is clearly independent of any observer and serves as a universal parameter in Special Relativity. Note that this deduction of the time-dilation formula differs uniquely from the usual sort of deduction in that it involves no theories about light as an electromagnetic field-propagation <em><em>in vacuo</em></em>, or any other theoretical premises. The deduction, like all the others in this paper, is one of pure syllogistic. [3] Professor Sir Herman Bondi has concurred with us concerning the redundancy of c as 'the speed of light', at least insofar as it provides a teaching aid. [4] As Bondi writes: "Any attempt to measure the velocity of light is … not an attempt at measuring the velocity of light but an attempt</p>
+<p>Following the publication of our first joint paper 'A New Approach to Special Relativity' [1], the Citations Index described it simply as 'a modelling approach to Relativity'. This omitted to mention that rather than being viewed as simply a teaching aid, our geometric 'modelling approach' did not require – indeed, had made logically redundant – any reference to Einstein's Second Axiom regarding his 'constant speed of light in vacuo'.</p>
 
-<p>at ascertaining the length of the standard metre in Paris in terms of time-units." [5] Exploring the logical and philosophical implications of this lateral thinking alternative in the interpretation of the constant c has produced a new approach to natural philosophy termed 'Normal Realism'. [6] This takes its departure from classical physics along the lines of the radical relativism, or phenomenalism - sometimes called English Empiricism - of the philosophers Locke, Berkeley and Hume. [7] Developed by Kant, it was articulated as a basis for modern relativistic physics by Einstein's mentor, Mach. [8] For Mach, all our knowledge of the world (especially in science) is based on sense-impressions, which he called 'sense-data'. In Normal Realism, this includes not only instrument data but also the informational data transacted between observers in what is generally known as language. Normal Realism is therefore the present-day successor of this phenomenalist line. Dr. Michael Duffy, organizer of the PIRT (Physical Interpretations of Relativity) conferences at Imperial College, London [9], refers to this phenomenalist approach as 'the third alternative'. The others he sees as "either geometrical (or continuum) formulations or some form of physical (mechanistic) analogue". Now in any phenomenalist account of physics, since phenomena are the fundamental starting-point of any scientific enquiry, plainly phenomenalism cannot be reconciled with Einstein's Second Postulate, according to which phenomena are mediated by light travelling at a constant speed in the void between objects and our scientific observations of them. This is doubtless what caused the notorious rift between the 'Relativity' of Einstein and its parent, the relationism of Mach. [10] Of particular relevance to this present paper is the application of the Normal Realist programme of phenomenalism to the mechanical laws of Newton. Newton's first law states that all bodies left to themselves, with no external forces acting upon them either remain stationary or else travel is straight lines. Normal Realism regards this 'law' as unempirical, since no force-free bodies are ever observed to stand in space or travel in that so-called 'inertial' way. Doubly unempirical, as Normal Realism sees it, is Newton's explanation as to why no bodies anywhere obey that 'first law', which is that all bodies are universally attracted to one another by an invisible <em><em>in vacuo</em></em> force, so that they never either stand still in space or travel in straight lines in the way Newton envisaged. What is actually observed, then, according to Normal Realism are not bodies traveling in space with an 'inertial' rectilinear momentum but bodies traveling in orbits of automatically paired and balanced angular momentum. This idea may be summarised in the following principle. [11] "The Principle of Angular Inertia: All bodies move angular-inertially. Angular inertia is the resistance of a body to any change in its angular momentum relations and is the natural tendency of a body to follows the path of least resistance (i.e. least action) in accordance with the conservation of angular momentum." We have named this alternative approach to the phenomenon of motion 'POAMS' (for Pope-Osborne Angular Momentum Synthesis). In POAMS this is demonstrated to be sufficient to explain the orbital motions of masses without any reference</p>
+<p>The initial aim of this 'New Approach' was to demonstrate that there are two different dimensional aspects to the phenomenon of physical motion. These are distinguished by the fact that, observationally, there are two distinct measures of the 'speed' of relative motion. One is the observational distance moved by the object divided by the time registered by the observer of the motion (the observational time) and the other is that same distance divided by the time the observer sees registered by the moving body itself, usually called the proper time. Traditionally, the concept of 'speed' makes no such distinction between the times by which the distance is divided. This means that the motion may be represented in the usual, traditional way, by a simple two-dimensional flat graph in which the curve may be plotted against the distance and time axes in terms of an unrestricted choice of units. In the 'New Approach', this two-dimensional representation is replaced by a geometrical – or, rather, a geometro-temporal – representation in which units of distance and units of time are relationally fixed in the constant ratio <em>c</em> of distance-units to time-units. In this case, <em>c</em> is no longer the conventional 'speed of light' but simply a scale-constant of observationally projected dimensions. The number of dimensions required for a true graphical representation of motion are therefore no longer the simple two, namely, distance and time, but three. These are, i) the observed distance (distance-time) of the motion, measured in seconds, ii) the proper time, i.e. the time of the motion as observed to be registered by the body itself, and, iii) the observational time, i.e. the time of the motion as registered by the observer's clock. Projected orthogonally, in the usual manner of geometrical dimensions, the surface on which the motion is represented is no longer that of a flat graph but that of a conic surface – in fact, that of a rectangular cone. This can be demonstrated as follows.</p>
 
-<p>whatsoever to Newton's invisible 'gravitational force'. In similar fashion, POAMS also dispenses with other forces, conceived by analogy with Newton's 'gravitational force', such as for example, electrostatic 'force'. [12] The full philosophical background to POAMS has been published sufficiently widely elsewhere for that subject not to be laboured here . [13,14] Suffice it to say, for now, that this paper is a natural logical progression of discoveries published so far. As such it represents a 'new move' in POAMS that consists of 'marrying' the time dilation formula (1.1) into its angular momentum synthesis. The paper successfully coalesces the two aspects and consummates this marriage by predicting known orbital time dilation effects in agreement with the predictions of Einstein's General Theory of Relativity in the manner already described. Moreover, in predicting the known effects in such a simple way, POAMS also predicts the observed perihelion shift effect of Mercury and other planets as in General Relativity, without the need for the Einstein field equations or direct use of tensor calculus. In fact, POAMS is able to construct the Schwarzschild space-time metric without reference to the field equations.</p>
-<h2>2. Time Dilation in Non-Uniform Motion</h2>
-<p>As demonstrated in the introduction, the usual time dilation formula (1.1) of Special Relativity can be deduced using the Normal Realist approach in a more economical way. In summary, if a clock X moves along a rectilinear path at constant speed v relative to an observer O, then in passage of time t as recorded by O, X's clock records a passage of proper time τ given by $\tau = \sqrt{1 - v^2/c^2}\; t$</p>
+<p>Consider a clock X moving with uniform velocity, i.e. with uniform speed <em>v</em> metres per second along a rectilinear path, relative to an observer O. After passage of time <em>t</em> seconds, recorded by O, X moves a distance <em>s</em> = <em>vt</em> meters. Using the conversion factor <em>c</em>, X moves a distance-time <em>s</em>/<em>c</em> measured in seconds. Let the same time interval as recorded by X's clock be τ seconds as observed by O. It then follows simply by applying Pythagoras's theorem in the associated two-dimensional time diagram with coordinates <em>s</em>/<em>c</em> and τ that</p>
 
-<p>According to POAMS, all motion is naturally orbital, such orbits being determined by conservation of angular momentum. In this scenario, in contrast to Newtonian theory, there is no such thing as ideally rectilinear motion. Hence, formula (2.1) is not generally appropriate in POAMS, except for small enough segments of orbits of extremely large mean radius, which are effectively straight-line segments. However, exactly as in Special Relativity, formula (2.1) can be generalized to the case of a clock in non-uniform motion relative to an observer. Consider a clock X moving with non-constant velocity v(t) relative to an observer O and let v(t) =|v(t)| denote the speed of the clock relative to O. It follows by (2.1) and the definition of the Riemann integral that in this case, the relatively moving clock X records proper time τ given by τ=</p>
-<p>∫ 1 - (v / c) dt</p>
+$$t^2 = \tau^2 + (s/c)^2$$
 
-<p>Of course, a relatively moving clock may travel along any path but still have constant speed, as in the case of a clock moving in a circular orbit with constant speed. If the speed v of the relatively moving clock is constant, then (2.2) gives τ=</p>
-<p>∫ 1 - (v / c) dt = 1 - (v / c) t</p>
+<p>which is the equation of a rectangular cone in three-dimensions. Since <em>s</em> = <em>vt</em> it follows that</p>
 
+$$\tau = \sqrt{1 - (v/c)^2}\; t \tag{1.1}$$
 
-<p>as in (2.1). In other words, formula (2.1) holds not only for rectilinear motion, but also for any non-uniform motion for which the speed is constant. Let positions in space be described by Cartesian coordinates ( x, y, z ). Then, as in classical kinematics, the velocity of a mov-</p>
-<p>for some constant G in (2.4), exactly as in the Newtonian approach [12]. In general, the magnitude, L , of the orbital angular momentum of P, which is a constant, is given by $L = mr^2\dot{$\theta$}$</p>
+<p>Of course, this is the same time dilation formula as is derived in Special Relativity, and it implies that moving clocks run relatively slower. [2] The proper time τ as recorded by the moving clock (relative to the clock's own rest frame) is clearly independent of any observer and serves as a universal parameter in Special Relativity.</p>
 
-<p>ing object is given by It follows that for any closed orbit, (2.4) can be written as</p>
-<p>$\$\mathbf{v}(t) = (dx/dt, dy/dt, dz/dt)$</p>
-<p>dr 2 / dt 2 - L / m2 r 3 = -GM / r 2</p>
+<p>Note that this deduction of the time-dilation formula differs uniquely from the usual sort of deduction in that it involves no theories about light as an electromagnetic field-propagation in vacuo, or any other theoretical premises. The deduction, like all the others in this paper, is one of pure syllogistic. [3]</p>
 
-<p>so that its speed satisfies Equation (2.6) can be integrated in the standard way to show that the orbits that are closed must be ellipses. [16] This is, of course, what is predicted by Newtonian theory and almost agrees with the observational evidence regarding the motions of the planets. Consider the special case of a circular orbit, so that r is constant. In this case, the orbital speed, v(t) , of P relative to O is given by</p>
-<p>v2 (t) = (dx / dt)2 + (dy / dt)2 + (dz / dt)2   </p>
-<p>It then follows by (2.2) that (dτ / dt)2 = 1 - v2 (t) / c2 implies</p>
-<p> dτ   dx   dy   dz  c2   = c 2 - v2 (t) = c2 -   +   +    dt   dt   dt   dt </p>
-<p>$v = r\dot{$\theta$}$</p>
-<p>so that $-c^2 d\tau^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2$</p>
+<p>Professor Sir Herman Bondi has concurred with us concerning the redundancy of <em>c</em> as 'the speed of light', at least insofar as it provides a teaching aid. [4] As Bondi writes:</p>
 
+<blockquote>"Any attempt to measure the velocity of light is … not an attempt at measuring the velocity of light but an attempt at ascertaining the length of the standard metre in Paris in terms of time-units." [5]</blockquote>
 
-<p>and then (2.4) with h(r) = GM / r simplifies to</p>
-<p>Equation (2.3) is the metric for Minkowski space-time, the underlying mathematical structure for Special Relativity [2], in</p>
-<p>$v^2 = GM/r$</p>
-<p>which the elementary separation, ds 2 , between two events is</p>
-<p>Eq. (2.8) gives the equation of motion of a freely moving particle P in a circular orbit about a central mass M , i.e. the equation of any circular geodesic. In POAMS, the orbit of P is circular not because of some unseen 'gravitational force' acting on P due to the presence of the mass M , but rather, simply because of the fact that the orbital angular momentum of P is constant. Notice that the speed of P is constant along a circular geodesic, since G , M and r are constants, and that for any particular value of r , there is only one circular geodesic orbit. It follows by (2.8) and (2.2) that since the speed of P is constant, the time dilation determined by the effect of relative speed alone is</p>
-<p>defined by $(ds/d\\tau) = -c$ . Note that here, (2.3) is derived using only the time dilation formula, which, in turn, is derived without reference to the Special Lorentz transformation. This is a significant result: the time dilation formula (2.2) is essentially equivalent to the metric for Minkowski space-time, so if (2.2) holds, then, just as in Special Relativity, the underlying mathematical structure is Minkowski space-time. The purpose of this paper is to investigate the time dilation in the natural orbits of POAMS. For simplicity, we only consider the case of an isolated system consisting of a particle P of mass m orbiting a body of mass M, situated at the origin O of some frame of reference. POAMS postulates that angular momentum is always conserved, so that in this isolated system, the orbital angular momentum of P relative to O is constant. It follows that the orbit of P lies in a plane and that the acceleration of P acts in the opposite direction to the position vector of P relative to O. It then follows that the equation of motion of P relative to O takes the form d 2r / dt 2 - r(dθ / dt)2 = -h(r)</p>
+<p>Exploring the logical and philosophical implications of this lateral thinking alternative in the interpretation of the constant <em>c</em> has produced a new approach to natural philosophy termed 'Normal Realism'. [6] This takes its departure from classical physics along the lines of the radical relativism, or phenomenalism – sometimes called English Empiricism – of the philosophers Locke, Berkeley and Hume. [7] Developed by Kant, it was articulated as a basis for modern relativistic physics by Einstein's mentor, Mach. [8] For Mach, all our knowledge of the world (especially in science) is based on sense-impressions, which he called 'sense-data'. In Normal Realism, this includes not only instrument data but also the informational data transacted between observers in what is generally known as language. Normal Realism is therefore the present-day successor of this phenomenalist line. Dr. Michael Duffy, organizer of the PIRT (Physical Interpretations of Relativity) conferences at Imperial College, London [9], refers to this phenomenalist approach as 'the third alternative'. The others he sees as "either geometrical (or continuum) formulations or some form of physical (mechanistic) analogue".</p>
 
-<p>for some function h(r) [12]. Here, plane polar coordinates r and θ are used, where r(t) is the radial distance of P from O at any time t and θ(t ) is the angle which the position vector of P makes with some fixed radial line from O at any time t . For initial simplicity, it is assumed that the orbit of P about O is closed. Then Bertrand's theorem [15] shows that h(r ) = GM / r 2</p>
-<p>$\tau = \sqrt{1 - GM/(rc^2)}\; t$</p>
+<p>Now in any phenomenalist account of physics, since phenomena are the fundamental starting-point of any scientific enquiry, plainly phenomenalism cannot be reconciled with Einstein's Second Postulate, according to which phenomena are mediated by light travelling at a constant speed in the void between objects and our scientific observations of them. This is doubtless what caused the notorious rift between the 'Relativity' of Einstein and its parent, the relationism of Mach. [10]</p>
 
+<p>Of particular relevance to this present paper is the application of the Normal Realist programme of phenomenalism to the mechanical laws of Newton. Newton's first law states that all bodies left to themselves, with no external forces acting upon them either remain stationary or else travel in straight lines. Normal Realism regards this 'law' as unempirical, since no force-free bodies are ever observed to stand in space or travel in that so-called 'inertial' way. Doubly unempirical, as Normal Realism sees it, is Newton's explanation as to why no bodies anywhere obey that 'first law', which is that all bodies are universally attracted to one another by an invisible in vacuo force, so that they never either stand still in space or travel in straight lines in the way Newton envisaged.</p>
 
-<p>In (2.9), τ is the proper time as recorded by P's clock and t is the same passage of time as recorded by an 'external' observer, far away from the orbit of P. The time t is referred to as deep space time (DST) in POAMS. [17] It follows by (2.9) that the closer P is to the mass M , the greater the time dilation effect. In other words, clocks on circular geodesics further away from the mass M run faster than clocks nearer to M, relative to DST. Clearly, r cannot approach 0 in (2.9); it is necessary that</p>
-<p>r &gt; GM / c 2 . The constant GM / c 2 is much smaller that the radius of any stable star or planet, so that there is no problem in applying (2.9) in general. This equation is, of course, exactly the result obtained by Special Relativity when applied to Newtonian circular orbits. Consider now the general case of a particle P orbiting a body of mass M , situated at the origin O of a plane polar coordinate system. As in Newtonian theory, the first integral of P's equation of motion, (2.6), is</p>
- (dr / dt)2 + L2 / m 2 r 2 = 2GM / r + K</p>
+<p>What is actually observed, then, according to Normal Realism are not bodies traveling in space with forces acting upon them, but bodies moving freely, naturally, through 360°, in closed orbits. Nothing further needs to be explained, but, rather, the orbits themselves need to be accurately described in the terms of their observed phenomenology: that is to say, in terms of (a) their angular momentum and (b) the observational time-dilation inherent in their perceived motion. These are, respectively, the empirical essentials of Newton's theory of Gravitation and Einstein's theory of Relativity. [11]</p>
 
-<p>where K is a constant of integration, and the orbital speed of P is given by v2 = (dr / dt )2 + r 2 (d θ / dt )2</p>
+<p>It follows that in POAMS, angular momentum is the key to 'gravitation', rather than Newton's 'gravitational force' or Einstein's 'curvature of space-time'. In POAMS, all free motion is naturally orbital and orbital angular momentum is conserved. It is not the purpose of this paper to discuss these matters further but to derive the theoretical consequences and make comparison with those aspects of theoretical physics to which these consequences are relevant. More detailed discussions can be found in References [12] to [14].</p>
 
-<p>Then substituting (2.11) and (2.5) into (2.2) and using (2.10) gives τ=</p>
-<p>∫</p>
-<p>1 - 2GM / r 2 c 2 - K / c 2 dt</p>
+<!-- ===== SECTION 2 ===== -->
+<h2>2. Time Dilation in Special Relativity and POAMS</h2>
 
-<p>where v is the constant speed of P, r is the radius of the orbit and G is a constant. We shall suppose that the mass M is spherically symmetric and static. Then any additional time dilation effect can depend only on M and the distance, r , of P from M . It is reasonable to suppose that any such additional effect is proportional to M / r , since, by (2.9), the closer P is to M , the greater the time dilation. Hence we postulate that the true proper time as recorded by P's clock relative to DST is given by τ = 1 - GM / r 2 c 2 - aGM / rc2 t</p>
+<p>In general, if a clock X has a time-varying speed <em>v</em>(<em>t</em>) relative to an observer O, then the time dilation formula (1.1), now local rather than global, takes the form</p>
 
+$$\tau = \sqrt{1 - (v/c)^2}\; t \tag{2.1}$$
 
-<p>where a is a constant to be determined. It is convenient to let Equation (2.12) gives the proper time as recorded by a clock traveling with a freely moving particle P in its closed orbit about the mass M , relative to DST, only taking into account effects due to the relative speed of P. Since the orbit of P is assumed to be closed, K is necessarily negative in (2.12). It follows that the maximum possible time dilation effect predicted by (2.12) occurs as $K \\to 0$ . This extreme case represents 'up and down movement' along a straight line and here the prediction of (2.12) is supported by evidence provided by the Pound-Rebka experiments. [17]</p>
+<p>where τ is the proper time and <em>t</em> is the observational time (both measured locally). In integral form this is</p>
+
+$$\tau = \int \sqrt{1 - (v/c)^2}\; dt \tag{2.2}$$
+
+<p>For an object at position (<em>x</em>, <em>y</em>, <em>z</em>), as in classical kinematics, the velocity of a moving object is given by</p>
+
+$$\mathbf{v}(t) = (dx/dt,\; dy/dt,\; dz/dt)$$
+
+<p>so that its speed satisfies</p>
+
+$$v^2(t) = (dx/dt)^2 + (dy/dt)^2 + (dz/dt)^2$$
+
+<p>It then follows by (2.2) that $(d\tau/dt)^2 = 1 - v^2(t)/c^2$ implies</p>
+
+$$c^2\!\left(\frac{d\tau}{dt}\right)^2 = c^2 - v^2(t) = c^2 - \left[\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2\right]$$
+
+<p>so that</p>
+
+$$-c^2 d\tau^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2 \tag{2.3}$$
+
+<p>Equation (2.3) is the metric for Minkowski space-time, the underlying mathematical structure for Special Relativity [2], in which the elementary separation, $ds^2$, between two events is defined by $(ds/d\tau)^2 = -c^2$. Note that here, (2.3) is derived using only the time dilation formula, which, in turn, is derived without reference to the Special Lorentz transformation. This is a significant result: the time dilation formula (2.2) is essentially equivalent to the metric for Minkowski space-time, so if (2.2) holds, then, just as in Special Relativity, the underlying mathematical structure is Minkowski space-time.</p>
+
+<p>The purpose of this paper is to investigate the time dilation in the natural orbits of POAMS. For simplicity, we only consider the case of an isolated system consisting of a particle P of mass <em>m</em> orbiting a body of mass <em>M</em>, situated at the origin O of some frame of reference. POAMS postulates that angular momentum is always conserved, so that in this isolated system, the orbital angular momentum of P relative to O is constant. It follows that the orbit of P lies in a plane and that the acceleration of P acts in the opposite direction to the position vector of P relative to O. It then follows that the equation of motion of P relative to O takes the form</p>
+
+$$\frac{d^2 r}{dt^2} - r\!\left(\frac{d\theta}{dt}\right)^2 = -h(r) \tag{2.4}$$
+
+<p>for some function <em>h</em>(<em>r</em>) [12]. Here, plane polar coordinates <em>r</em> and θ are used, where <em>r</em>(<em>t</em>) is the radial distance of P from O at any time <em>t</em> and θ(<em>t</em>) is the angle which the position vector of P makes with some fixed radial line from O at any time <em>t</em>. For initial simplicity, it is assumed that the orbit of P about O is closed. Then Bertrand's theorem [15] shows that</p>
+
+$$h(r) = GM/r^2$$
+
+<p>for some constant <em>G</em> in (2.4), exactly as in the Newtonian approach [12]. In general, the magnitude, <em>L</em>, of the orbital angular momentum of P, which is a constant, is given by</p>
+
+$$L = mr^2\!\left(\frac{d\theta}{dt}\right) \tag{2.5}$$
+
+<p>It follows that for any closed orbit, (2.4) can be written as</p>
+
+$$\frac{d^2 r}{dt^2} - \frac{L^2}{m^2 r^3} = -\frac{GM}{r^2} \tag{2.6}$$
+
+<p>Equation (2.6) can be integrated in the standard way to show that the orbits that are closed must be ellipses. [16] This is, of course, what is predicted by Newtonian theory and almost agrees with the observational evidence regarding the motions of the planets.</p>
+
+<p>Consider the special case of a circular orbit, so that <em>r</em> is constant. In this case, the orbital speed, <em>v</em>(<em>t</em>), of P relative to O is given by</p>
+
+$$v = r\!\left(\frac{d\theta}{dt}\right) \tag{2.7}$$
+
+<p>and then (2.4) with $h(r) = GM/r^2$ simplifies to</p>
+
+$$v^2 = GM/r \tag{2.8}$$
+
+<p>Eq. (2.8) gives the equation of motion of a freely moving particle P in a circular orbit about a central mass <em>M</em>, i.e. the equation of any circular geodesic. In POAMS, the orbit of P is circular not because of some unseen 'gravitational force' acting on P due to the presence of the mass <em>M</em>, but rather, simply because of the fact that the orbital angular momentum of P is constant. Notice that the speed of P is constant along a circular geodesic, since <em>G</em>, <em>M</em> and <em>r</em> are constants, and that for any particular value of <em>r</em>, there is only one circular geodesic orbit.</p>
+
+<p>It follows by (2.8) and (2.2) that since the speed of P is constant, the time dilation determined by the effect of relative speed alone is</p>
+
+$$\tau = \sqrt{1 - \frac{GM}{rc^2}}\; t \tag{2.9}$$
+
+<p>In (2.9), τ is the proper time as recorded by P's clock and <em>t</em> is the same passage of time as recorded by an 'external' observer, far away from the orbit of P. The time <em>t</em> is referred to as deep space time (DST) in POAMS. [17] It follows by (2.9) that the closer P is to the mass <em>M</em>, the greater the time dilation effect. In other words, clocks on circular geodesics further away from the mass <em>M</em> run faster than clocks nearer to <em>M</em>, relative to DST. Clearly, <em>r</em> cannot approach 0 in (2.9); it is necessary that $r > GM/c^2$. The constant $GM/c^2$ is much smaller than the radius of any stable star or planet, so that there is no problem in applying (2.9) in general. This equation is, of course, exactly the result obtained by Special Relativity when applied to Newtonian circular orbits.</p>
+
+<p>Consider now the general case of a particle P orbiting a body of mass <em>M</em>, situated at the origin O of a plane polar coordinate system. As in Newtonian theory, the first integral of P's equation of motion, (2.6), is</p>
+
+$$\left(\frac{dr}{dt}\right)^2 + \frac{L^2}{m^2 r^2} = \frac{2GM}{r} + K \tag{2.10}$$
+
+<p>where <em>K</em> is a constant of integration, and the orbital speed of P is given by</p>
+
+$$v^2 = \left(\frac{dr}{dt}\right)^2 + r^2\!\left(\frac{d\theta}{dt}\right)^2 \tag{2.11}$$
+
+<p>Then substituting (2.11) and (2.5) into (2.2) and using (2.10) gives</p>
+
+$$\tau = \int \sqrt{1 - \frac{2GM}{rc^2} - \frac{K}{c^2}}\; dt \tag{2.12}$$
+
+<p>Equation (2.12) gives the proper time as recorded by a clock traveling with a freely moving particle P in its closed orbit about the mass <em>M</em>, relative to DST, only taking into account effects due to the relative speed of P. Since the orbit of P is assumed to be closed, <em>K</em> is necessarily negative in (2.12). It follows that the maximum possible time dilation effect predicted by (2.12) occurs as $K \to 0$. This extreme case represents 'up and down movement' along a straight line and here the prediction of (2.12) is supported by evidence provided by the Pound-Rebka experiments. [17]</p>
+
+<!-- ===== SECTION 3 ===== -->
 <h2>3. True Orbital Time Dilation</h2>
-<p>The preceding section essentially addresses time dilation effects in orbital motion due to velocity effects alone and the results, at least mathematically, are the same as those predicted by applying Special Relativity to Newtonian orbits. However, equations (2.9) and (2.12) cannot provide the complete answer. For although at first sight these equations seem take account of the fact that P is in a particular orbit around the mass M due to considerations of conservation of angular momentum, the results only directly depend on the speed of P in its orbit and would apply equally well if P were traveling in a straight line with the same speed v. Hence, these equations do not take into account the fact that the geodesics in POAMS are not straight lines. This can been seen mathematically, since (2.9) and (2.12) are equivalent to (2.2) and it was shown in the last section that (2.2) in turn is equivalent to (2.3), the metric for Minkowski space-time. The geodesics in Minkowski space-time are straight lines. If (2.9) and (2.12) are applied to the closed orbits in POAMS, the implication is that those orbits are constrained in some way and are not the geodesics of the underlying mathematical structure. Hence, POAMS predicts that true orbital time dilation is due not only to velocity effects but also to effects determined by the nature of the paths of freely moving particles. Consider once again an isolated system consisting of a particle P orbiting a mass M situated at the origin of a plane polar coordinate system. The key to understanding the true time dilation effect in the orbit of P comes from consideration of the simple case of a circular orbit. Recall that in POAMS, if P is freely moving in its circular orbit about M , then the proper time, τ, as recorded by a clock traveling with P, relative to DST t , taking only velocity effects into account, is given by (2.9), i.e. $\tau = \sqrt{1 - v^2/c^2}\; t = \sqrt{1 - GM/(rc^2)}\; t $\approx$ (1 - GM/(2rc^2))$</p>
-<p>$\\mathcal{M} = GM/c^2$ . Then by (2.8), (3.1) implies - c2 (d τ / dt )2 = -c 2 + v2 + a M c2 / r</p>
-<p>Then using (2.7) this equation becomes - c2d τ2 = -c 2 (1 - a M /r)dt 2 + r 2d θ2</p>
 
-<p>Equation (3.2) is the metric for a two-dimensional space-time that may be treated as a special case of the three-dimensional space-time with metric - c2d τ2 = -c 2 (1 - a M/ /r)dt 2 + B(r)dr 2 + r 2dθ2</p>
+<p>The preceding section essentially addresses time dilation effects in orbital motion due to velocity effects alone and the results, at least mathematically, are the same as those predicted by applying Special Relativity to Newtonian orbits. However, equations (2.9) and (2.12) cannot provide the complete answer. For although at first sight these equations seem to take account of the fact that P is in a particular orbit around the mass <em>M</em> due to considerations of conservation of angular momentum, the results only directly depend on the speed of P in its orbit and would apply equally well if P were traveling in a straight line with the same speed <em>v</em>. Hence, these equations do not take into account the fact that the geodesics in POAMS are not straight lines. This can be seen mathematically, since (2.9) and (2.12) are equivalent to (2.2) and it was shown in the last section that (2.2) in turn is equivalent to (2.3), the metric for Minkowski space-time. The geodesics in Minkowski space-time are straight lines. If (2.9) and (2.12) are applied to the closed orbits in POAMS, the implication is that those orbits are constrained in some way and are not the geodesics of the underlying mathematical structure. Hence, POAMS predicts that true orbital time dilation is due not only to velocity effects but also to effects determined by the nature of the paths of freely moving particles.</p>
 
-<p>when r is a constant. Just as (3.2) is equivalent to the time dilation formula for circular geodesics, so (3.3) must be equivalent to the time dilation formula for geodesics in general. It follows that the coefficient of dr 2 , i.e. B(r) , must be a function of r alone, since the central mass M is spherically symmetric and static. In order for circles satisfying (2.8) to be geodesics in space, we require that these circles are geodesics in the Riemannian manifold with metric (3.3). It follows by standard differential geometry (using the Euler-Lagrange equations of variational calculus [18]) that all geodesics in this structure must satisfy dt / d τ = α / c 2 (1 - a M r ) ,</p>
-<p>dθ / d τ = β / r 2</p>
-<p>(3.4a,b)</p>
-<p> dt  B′(r)  dr  + [ac 2 M / B(r)r 2 ]   + = B(r)  dτ   dτ  dτ</p>
-<p>d 2r</p>
-<p>(3.4c)</p>
-<p>2r  dr  2r  dθ  = B(r)  dτ  B(r)  dτ </p>
-<p>where α and β are constants and a dash denotes differentiation with respect to r . In the special case when r is a constant, (3.4c) reduces to (ac 2 M /2r 3 )(dt / d τ)2 = (d θ / d τ)2</p>
+<p>Consider once again an isolated system consisting of a particle P orbiting a mass <em>M</em> situated at the origin of a plane polar coordinate system. The key to understanding the true time dilation effect in the orbit of P comes from consideration of the simple case of a circular orbit. Recall that in POAMS, if P is freely moving in its circular orbit about <em>M</em>, then the proper time, τ, as recorded by a clock traveling with P, relative to DST <em>t</em>, taking only velocity effects into account, is given by (2.9), i.e.</p>
 
+$$\tau = \sqrt{1 - v^2/c^2}\; t = \sqrt{1 - GM/rc^2}\; t \approx (1 - GM/2rc^2)\,t$$
 
-<p>and so is independent of B. It then follows that for any circular orbit, since r is constant and (2.7) holds,</p>
-<p>ac 2 M /2r 3 = (dθ / dτ)2 (dτ / dt)2 ⇒ (dθ / dt)2 = v2 / r 2 = ac M /2r 3 ⇒</p>
-<p>Hence, in order for circular orbits given by (2.8) to be geodesics, a = 2 . Then by (3.1), the true proper time recorded by P's clock in its circular orbit relative to DST, taking into account not only effects due to relative speed but also the fact that P follows a geodesic, is given by $\tau = \sqrt{1 - 3GM/(rc^2)}\; t$</p>
-<p>It was demonstrated in the last Section that (3.6), i.e. (3.1) with a = 2 , which gives the proper time τ as recorded by a clock traveling with a particle P orbiting a central mass M on a circular geodesic, is equivalent to (3.2) with a = 2 , i.e. - c2d τ 2 = - c 2 (1 - 2 M / r )dt 2 + r 2d θ2</p>
+<p>where <em>v</em> is the constant speed of P, <em>r</em> is the radius of the orbit and <em>G</em> is a constant. We shall suppose that the mass <em>M</em> is spherically symmetric and static. Then any additional time dilation effect can depend only on <em>M</em> and the distance, <em>r</em>, of P from <em>M</em>. It is reasonable to suppose that any such additional effect is proportional to <em>M</em>/<em>r</em>, since, by (2.9), the closer P is to <em>M</em>, the greater the time dilation. Hence we postulate that the true proper time as recorded by P's clock relative to DST is given by</p>
 
-<p>v2 = ac 2 M /2r = aG M /2r</p>
+$$\tau = \sqrt{1 - \frac{GM}{rc^2} - \frac{aGM}{rc^2}}\; t \tag{3.1}$$
 
-<p>Note that it then follows that (3.4a) and (3.4b) are automatically satisfied. Equation (3.6) is the formula predicted by General Relativity for time dilation on a circular geodesic, except that r does not measure exactly the radial distance from the origin in that case. In General Relativity (3.6) is derived using a special case of the geodesic equations for the 'equatorial plane' of Schwarzschild space-time. [19] However, it should be appreciated here that in POAMS, (3.6) is derived only by adapting the time dilation formula of section one to circular geodesics in three-dimensional space and using classical differential geometry. This derivation does not depend on the existence of the Einstein field equations In General Relativity it is often stated that by comparing (3.6) and (2.9), it follows that even if P is stationary, the proper time as recorded on P's clock is $\tau = \sqrt{1 - 2GM/(rc^2)}\; t$</p>
-<p>so that this is the time dilation effect due to the 'gravitational effect' of the presence of the mass M alone. This makes no sense in POAMS, since the speed of P is zero if and only if r → ∞ and then τ = t . Rather, in POAMS, the formula (3.6) comes as a single package and is due simply to the fact that P is following a circular geodesic. Nevertheless, equations (3.6) and (2.9) taken together form the basis of calculations which clearly demonstrate that clocks in the Global Positioning Satellites in orbit around Earth run faster relative to Earth clocks by an amount that agrees with observations. [20]</p>
+<p>where <em>a</em> is a constant to be determined. It is convenient to let $\mathcal{M} = GM/c^2$. Then by (2.8), (3.1) implies</p>
+
+$$-c^2\!\left(\frac{d\tau}{dt}\right)^2 = -c^2 + v^2 + \frac{a\mathcal{M}c^2}{r}$$
+
+<p>Then using (2.7) this equation becomes</p>
+
+$$-c^2 d\tau^2 = -c^2(1 - a\mathcal{M}/r)\,dt^2 + r^2 d\theta^2 \tag{3.2}$$
+
+<p>Equation (3.2) is the metric for a two-dimensional space-time that may be treated as a special case of the three-dimensional space-time with metric</p>
+
+$$-c^2 d\tau^2 = -c^2(1 - a\mathcal{M}/r)\,dt^2 + B(r)\,dr^2 + r^2 d\theta^2 \tag{3.3}$$
+
+<p>when <em>r</em> is a constant. Just as (3.2) is equivalent to the time dilation formula for circular geodesics, so (3.3) must be equivalent to the time dilation formula for geodesics in general. It follows that the coefficient of $dr^2$, i.e. <em>B</em>(<em>r</em>), must be a function of <em>r</em> alone, since the central mass <em>M</em> is spherically symmetric and static. In order for circles satisfying (2.8) to be geodesics in space, we require that these circles are geodesics in the Riemannian manifold with metric (3.3). It follows by standard differential geometry (using the Euler-Lagrange equations of variational calculus [18]) that all geodesics in this structure must satisfy</p>
+
+$$\frac{dt}{d\tau} = \frac{\alpha}{c^2(1 - a\mathcal{M}/r)} \tag{3.4a}$$
+
+$$\frac{d\theta}{d\tau} = \frac{\beta}{r^2} \tag{3.4b}$$
+
+$$\frac{d^2 r}{d\tau^2} + \frac{ac^2\mathcal{M}}{2B(r)r^2}\!\left(\frac{dt}{d\tau}\right)^2 + \frac{B'(r)}{2B(r)}\!\left(\frac{dr}{d\tau}\right)^2 - \frac{r}{B(r)}\!\left(\frac{d\theta}{d\tau}\right)^2 = 0 \tag{3.4c}$$
+
+<p>where α and β are constants and a dash denotes differentiation with respect to <em>r</em>. In the special case when <em>r</em> is a constant, (3.4c) reduces to</p>
+
+$$\frac{ac^2\mathcal{M}}{2r^3}\!\left(\frac{dt}{d\tau}\right)^2 = \left(\frac{d\theta}{d\tau}\right)^2$$
+
+<p>and so is independent of <em>B</em>. It then follows that for any circular orbit, since <em>r</em> is constant and (2.7) holds,</p>
+
+$$\frac{ac^2\mathcal{M}}{2r^3} = \left(\frac{d\theta}{d\tau}\right)^2\!\left(\frac{d\tau}{dt}\right)^2 \;\Rightarrow\; \left(\frac{d\theta}{dt}\right)^2 = \frac{v^2}{r^2} = \frac{ac^2\mathcal{M}}{2r^3} \;\Rightarrow$$
+
+$$ v^2 = \frac{ac^2\mathcal{M}}{2r} = \frac{aGM}{2r} \tag{3.5}$$
+
+<p>Hence, in order for circular orbits given by (2.8) to be geodesics, $a = 2$. Then by (3.1), the true proper time recorded by P's clock in its circular orbit relative to DST, taking into account not only effects due to relative speed but also the fact that P follows a geodesic, is given by</p>
+
+$$\tau = \sqrt{1 - \frac{3GM}{rc^2}}\; t \tag{3.6}$$
+
+<p>Note that it then follows that (3.4a) and (3.4b) are automatically satisfied. Equation (3.6) is the formula predicted by General Relativity for time dilation on a circular geodesic, except that <em>r</em> does not measure exactly the radial distance from the origin in that case. In General Relativity (3.6) is derived using a special case of the geodesic equations for the 'equatorial plane' of Schwarzschild space-time. [19] However, it should be appreciated here that in POAMS, (3.6) is derived only by adapting the time dilation formula of section one to circular geodesics in three-dimensional space and using classical differential geometry. This derivation does not depend on the existence of the Einstein field equations.</p>
+
+<p>In General Relativity it is often stated that by comparing (3.6) and (2.9), it follows that even if P is stationary, the proper time as recorded on P's clock is</p>
+
+$$\tau = \sqrt{1 - \frac{2GM}{rc^2}}\; t$$
+
+<p>so that this is the time dilation effect due to the 'gravitational effect' of the presence of the mass <em>M</em> alone. This makes no sense in POAMS, since the speed of P is zero if and only if $r \to \infty$ and then $\tau = t$. Rather, in POAMS, the formula (3.6) comes as a single package and is due simply to the fact that P is following a circular geodesic. Nevertheless, equations (3.6) and (2.9) taken together form the basis of calculations which clearly demonstrate that clocks in the Global Positioning Satellites in orbit around Earth run faster relative to Earth clocks by an amount that agrees with observations. [20]</p>
+
+<!-- ===== SECTION 4 ===== -->
 <h2>4. The Schwarzschild Metric as a Consequence of Time Dilation</h2>
+
 <p>It was shown in Section 2 that the time dilation formula (2.2) is equivalent to the metric for Minkowski space-time, the underlying mathematical structure for Special Relativity. This Section demonstrates that, in the same way, it is possible to construct the Schwarzschild metric in General Relativity, which describes the space-time surrounding a spherically symmetric and static body, from consideration of the proper time recorded by clocks travelling along the geodesics in POAMS.</p>
-<p>where $\\mathcal{M} = GM/c^2$ , t is DST, r is the radius of P's orbit and θ is the angular coordinate as before. This metric, in turn, is a special case of the metric</p>
-<p>-c2dτ2 = -c2 (1 - 2 M / r )dt 2 + B(r )dr 2 + r 2dθ2</p>
 
-<p>for a three-dimensional space-time, where r is no longer constant. The coefficient B(r) depends only on r if the central mass M is spherically symmetric and static. The function B(r) is now determined by the fact that the geodesics in this Riemannian manifold must give rise to geodesics in space that are ellipses, or at least almost ellipses, as dictated by Newtonian theory, POAMS and observation. The geodesics for the manifold with metric (4.1) are given by equations (3.4) with a = 2 . It also follows from the metric (4.1) that along any geodesic,</p>
-<p> dt   dr   dθ  c2 (1 - 2 M /r)   - B(r)   - r 2   = c 2 ⇒  dτ   dτ   dτ </p>
-<p> dt   dτ   dr  c 2 (1 - 2 c2M /r)     - B(r)   - r 2 dτ dθ      dθ  = c 2 (dτ / dθ)2</p>
+<p>It was demonstrated in the last Section that (3.6), i.e. (3.1) with $a = 2$, which gives the proper time τ as recorded by a clock traveling with a particle P orbiting a central mass <em>M</em> on a circular geodesic, is equivalent to (3.2) with $a = 2$, i.e.</p>
+
+$$-c^2 d\tau^2 = -c^2(1 - 2\mathcal{M}/r)\,dt^2 + r^2 d\theta^2$$
+
+<p>where $\mathcal{M} = GM/c^2$, <em>t</em> is DST, <em>r</em> is the radius of P's orbit and θ is the angular coordinate as before. This metric, in turn, is a special case of the metric</p>
+
+$$-c^2 d\tau^2 = -c^2(1 - 2\mathcal{M}/r)\,dt^2 + B(r)\,dr^2 + r^2 d\theta^2 \tag{4.1}$$
+
+<p>for a three-dimensional space-time, where <em>r</em> is no longer constant. The coefficient <em>B</em>(<em>r</em>) depends only on <em>r</em> if the central mass <em>M</em> is spherically symmetric and static. The function <em>B</em>(<em>r</em>) is now determined by the fact that the geodesics in this Riemannian manifold must give rise to geodesics in space that are ellipses, or at least almost ellipses, as dictated by Newtonian theory, POAMS and observation. The geodesics for the manifold with metric (4.1) are given by equations (3.4) with $a = 2$. It also follows from the metric (4.1) that along any geodesic,</p>
+
+$$c^2(1 - 2\mathcal{M}/r)\!\left(\frac{dt}{d\tau}\right)^2 - B(r)\!\left(\frac{dr}{d\tau}\right)^2 - r^2\!\left(\frac{d\theta}{d\tau}\right)^2 = c^2$$
+
 <p>Then from Eqs. (3.4a) and (3.4b) it follows that</p>
-<p>α2r 4</p>
-<p> dr  c 2r 4 - B(r )(1 - 2 M / r )   - r 2 (1 - 2 M / r ) = (1 - 2 M / r )  dθ  β 2c 2 β2</p>
-<p>Letting r - 1 / u so that dr / dθ = -u -2du / dθ =, then gives</p>
-<p> du  uc 2 + 2 M u3 + u2 = K * + 2 M B(u)(1 - 2 M u)    dθ  β2</p>
 
-<p>where K * = (α2 / c 2 - c 2 ) / β2 . Eq. (4.3) is the equation of any geodesic in POAMS for which r and θ is not constant and so describes any non-circular geodesic. The term 2M u3 in (4.2) is almost negligible for planetary orbits or satellites orbiting planets. For example, in the case of a satellite orbiting the Earth at a distance r = 3 × 107 meters, 2M u3 ≈ 3 × 10-25. *</p>
-<p>Hence, letting</p>
-<p>K = Km / L and β = L / m , (4.2) is very nearly</p>
-<p> du  2GMm 2 + u2 = u + Km 2 / L2 B(u)(1 - 2 M u)    dθ  L2</p>
+$$\frac{\alpha^2 r^4}{\beta^2 c^2(1-2\mathcal{M}/r)} - B(r)(1-2\mathcal{M}/r)\!\left(\frac{dr}{d\theta}\right)^2 - r^2(1-2\mathcal{M}/r) = \frac{c^2 r^4}{\beta^2}$$
 
-<p>Recall that in POAMS, the geodesics, if closed orbits, must be ellipses determined by (2.10). As in Newtonian theory, letting u = 1 / r in (2.10) gives</p>
+<p>Letting $u = 1/r$ so that $dr/d\theta = -u^{-2}\,du/d\theta$, then gives</p>
 
-<p> du  2GMm 2 u + Km 2 / L2 + u =  dθ    L2</p>
+$$B(u)(1 - 2\mathcal{M}u)\!\left(\frac{du}{d\theta}\right)^2 + u^2 = K^* + \frac{2\mathcal{M}c^2 u}{\beta^2} + 2\mathcal{M}u^3 \tag{4.2}$$
 
-<p>Equation (4.3) reduces to (4.4) if and only if B(u) = (1 - 2 M u)-1 and hence the metric (4.1) must read -c2dτ2 = -c2 (1 - 2 M /r)dt 2 + (1 - 2 M /r)-1 dr 2 + r 2dθ2</p>
+<p>where $K^* = (\alpha^2/c^2 - c^2)/\beta^2$. Eq. (4.2) is the equation of any geodesic in POAMS for which <em>r</em> and θ is not constant and so describes any non-circular geodesic. The term $2\mathcal{M}u^3$ in (4.2) is almost negligible for planetary orbits or satellites orbiting planets. For example, in the case of a satellite orbiting the Earth at a distance $r = 3 \times 10^7$ meters, $2\mathcal{M}u^3 \approx 3 \times 10^{-25}$.</p>
 
-<p>This is the metric for the 'equatorial plane' of Schwarzschild space-time as derived in General Relativity. [21] However, again in contrast to General Relativity, (4.5) is derived here ultimately as a natural consequence of conservation of angular momentum together with considerations of time dilation, rather than as a solution of the Einstein field equations. Also, it must be remembered that in POAMS, it makes no sense to talk about 'null geodesics' as 'paths of light signals'. The metric (4.5) refers only to the paths of material particles; there is no corresponding metric for 'paths of light signals'. Notice also that since (4.5) is derived from the time dilation formula for circular motion, i.e. (3.7), it follows that r &gt; 3 M in (4.5). Hence, in contrast to General Relativity, in POAMS it is not possible to extrapolate and apply (4.5) to 'gravitational collapse' to obtain pathological 'space-time singularities'. With B(u) = (1 - 2 M u)-1 , the associated equation for general freely moving particle motion (4.2) becomes</p>
-<p> du  *  dθ  + u = K + 2 M c u / β + 2 M u  </p>
+<p>Hence, letting $K^* = Km^2/L^2$ and $\beta^2 = L^2/m^2$, (4.2) is very nearly</p>
 
-<p>which, of course, is the same as in General Relativity. It is this equation that provides a simplified model of planetary and satellite orbits, with the term in 2M u3 predicting a perihelion shift in planetary motion, which agrees with all observational evidence. [22] It must be remembered that POAMS does not begin by postulating that all geodesic orbits are elliptical. Rather, POAMS postulates that all motion is orbital and that angular momentum is conserved. For initial simplicity, if it is assumed that in any isolated two-body system orbits are closed, then Bertrand's theorem gives (2.6) as the equation of motion and, as a consequence, geodesic orbits are ellipses. However, once time dilation effects are taken into consideration, POAMS predicts, just as in General Relativity, that the geodesic orbits are given by (4.6). In this case, the corresponding geodesic orbits are approximately ellipses with a small perihelion shift, and so are no longer</p>
-<p>closed.</p>
-<p>Letting</p>
-<p>u = 1/ r ,</p>
-<p>K * = Km2 / L2</p>
-<p>and</p>
-<p>β = L / m in (4.6) and using (2.5) gives</p>
-<p>d 2 r / dt 2 - r(dθ / dt)2 = -GML2 / c 2m 2 r 4</p>
-<p>This is an equation of the form (2.4), which agrees with the fundamental postulates of POAMS, and in particular, angular momentum is conserved, but where now h(r) = GM / r 2 + 3GML2 / c 2m 2r 4</p>
+$$B(u)(1 - 2\mathcal{M}u)\!\left(\frac{du}{d\theta}\right)^2 + u^2 = \frac{2GMm^2}{L^2}\,u + \frac{Km^2}{L^2} \tag{4.3}$$
 
-<p>and not h(r) = GM / r 2 as dictated by Bertrand's theorem for closed orbits. The second term in h(r) here represents the correction term that takes time dilation into consideration.</p>
+<p>Recall that in POAMS, the geodesics, if closed orbits, must be ellipses determined by (2.10). As in Newtonian theory, letting $u = 1/r$ in (2.10) gives</p>
+
+$$\left(\frac{du}{d\theta}\right)^2 + u^2 = \frac{2GMm^2}{L^2}\,u + \frac{Km^2}{L^2} \tag{4.4}$$
+
+<p>Equation (4.3) reduces to (4.4) if and only if $B(u) = (1 - 2\mathcal{M}u)^{-1}$ and hence the metric (4.1) must read</p>
+
+$$-c^2 d\tau^2 = -c^2(1 - 2\mathcal{M}/r)\,dt^2 + (1 - 2\mathcal{M}/r)^{-1}\,dr^2 + r^2 d\theta^2 \tag{4.5}$$
+
+<p>This is the metric for the 'equatorial plane' of Schwarzschild space-time as derived in General Relativity. [21] However, again in contrast to General Relativity, (4.5) is derived here ultimately as a natural consequence of conservation of angular momentum together with considerations of time dilation, rather than as a solution of the Einstein field equations. Also, it must be remembered that in POAMS, it makes no sense to talk about 'null geodesics' as 'paths of light signals'. The metric (4.5) refers only to the paths of material particles; there is no corresponding metric for 'paths of light signals'. Notice also that since (4.5) is derived from the time dilation formula for circular motion, i.e. (3.6), it follows that $r > 3\mathcal{M}$ in (4.5). Hence, in contrast to General Relativity, in POAMS it is not possible to extrapolate and apply (4.5) to 'gravitational collapse' to obtain pathological 'space-time singularities'.</p>
+
+<p>With $B(u) = (1 - 2\mathcal{M}u)^{-1}$, the associated equation for general freely moving particle motion (4.2) becomes</p>
+
+$$\left(\frac{du}{d\theta}\right)^2 + u^2 = K^* + \frac{2\mathcal{M}c^2 u}{\beta^2} + 2\mathcal{M}u^3 \tag{4.6}$$
+
+<p>which, of course, is the same as in General Relativity. It is this equation that provides a simplified model of planetary and satellite orbits, with the term in $2\mathcal{M}u^3$ predicting a perihelion shift in planetary motion, which agrees with all observational evidence. [22]</p>
+
+<p>It must be remembered that POAMS does not begin by postulating that all geodesic orbits are elliptical. Rather, POAMS postulates that all motion is orbital and that angular momentum is conserved. For initial simplicity, if it is assumed that in any isolated two-body system orbits are closed, then Bertrand's theorem gives (2.6) as the equation of motion and, as a consequence, geodesic orbits are ellipses. However, once time dilation effects are taken into consideration, POAMS predicts, just as in General Relativity, that the geodesic orbits are given by (4.6). In this case, the corresponding geodesic orbits are approximately ellipses with a small perihelion shift, and so are no longer closed.</p>
+
+<p>Letting $u = 1/r$, $K^* = Km^2/L^2$ and $\beta^2 = L^2/m^2$ in (4.6) and using (2.5) gives</p>
+
+$$\frac{d^2 r}{dt^2} - r\!\left(\frac{d\theta}{dt}\right)^2 = -\frac{GM}{r^2} - \frac{3GML^2}{c^2 m^2 r^4}$$
+
+<p>This is an equation of the form (2.4), which agrees with the fundamental postulates of POAMS, and in particular, angular momentum is conserved, but where now</p>
+
+$$h(r) = \frac{GM}{r^2} + \frac{3GML^2}{c^2 m^2 r^4}$$
+
+<p>and not $h(r) = GM/r^2$ as dictated by Bertrand's theorem for closed orbits. The second term in <em>h</em>(<em>r</em>) here represents the correction term that takes time dilation into consideration.</p>
+
+<!-- ===== SECTION 5 ===== -->
 <h2>5. Conclusions</h2>
-<p>All the keys, it is said, hang not at one man's girdle. Science has always been a search for conceptual keys to fit nature, with the ideal end-aim, as some scientists have projected it, of finding or producing just one master key that will fit all the locks. So much larger than man, however, is nature that the aim of producing just one 'Key to the Universe' - or 'Theory of Everything', as it has been called - is undoubtedly a vain hope of scientific achievement during mankind's stay on this planet. Nevertheless, there have been keys that have been superior to others in the sense that they open far more doors into an understanding of nature than others do. This historic door-opening process has produced theories such as those of Galileo, Newton, Faraday, Maxwell, Lorentz, Einstein … <em>et al.</em>; and the fact that these illustrious people have so spectacularly done what they did cannot mean that there is no more to do. So the search for new keys must continue; and if that search is not to stultify into oblivion, then it is plain that no locksmith, however successful his efforts in opening-up some particular sector of understanding, should be allowed to monopolize the overall operation by restricting the use of any key but his own particular one. Others must be allowed to continue the venture in their own particular ways, and there is more than enough room in Nature for many very different lateral-thinking efforts. In the same way, then, that Einstein's and Bohr's theoretical keys fitted the separate locks of Relativity and Quantum theory but were not able to be used on each other, POAMS seeks to advance the cause of science by providing a key designed to fit both [12]. In this paper, this POAMS key has been found to fit the locks of phenomena in areas of both Special and General Relativity, by pure syllogistic in the anti-metaphysical manner described. The way POAMS does this is to adopt, as a starting point what Duffy identifies as the 'third alternative'. This, as already stated, is a radical empiricism, the strand of scientific philosophy that has been historically labeled 'phenomenalism'. This approach eschews theoretical approaches to science that postulate causal influences and processes going on in the vacuum. Such purely imaginary or metaphysical processes are, for example, Newton's straight-line rectilinear motion, which nowhere can be observed; the underlying and invisible 'fieldforces' assumed responsible for the phenomenon of orbital motion, and Einstein's completely unnecessary 'constant speed of light relative to a vacuum'. As soon as we abandon our current scholastic obsession with these particular 'keys' to our understanding of relativity and its connection with orbital motion, we are no longer blinded to the fact that at least some of the doors to nature need no more such keys because they are, as they have always been, already standing observationally wide-open. This, for those who are prepared to credit it, has been demonstrated in this paper, namely that far from needing more and more new theories to explain physical phenomena, it may well eventually</p>
 
+<p>All the keys, it is said, hang not at one man's girdle. Science has always been a search for conceptual keys to fit nature, with the ideal end-aim, as some scientists have projected it, of finding or producing just one master key that will fit all the locks. So much larger than man, however, is nature that the aim of producing just one 'Key to the Universe' – or 'Theory of Everything', as it has been called – is undoubtedly a vain hope of scientific achievement during mankind's stay on this planet. Nevertheless, there have been keys that have been superior to others in the sense that they open far more doors into an understanding of nature than others do. This historic door-opening process has produced theories such as those of Galileo, Newton, Faraday, Maxwell, Lorentz, Einstein … et al.; and the fact that these illustrious people have so spectacularly done what they did cannot mean that there is no more to do.</p>
 
-<p>transpire that the phenomena themselves are both logically and mathematically self-explanatory.</p>
-<h2>Notes and References</h2>
-<p>[1] N. V. Pope and A. D. Osborne, "A New Approach to Special Relativity", <em>Int. J. Math. Educ. Sci. Tech.</em>, 18, 2, 191–198 (1987). Also accessible in the Seminal Publications section of the POAMS website <a href="http://www.poams.org">www.poams.org</a>.</p>
+<p>So the search for new keys must continue; and if that search is not to stultify into oblivion, then it is plain that no locksmith, however successful his efforts in opening-up some particular sector of understanding, should be allowed to monopolize the overall operation by restricting the use of any key but his own particular one. Others must be allowed to continue the venture in their own particular ways, and there is more than enough room in Nature for many very different lateral-thinking efforts.</p>
+
+<p>In the same way, then, that Einstein's and Bohr's theoretical keys fitted the separate locks of Relativity and Quantum theory but were not able to be used on each other, POAMS seeks to advance the cause of science by providing a key designed to fit both [12]. In this paper, this POAMS key has been found to fit the locks of phenomena in areas of both Special and General Relativity, by pure syllogistic in the anti-metaphysical manner described.</p>
+
+<p>The way POAMS does this is to adopt, as a starting point what Duffy identifies as the 'third alternative'. This, as already stated, is a radical empiricism, the strand of scientific philosophy that has been historically labeled 'phenomenalism'. This approach eschews theoretical approaches to science that postulate causal influences and processes going on in the vacuum. Such purely imaginary or metaphysical processes are, for example, Newton's straight-line rectilinear motion, which nowhere can be observed; the underlying and invisible 'field-forces' assumed responsible for the phenomenon of orbital motion, and Einstein's completely unnecessary 'constant speed of light relative to a vacuum'. As soon as we abandon our current scholastic obsession with these particular 'keys' to our understanding of relativity and its connection with orbital motion, we are no longer blinded to the fact that at least some of the doors to nature need no more such keys because they are, as they have always been, already standing observationally wide-open. This, for those who are prepared to credit it, has been demonstrated in this paper, namely that far from needing more and more new theories to explain physical phenomena, it may well eventually transpire that the phenomena themselves are both logically and mathematically self-explanatory.</p>
+
+<!-- ===== REFERENCES ===== -->
+<h2>References</h2>
+<div class="references">
+<p>[1] N.V. Pope and A.D Osborne, "A New Approach to Special Relativity", <em>Int. J. Math. Educ. Sci. Tech.</em>, 18, 2, 191–198 (1987). Also accessible at <a href="http://www.poams.org">www.poams.org</a>.</p>
 <p>[2] See for example, W. Rindler, <em>Introduction to Special Relativity</em> (Clarendon Press, Oxford, 1982).</p>
 <p>[3] For those to whom this term may be unfamiliar, a syllogism, in the simplest case, is a valid deductive argument having two premises linked by a middle term, leading to a conclusion that it is impossible to deny without contradiction.</p>
 <p>[4] In correspondence with the second author in 1985, Bondi stated 'As regard your "New Approach to Special Relativity", I am in broad sympathy, both with your arguments and your conclusion.'</p>
 <p>[5] H. Bondi, <em>Assumption and Myth in Physical Theory</em>, p. 28 (Cambridge University Press, 1965).</p>
 <p>[6] This new philosophy is described in full on the POAMS website <a href="http://www.poams.org">www.poams.org</a>.</p>
-<p>[7] T. Mautner, <em>The Penguin Dictionary of Philosophy</em>, pp. 166–167 (Penguin, 1997).</p>
+<p>[7] T. Mautner, <em>The Penguin Dictionary of Philosophy</em>, pp. 166–167 (Penguin 1997).</p>
 <p>[8] N. V. Pope and A. D. Osborne, "Instantaneous Relativistic Action-at-a-Distance", <em>Phys. Essays</em> 5, 409–421 (1992).</p>
 <p>[9] The PIRT conferences are held under the auspices of BSPS (the British Society for the Philosophy of Science).</p>
-<p>[10] E. Mach, preface to <em>Die Prinzipien der physikalischen Optik. Historisch und erkenntnispsychologisch entwickelt</em> (Barth, 1921).</p>
-<p>[11] This principle was first formulated in this form by our colleague, Jon Blay.</p>
-<p>[12] A. D. Osborne and N. V. Pope, 'An Angular Momentum Synthesis of "Gravitational" and "Electrostatic" Forces', <em>Galilean Electrodynamics</em>, 14, Special Issues 1, 9–19 (2003).</p>
-<p>[13] N. V. Pope and A. D. Osborne, <em>art. cit.</em>, 409–412 (1992).</p>
-<p>[14] N. V. Pope and A. D. Osborne, "Instantaneous Gravitational and Inertial Action-at-a-Distance", <em>Phys. Essays</em> 8, 384–397 (1995). See also the Seminal Publications section of the POAMS website <a href="http://www.poams.org">www.poams.org</a>.</p>
+<p>[10] E. Mach, preface to <em>Die Prinzipien der physikalischen Optik. Historisch und erkenntnis-psychologisch entwickelt</em> (Barth, 1921).</p>
+<p>[11] Viv Pope, <em>The Eye of the Beholder: The Role of the Observer in Modern Physics</em>, p. 32 (Phi Philosophical Enterprises, Swansea, 2004).</p>
+<p>[12] A. D. Osborne and N. V. Pope, "An Angular Momentum Synthesis of 'Gravitational' and 'Electrostatic' Forces", <em>Galilean Electrodynamics</em>, 14, Special Issues 1, 9–19 (2003).</p>
+<p>[13] N. V. Pope and A. D. Osborne, art. cit. 409–412 (1992).</p>
+<p>[14] N. V. Pope and A. D. Osborne, "Instantaneous Gravitational and Inertial Action-at-a-Distance", <em>Phys. Essays</em> 8, 384–397 (1995). See also <a href="http://www.poams.org">www.poams.org</a>.</p>
 <p>[15] Y. Tikochinsky, <em>Amer. Journal of Phys.</em>, 56, 12 (1988).</p>
 <p>[16] S. W. McCuskey, <em>An Introduction to Advanced Dynamics</em>, pp. 85–90 (Addison-Wesley, Reading, 1959).</p>
-<p>[17] Viv Pope, <em>The Eye of the Beholder: The Role of the Observer in Modern Physics</em>, p. 32 (Phi Philosophical Enterprises, Swansea, 2004).</p>
+<p>[17] N. V. Pope and A. D. Osborne, "Instantaneous Gravitational and Inertial Action-at-a-Distance", <em>Phys. Essays</em> 8, 384–397 (1995). See also <a href="http://www.poams.org">www.poams.org</a>.</p>
 <p>[18] See, for example, B. Spain, <em>Tensor Calculus</em>, pp. 38–41 (Oliver and Boyd, 1953).</p>
 <p>[19] J. Foster and J. D. Nightingale, <em>A Short Course in General Relativity</em>, pp. 86–89, 105–112 (Longman, 1979).</p>
-<p>[20] C. O. Alley and T. Van Flandern, Briefing Document: "Absolute GPS to better than one meter".</p>
-<p>[21] <em>Op. cit.</em> reference 19, pp. 86–89.</p>
-<p>[22] <em>Op. cit.</em> reference 19, pp. 115–117.</p>
+<p>[20] C. O. Alley and T. Van Flandern, Briefing Document: "Absolute GPS to better than one meter", available at <a href="http://metaresearch.org/solar%20system/gps/absolute-gps1meter.asp">metaresearch.org</a>.</p>
+<p>[21] Op cit reference 19, pp 86–89.</p>
+<p>[22] Op cit reference 19, pp 115–117.</p>
+</div>
 
 </main>
-<script>
-if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
-document.addEventListener('keydown',e=>{
-  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
-});
-</script>
+<script>if(localStorage.getItem('theme')==='light')document.body.classList.add('light');</script>
 </body>
 </html>
