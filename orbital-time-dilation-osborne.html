@@ -447,7 +447,7 @@ $$h(r) = \frac{GM}{r^2} + \frac{3GML^2}{c^2 m^2 r^4}$$
 $$\tau = \int \sqrt{1 - \frac{2GM}{rc^2} - \frac{v^2}{c^2}}\; dt$$
 
 <div class="exhibit-row">
-  <div><canvas id="ellipCanvas" width="400" height="400"></canvas></div>
+  <div><canvas id="ellipCanvas" width="400" height="400" style="width:100%;max-width:500px;height:auto;aspect-ratio:1/1;"></canvas></div>
   <div class="exhibit-col">
     <div class="controls-area">
       <label>Eccentricity: <span id="ellipEVal">0.60</span></label>
@@ -501,9 +501,10 @@ $$\tau = \int \sqrt{1 - \frac{2GM}{rc^2} - \frac{v^2}{c^2}}\; dt$$
     requestAnimationFrame(frame);
     if(!lastTime){lastTime=ts;return}
     let dt=(ts-lastTime)/1000;lastTime=ts;if(dt>0.1)dt=0.1;
-    const rect=cv.getBoundingClientRect(),W=rect.width,H=W;
+    const rect=cv.getBoundingClientRect(),W=Math.min(rect.width||400,500),H=W;
     const dpr=window.devicePixelRatio||1;
-    if(cv.width!==W*dpr){cv.width=W*dpr;cv.height=W*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+    const tW=Math.round(W*dpr),tH=Math.round(H*dpr);
+    if(cv.width!==tW){cv.width=tW;cv.height=tH;ctx.setTransform(dpr,0,0,dpr,0,0)}
     const cxC=W/2,cyC=H/2,a=(0.15+aFrac*0.25)*W;
     const n=0.4*speedMul;
     if(playing){
@@ -733,7 +734,7 @@ $$v^2_{\text{geo}} = \frac{a\,GM}{2r}, \qquad v^2_{\text{orb}} = \frac{GM}{r}$$
 $$\left(\frac{du}{d\theta}\right)^{\!2} + u^2 = K^* + \frac{2\mathcal{M}c^2}{\beta^2}\,u + 2\mathcal{M}\,u^3$$
 
 <div class="exhibit-row">
-  <div><canvas id="precCanvas" width="420" height="420" style="width:100%;aspect-ratio:1;background:#12121f;border:1px solid #2a2a4a;border-radius:8px"></canvas></div>
+  <div><canvas id="precCanvas" width="420" height="420" style="width:100%;max-width:600px;aspect-ratio:1;background:#12121f;border:1px solid #2a2a4a;border-radius:8px"></canvas></div>
   <div class="exhibit-col">
     <div class="controls-area">
       <label>Precession strength: <span id="precPVal" style="color:var(--accent)">1.00×</span></label>
@@ -776,7 +777,7 @@ $$\left(\frac{du}{d\theta}\right)^{\!2} + u^2 = K^* + \frac{2\mathcal{M}c^2}{\be
     du+=dtheta/6*(k1du+2*k2du+2*k3du+k4du);
     theta+=dtheta;
   }
-  function resize(){const rect=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;cv.width=rect.width*dpr;cv.height=rect.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  function resize(){const rect=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1,w=Math.min(rect.width||420,600),h=Math.min(rect.height||420,600);cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
   function toScreen(r,a){const{ecc}=getParams();const rect=cv.getBoundingClientRect(),w=rect.width,h=rect.height;const maxR=1/(1-ecc)*1.15,scale=Math.min(w,h)*0.42/maxR;return[w/2+r*Math.cos(a)*scale,h/2-r*Math.sin(a)*scale]}
 
   function update(){
