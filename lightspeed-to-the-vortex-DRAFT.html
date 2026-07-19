@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>From Lightspeed to the Vortex — DRAFT</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+.light {
+  --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 16px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+
+.subtitle { color: var(--accent2); font-size: 1.15rem; font-style: italic; margin: 0.2rem 0 1rem; line-height:1.35; }
+.draft-banner { background: var(--blockquote-bg); border:1px solid var(--accent); border-radius:6px;
+  padding:0.5rem 0.9rem; margin:0 0 1.5rem; font-size:0.85rem; color:var(--accent2); }
+sup, .fnref { color: var(--accent); }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">&#127769;</button>
+<main>
+<a class="back-link" href="index.html">&larr; Back to Papers</a>
+<div class="draft-banner">Working draft &mdash; unlinked, not in the index. For review before publication.</div>
+<h1>From Lightspeed to the Vortex</h1>
+<div class="subtitle">A Condensed Restatement of the Pope–Osborne Angular Momentum Synthesis, with the Recruitment Correction and its Single-Vortex Form</div>
+<div class="meta">C. F. Milam, after N. V. Pope &amp; A. D. Osborne &middot; DRAFT 2026-07-18 &middot; not for circulation</div>
+<h3 id="abstract">Abstract</h3>
+<p>Osborne and Pope’s <em>Light-Speed, Gravitation and Quantum Instantaneity</em> (2007) derives the whole verified content of Special and General Relativity, the hydrogen spectrum, and the dissolution of electrostatic “charge” from <strong>two moves only</strong>: (i) the constant <em>c</em> is a dimensional conversion factor between the units of observed distance and time, not a speed; and (ii) all free motion is a manifestation of angular momentum, which is holistically conserved. We give a condensed statement of that programme, then make one correction the book did not carry through — the treatment of an extended spinning body as a <em>single</em> angular-momentum accumulator — and re-express the whole scheme in the single-vortex ontology of Normal Realism, in which orbital angular momentum is the <strong>winding</strong> of a closed vortex and spin is its <strong>twist</strong>. The correction identifies precisely <strong>when and where</strong> the sign of a spin-dependent weight change survives or is lost (the swamping crossover, ρ = K_s/K₀), and shows that an extended body recruits a fraction of its ~10²²–10²⁴ internal accumulators into coherent alignment, so that its effective spin energy far exceeds the rigid-body value. We keep to the book wherever the book speaks; we mark every departure.</p>
+<hr />
+<h2 id="the-two-moves-and-the-cascade-forced">1. The two moves and the cascade <strong>[FORCED]</strong></h2>
+<p><strong>Move 1 — <em>c</em> is a conversion factor.</strong> (Ch. 2.) Observed distance and observed duration are both measured, ultimately, in units of time (the metre is a light-second divided by <em>c</em>). Writing the three spatial dimensions in seconds via <em>c</em> makes the world four-dimensional in a single unit, and a “speed” acquires a geometric length in seconds. Relativistic time-dilation is then nothing but Pythagoras’ theorem on that four-dimensional measure (Ch. 3): a clock in relative motion traces the hypotenuse; its proper time is the adjacent side,
+<span class="math display">\[\tau = \left(1 - v^2/c^2\right)^{1/2} t. \tag{1}\]</span>
+There is no ether, no light “travelling,” no photon in flight — light is the information by which distant events are registered, instantaneous in proper time and delayed only in observer time (the cone model, Ch. 3).</p>
+<p><strong>Move 2 — angular momentum is the sole agency.</strong> (Ch. 6.) No free body is ever observed to move in an unbounded straight line; all free motion is curved. Osborne and Pope take this at face value: natural motion is <em>orbital</em>, a manifestation of angular momentum, and angular momentum is holistically conserved. Newton’s <em>in vacuo</em> gravitational force is then as redundant as the ether. Requiring that some natural orbits close forces the radial law to inverse-square (Bertrand’s theorem), recovering the Newtonian orbit <strong>without</strong> a force in the void.</p>
+<p><strong>The cascade.</strong> From these two, in order: the Lorentz transformation and <span class="math inline">\(E=mc^2\)</span> (Ch. 4, <span class="math inline">\(c^2\)</span> a mass–energy conversion factor); the Balmer–Rydberg spectrum from the atom as a quantum accumulator with fundamental mass unit <span class="math inline">\(m^\ast = hR/c\)</span> (Ch. 5); the <strong>Schwarzschild metric with no field equations</strong> — only time-dilation plus the postulate that natural circular orbits are geodesics (Ch. 8), yielding Mercury’s perihelion advance (43.03″/century) and starlight deflection (1.75″, as refraction through the corona, not a bent photon); and finally the refusal of black holes, the Big Bang, and dark matter as extrapolations of the metric beyond its warrant (Ch. 9), with the galactic “missing mass” reinterpreted as neglected <strong>spin</strong> angular momentum and a correspondingly variable <em>G</em> — the position independently reached by Milgrom’s MOND.</p>
+<p>The rest of this paper concerns the hinge of Chapters 6–7: <strong>weight, and how spin changes it.</strong></p>
+<hr />
+<h2 id="weight-as-a-constraint-force-the-variable-g-forced">2. Weight as a constraint force; the variable <em>G</em> <strong>[FORCED]</strong></h2>
+<p>In the synthesis a body at rest on the ground is <strong>not</strong> in its natural state. Its natural (force-free) state is an orbit at some radius <span class="math inline">\(r_{\rm ff}\)</span> fixed by its angular momentum. The ground holds it off that orbit; the force required is what we measure as <strong>weight</strong>. Weight is therefore a real, measurable constraint force, not the pull of an <em>in vacuo</em> field (Ch. 6 §6.3). Add angular momentum and <span class="math inline">\(r_{\rm ff}\)</span> moves; the constraint force — the weight — changes with it. Osborne and Pope make this explicit: an eastward-moving mass (adding to Earth-frame angular momentum) weighs less; Anthony calls the limit <em>levitation</em>.</p>
+<p>For a body carrying both orbital and intrinsic (spin) angular momentum the relevant kinetic energy is the sum
+<span class="math display">\[\mathcal{K} = K_0 + K_s, \tag{2}\]</span>
+with <span class="math inline">\(K_0\)</span> orbital and <span class="math inline">\(K_s\)</span> spin. The equation of motion keeps its Newtonian form but with a <strong>variable</strong> coefficient <span class="math inline">\(\mathcal{G}\)</span> in place of the constant <span class="math inline">\(G\)</span> (Ch. 7 §7.3), <span class="math inline">\(\mathcal{G}\)</span> growing with the spin content. The sign is purely dynamical and we adopt it as canonical <strong>[FORCED, O2]</strong>:</p>
+<blockquote>
+<p><strong>spin parallel to orbital <span class="math inline">\(L\)</span></strong> ⇒ <span class="math inline">\(\mathcal{K}=K_0+K_s\)</span> ⇒ orbit contracts ⇒ <em>more strongly held</em> ⇒ <strong>heavier</strong>;
+<strong>spin anti-parallel</strong> ⇒ <span class="math inline">\(\mathcal{K}=K_0-K_s\)</span> ⇒ <strong>lighter</strong>.</p>
+</blockquote>
+<p>We retire the earlier “field-handedness / outward-thinning” language: it is only this same statement — whether the spin adds to or subtracts from the orbital sense — expressed less directly (see §5).</p>
+<hr />
+<h2 id="the-swamping-crossover-when-the-sign-survives-forced">3. The swamping crossover: when the sign survives <strong>[FORCED]</strong></h2>
+<p>The synthesis carries <strong>two</strong> effects of spin, not one. Beyond the directional <span class="math inline">\(\pm\)</span> of §2 there is a
+<em>sign-independent</em> <strong>magnitude</strong> effect: spin raises <span class="math inline">\(\mathcal{K}\)</span>, hence <span class="math inline">\(\mathcal{G}\)</span>, whichever way it points.
+Osborne and Pope state this explicitly in their own later correction of Chapter 7 — “the magnitude effect of
+spin alone, which is the same regardless of the direction” — and note it is “so minuscule … compared to the
+magnitude of the orbital angular [momentum]” for macroscopic bodies, yet “extremely large” for the electron
+(Pope, <em>A Critique of Modern Physics</em>, PIRT 2008, notes 3–4; the note there is offered expressly “as a
+correction of that 2007 text”). What follows only <strong>names the boundary</strong> between those two regimes.
+Define the ratio
+<span class="math display">\[\rho \equiv K_s / K_0. \tag{3}\]</span></p>
+<ul>
+<li><strong>Direction-sensitive regime, <span class="math inline">\(\rho \ll 1\)</span></strong> (Ch. 7 §7.5; the macroscopic spinning-body examples). Orbital energy dominates; spin is a <em>signed perturbation</em>: <span class="math inline">\(\mathcal{K}=K_0\pm K_s\)</span> gives a small but <strong>reversible, direction-dependent</strong> weight change. To leading order the fractional shift in the force-free radius, hence in weight, scales as
+<span class="math display">\[\frac{\Delta W}{W} \sim \pm\,\rho \qquad (\rho \ll 1). \tag{4}\]</span></li>
+<li><strong>Swamped regime, <span class="math inline">\(\rho \gg 1\)</span></strong> (Ch. 7 §7.6, footnote 24; the atom). Spin dominates; <span class="math inline">\(\mathcal{K}\approx K_s\)</span> <strong>for either sign</strong>, so — in Anthony’s own words — “the direction of spin has no effect on the parameters of the orbit.” The effect becomes <strong>magnitude-only</strong>; the sign washes out. This is why atomic binding (“charge”) looks sign-symmetric in magnitude.</li>
+</ul>
+<p><strong>The crossover is the operative fact.</strong> A <em>signed, reversible</em> weight change exists <strong>only while <span class="math inline">\(\rho \lesssim 1\)</span></strong>. As <span class="math inline">\(\rho \to 1\)</span> the signed response saturates; for <span class="math inline">\(\rho \gg 1\)</span> it is gone. Any programme that seeks to <em>drive</em> a weight change by pumping spin must therefore live in, and stay in, the band <span class="math inline">\(\rho \lesssim 1\)</span>. <strong>[OPEN]</strong> the full <span class="math inline">\(\Delta W(\rho)\)</span> across the crossover follows from the <span class="math inline">\(r_{\rm ff}(L)\)</span> relation of §6.3 combined with (2); the qualitative content — perturbative-signed below, saturating-then-symmetric above — is fixed.</p>
+<hr />
+<h2 id="the-recruitment-correction-extended-bodies-are-not-single-accumulators-ext-with-reason">4. The recruitment correction: extended bodies are not single accumulators <strong>[EXT, with reason]</strong></h2>
+<p>That the magnitude effect <em>exists</em> is the authors’ own correction (§3). What the synthesis has not carried
+through is its <strong>size</strong> for a real, extended body, and this is our one substantive departure; we state the
+reason. In the worked treatment (Ch. 7 §§7.4–7.5, and the numerical proof in <em>ospope-proof</em>, which sizes the
+Hayasaka 175 g / 18 000 rpm disc) the spin energy is taken as the <strong>bulk rigid-body</strong> value,
+<span class="math display">\[K_s^{\rm bulk} = \tfrac12 I \omega^2, \qquad I = \tfrac25 m r^2\ (\text{sphere}),\ \tfrac12 m r^2\ (\text{disc}), \tag{5}\]</span>
+at the macroscopic angular speed <span class="math inline">\(\omega\)</span>. The body is treated as <strong>one</strong> accumulator. On that basis the
+predicted weight change is far smaller than Hayasaka reported — the ground on which the Bureau International
+des Poids et Mesures (Quinn &amp; Picard) called the Hayasaka result spurious.</p>
+<p>But a real ball, disc, or gyroscope has physical extent: <span class="math inline">\(\sim10^{22}\)</span>–<span class="math inline">\(10^{24}\)</span> constituent accumulators, each with intrinsic spin, ordinarily <strong>randomized</strong> so that their vector sum is nil and they contribute nothing to (5). Mechanical rotation does not leave them randomized. By the <strong>Barnett effect</strong> — the mechanical dual of Einstein–de Haas — rotation magnetizes the body, i.e. it <strong>coherently aligns a fraction <span class="math inline">\(f\)</span></strong> of the internal spins along <span class="math inline">\(\omega\)</span>. Each aligned internal accumulator carries spin energy on the atomic (“charge”) scale, <span class="math inline">\(K_s^{\rm atom}\sim hcR_\infty\)</span> (Ch. 7 §7.6), which is enormous compared with the bulk rotational energy <em>per atom</em>. Hence
+<span class="math display">\[K_s^{\rm eff} \;\approx\; \underbrace{\tfrac12 I\omega^2}_{\text{bulk}} \;+\; \underbrace{f\,N\,K_s^{\rm atom}}_{\text{recruited, dominant}}, \tag{6}\]</span>
+with the second term controlling. Three consequences:</p>
+<ol type="1">
+<li><strong>Anthony undercounted</strong> the spin content, and with it the excursion of <span class="math inline">\(\mathcal{G}\)</span>, by many orders — the “far too small” prediction is an artifact of the single-accumulator assumption, not a statement about nature.</li>
+<li>Restored, the recruited internal spin <strong>recovers the larger observed effect</strong>: on this reading Hayasaka’s result is, in direction and rough magnitude, plausibly correct.</li>
+<li>The coefficient that has stood as an undetermined coupling in this programme is exactly the <strong>recruitment fraction <span class="math inline">\(f\)</span></strong> (times <span class="math inline">\(K_s^{\rm atom}/K_0\)</span>) — a computable efficiency, not a mystery. <strong>[OPEN]</strong> compute <span class="math inline">\(f\)</span> for a given material and drive.</li>
+</ol>
+<p><strong>The correction is tied to §3.</strong> Recruiting internal spin is precisely what raises <span class="math inline">\(\rho=K_s/K_0\)</span> toward and past unity. So recruitment is the lever that carries a body <strong>across</strong> the swamping crossover. There is therefore an <strong>optimal recruited fraction <span class="math inline">\(f^\ast\)</span></strong> at which <span class="math inline">\(\rho\approx O(1)\)</span>: maximal <em>signed, still-reversible</em> effect. Recruit beyond <span class="math inline">\(f^\ast\)</span> and the sign is lost to swamping. This — the interplay of (4) and (6) — is, we suggest, the general principle behind every spinning-mass weight anomaly, and it is stated here without reference to any particular apparatus.</p>
+<hr />
+<h2 id="the-single-vortex-form-ext">5. The single-vortex form <strong>[EXT]</strong></h2>
+<p>Lightspeed’s machinery is two-body throughout: a mass P orbiting a mass B, carrying orbital <span class="math inline">\(L\)</span> and intrinsic <span class="math inline">\(S\)</span>. Normal Realism has since moved to a <strong>single-substance</strong> picture: the elementary object is one closed <strong>vortex</strong> of the time-substance, and there is no orbiting pair. We show the two-body results survive the move intact, and that the recruitment correction becomes <em>native</em> rather than added.</p>
+<p><strong>Two angular rates of one object.</strong> A single closed vortex has two independent angular coordinates: the azimuth <span class="math inline">\(\varphi\)</span> <strong>around</strong> the loop, and the internal framing angle <span class="math inline">\(\psi\)</span> of the vortex core. Advancing the phase around the loop by whole turns is the standing-wave (de Broglie) condition
+<span class="math display">\[\oint d\varphi = 2\pi n \;\Rightarrow\; L_{\rm orb} = n\hbar, \tag{7}\]</span>
+the <strong>winding</strong> — our orbital angular momentum. The rotation of the core’s framing as one traverses the loop is the <strong>twist</strong> — our spin. These are not two substances layered together (we do <strong>not</strong> reintroduce “inner/outer quanta”); they are two rates of the <em>same</em> filament, and both are literally rates of the one substance <span class="math inline">\(S\)</span> against an angle, in keeping with the Normal-Realist identity <span class="math inline">\(L = dS/d\theta\)</span>:
+<span class="math display">\[L_{\rm orb} = \frac{dS}{d\varphi}, \qquad L_{\rm spin} = \frac{dS}{d\psi}. \tag{8}\]</span></p>
+<p><strong>Conservation is topological.</strong> For a closed ribbon (a vortex with a framing) the Călugăreanu–White–Fuller theorem gives
+<span class="math display">\[\mathrm{Lk} = \mathrm{Tw} + \mathrm{Wr}, \tag{9}\]</span>
+with the linking number <span class="math inline">\(\mathrm{Lk}\)</span> an integer that cannot change under any smooth deformation. Identifying total angular momentum with <span class="math inline">\(\mathrm{Lk}\)</span>, orbital with the writhe/winding and spin with the twist, <strong>holistic conservation of angular momentum becomes conservation of total linking</strong> — a genuine invariant, not a postulate bolted on.</p>
+<p><strong>What falls out for free.</strong>
+- <strong>Spin-½ is a half-twist.</strong> A ribbon carrying <span class="math inline">\(\mathrm{Tw}=\tfrac12\)</span> must be traversed twice — 720° — before its framing returns: the spinor property, with no separate assumption. This half-twist is the same factor “2” that appears in the published fine-structure result <span class="math inline">\(\alpha = \sqrt{2/N}\)</span> (the planar <span class="math inline">\(2\pi\)</span> versus solid-angle <span class="math inline">\(4\pi\)</span>). Spin-½ stops being posited and becomes the minimal non-zero twist of a single vortex.
+- <strong>Charge sign is twist handedness.</strong> A right- versus left-handed half-twist is the binary phase-sense that Lightspeed §7.6 already identifies with the sign of “charge.” No charge substance survives; only the handedness of a twist.
+- <strong>Anthony’s sign, recovered (O2).</strong> Twist co-oriented with the winding sense adds to the linking (heavier); anti-oriented subtracts (lighter): exactly <span class="math inline">\(\mathcal{K}=K_0\pm K_s\)</span>. What we formerly called “field-handedness” is just <em>twist-versus-winding</em>, and needs no independent derivation.</p>
+<p><strong>Recruitment and swamping in vortex language.</strong> Each atom is a micro-vortex with its own twist. Randomized, the twists point every way and the net twist is nil — precisely Anthony’s “no internal contribution,” now seen as the <span class="math inline">\(n{=}1\)</span> rigid limit of a system that in fact has a whole tower of internal windings available. <strong>Alignment (Barnett) co-orients the twists so their linking numbers add</strong>, producing a macroscopic net twist — the recruitment of §4. <strong>Phase advance pumps the winding</strong> (<span class="math inline">\(\oint d\varphi\)</span>, i.e. adds writhe), the general form of driving angular momentum into the body. And <strong>swamping is spin-lock</strong>: when the aggregate twist dominates the winding, the sign of the total linking is set by the twist, and further winding (phase advance) can no longer flip the Earth-frame sense. The three phenomena of §§3–4 are one statement about <span class="math inline">\(\mathrm{Tw}\)</span> versus <span class="math inline">\(\mathrm{Wr}\)</span>.</p>
+<hr />
+<h2 id="scope">6. Scope</h2>
+<p><strong>[FORCED]</strong> — Everything in §§1–2 and the two regimes of §3 is Lightspeed, re-expressed. We assume the book correct and have found no reason in it to do otherwise.</p>
+<p><strong>[EXT]</strong> — (i) The naming and use of the swamping ratio <span class="math inline">\(\rho\)</span> as the control variable (§3); (ii) the recruitment correction (§4), which is the single substantive departure from the book, taken only because the book’s single-accumulator treatment of an extended body is demonstrably incomplete and its omission mispredicts a real experiment; (iii) the single-vortex re-expression (§5), which changes the <em>representation</em>, not the physics, and reproduces every two-body result.</p>
+<p><strong>[OPEN]</strong> — (i) the closed form <span class="math inline">\(\Delta W(\rho)\)</span> across the crossover; (ii) the recruitment fraction <span class="math inline">\(f\)</span> and the optimum <span class="math inline">\(f^\ast\)</span> for a given material and drive; (iii) a first-principles value for the twist–winding coupling that fixes the coefficient in (4).</p>
+<p><em>Downstream (not in this paper, per scope): the specialization of §§3–5 to a concrete resonant apparatus belongs in the engineering papers, which import from here — never the reverse.</em></p>
+<hr />
+<h2 id="sources">Sources</h2>
+<ul>
+<li>A. D. Osborne &amp; N. V. Pope, <em>Light-Speed, Gravitation and Quantum Instantaneity</em> (Philosophical Enterprises, Swansea, 2007) — the primary text; chapter references throughout.</li>
+<li>N. V. Pope, <em>A Critique of Modern Physics</em> (PIRT, Imperial College, 2008) — notes 3–4: the authors’ own correction that Ch. 7 omitted the sign-independent <strong>magnitude</strong> effect of spin, and the statement of the spin/orbital proportion (small for astronomical bodies, extremely large for the electron).</li>
+<li><em>An Angular Momentum Synthesis…</em> and the <em>ospope-proof</em> note — the rigid-body numerical treatment of the Hayasaka disc and the Quinn–Picard (BIPM) dispute.</li>
+<li>H. Hayasaka &amp; S. Takeuchi, <em>Phys. Rev. Lett.</em> <strong>63</strong> (1989) 2701; T. J. Quinn &amp; A. Picard, <em>Nature</em> <strong>343</strong> (1990) 732.</li>
+</ul>
+<p><strong>Reconciliation note (value of 𝒢 for the electron).</strong> The populated 2007 text as transcribed gives
+<span class="math inline">\(\mathcal{G} \approx 1.5141713\times10^{28}\)</span>; the 2008 correction and a direct evaluation of <span class="math inline">\(\mathcal{G}=r_s v_s^2/m_p\)</span>
+(<span class="math inline">\(r_s=5.29\times10^{-11}\)</span>, <span class="math inline">\(v_s=2.19\times10^6\)</span>, <span class="math inline">\(m_p=1.67\times10^{-27}\)</span>) both give <span class="math inline">\(\approx 1.514\times10^{29}\)</span>.
+We use <span class="math inline">\(10^{29}\)</span>; the <span class="math inline">\(10^{28}\)</span> in the transcription is an apparent OCR/typo — <strong>[OPEN]</strong> verify against the print scan before altering the published book.</p>
+
+</main>
+<script>
+if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+});
+</script>
+</body>
+</html>
