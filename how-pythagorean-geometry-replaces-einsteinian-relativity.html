@@ -8,9 +8,9 @@
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#1a1a2e;--bg2:#16213e;--fg:#e0e0e0;--fg2:#bbb;--accent:#c9a84c;--border:#333;--host:#c9a84c;--analyst:#7eb8da;--blockbg:#0f1a30}
+:root{--bg:#faf8f2;--bg2:#fff;--fg:#222;--fg2:#555;--accent:#8b6914;--border:#ccc;--host:#8b6914;--analyst:#2a6496;--blockbg:#f9f6f0}
 body{background:var(--bg);color:var(--fg);font-family:Georgia,serif;line-height:1.75;padding:20px;min-height:100vh}
-body.light{--bg:#f5f0e8;--bg2:#fff;--fg:#222;--fg2:#555;--border:#ccc;--blockbg:#f9f6f0;--analyst:#2a6496}
+:root[data-theme="dark"]{--bg:#1a1a2e;--bg2:#16213e;--fg:#e0e0e0;--fg2:#bbb;--accent:#c9a84c;--border:#333;--host:#c9a84c;--analyst:#7eb8da;--blockbg:#0f1a30}
 .container{max-width:860px;margin:0 auto}
 a{color:var(--accent)}
 .back{display:inline-block;margin-bottom:20px;font-size:.9em;text-decoration:none;color:var(--accent)}
@@ -18,7 +18,7 @@ a{color:var(--accent)}
 h1{color:var(--accent);font-size:2em;margin-bottom:4px;line-height:1.2}
 .subtitle{color:var(--fg2);font-size:1em;margin-bottom:6px}
 .meta-note{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:14px 18px;font-size:.88em;color:var(--fg2);margin:16px 0 28px;line-height:1.6}
-.theme-toggle{position:fixed;top:14px;right:14px;background:var(--accent);color:#1a1a2e;border:none;padding:6px 14px;border-radius:6px;font-family:Georgia,serif;font-size:.85em;cursor:pointer;font-weight:bold;z-index:99}
+#theme-btn{position:fixed;top:1rem;right:1rem;z-index:200;background:var(--accent);color:var(--bg);border:none;width:40px;height:40px;border-radius:8px;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 h2{color:var(--accent);font-size:1.35em;margin:36px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .dialogue{margin:10px 0}
 .turn{margin:12px 0;padding:0 0 0 0}
@@ -35,7 +35,7 @@ h2{color:var(--accent);font-size:1.35em;margin:36px 0 14px;padding-bottom:6px;bo
 </style>
 </head>
 <body>
-<button class="theme-toggle" onclick="document.body.classList.toggle('light');this.textContent=document.body.classList.contains('light')?'🌙 Dark':'☀️ Light'">☀️ Light</button>
+<button id="theme-btn" onclick="poamsToggleTheme()" title="Toggle theme (T)" aria-label="Toggle light/dark theme">🌙</button>
 
 <div class="container">
 <a class="back" href="index.html">← Back to Index</a>
@@ -717,5 +717,6 @@ h2{color:var(--accent);font-size:1.35em;margin:36px 0 14px;padding-bottom:6px;bo
 </div>
 
 </div><!-- /container -->
+<script>function poamsToggleTheme(){var h=document.documentElement,dark=h.getAttribute('data-theme')==='dark';if(dark){h.removeAttribute('data-theme')}else{h.setAttribute('data-theme','dark')}var b=document.getElementById('theme-btn');if(b)b.textContent=dark?'🌙':'☀️';}document.addEventListener('keydown',function(e){if(e.key==='t'||e.key==='T'){poamsToggleTheme();}});</script>
 </body>
 </html>

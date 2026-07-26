@@ -8,12 +8,12 @@
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
 :root {
-  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
-  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
-}
-.light {
   --bg: #faf8f2; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
   --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+:root[data-theme="dark"] {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 16px; }
@@ -36,7 +36,7 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 </style>
 </head>
 <body>
-<button id="theme-btn" onclick="document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')" title="Toggle theme (T)">🌙</button>
+<button id="theme-btn" onclick="poamsToggleTheme()" title="Toggle theme (T)" aria-label="Toggle light/dark theme">🌙</button>
 <main>
 <a class="back-link" href="index.html">← Back to Papers</a>
 <h1>POAMS - A Short Definitive Description</h1>
@@ -60,9 +60,9 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 
 </main>
 <script>
-if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+function poamsToggleTheme(){var h=document.documentElement,dark=h.getAttribute('data-theme')==='dark';if(dark){h.removeAttribute('data-theme')}else{h.setAttribute('data-theme','dark')}var b=document.getElementById('theme-btn');if(b)b.textContent=dark?'🌙':'☀️';}
 document.addEventListener('keydown',e=>{
-  if(e.key==='t'||e.key==='T'){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+  if(e.key==='t'||e.key==='T'){poamsToggleTheme();}
 });
 </script>
 </body>
