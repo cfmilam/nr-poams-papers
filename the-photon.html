@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Photon</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #ffffff; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+:root[data-theme="dark"] {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 16px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="poamsToggleTheme()" title="Toggle theme (T)" aria-label="Toggle light/dark theme">☀️</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>The Photon</h1>
+<h1>THE 'PHOTON'</h1>
+<p>The word 'photon' is a misnomer for the quantum of luminous energy. The ultimate pixel of illumination is the irreducible quantum of energy, $h$, lost by one atom and gained by another. Intrinsically – that is to say, in its own proper time – the transfer of that quantum is instantaneous, and it is only in statistical numbers of these quanta, in relative (observer) time that the transfer of energy is time-delayed [1].</p>
+<p>To assume that the quantum is a particle travelling at the 'speed $c$' produces nonsense. Any <em>particle</em> has mass, and the mass of any particle travelling at the 'speed $c$' is infinite, whereas the mass of the quantum ($h$ times its frequency divided by $c^2$) is extremely small – in the visible spectrum, about $10^{-34}$ kilogram. Some have sought to avoid this nonsensical 'infinite mass' by arguing that 'in its own stationary frame the mass of the photon is zero' [2]. Unfortunately for that argument it is axiomatic in relativity that $c$ is the same in <em>all</em> frames of reference, which leaves no 'rest frame' for the 'photon'.</p>
+<p>Another problem for the 'photon' concept is that, being irreducible, the quantum has no energy to spare in manifesting itself in any way between the emitter and the absorber, so the postulate of the 'photon' travelling between the two is completely unverifiable, hence empirically meaningless.</p>
+<p>To avoid these nonsensical connotations of the conventional word 'photon', in POAMS the word '<em>photum</em>' (plural, <em>phota</em>) has been deemed more appropriate [3].</p>
+<p>$^{1}$ Ref. to.
+$^{2}$ Jean-Paul Vigier, Conference, Toronto. 1996
+$^{3}$ Give ref.</p>
+</main>
+<script>
+function poamsToggleTheme(){var h=document.documentElement,dark=h.getAttribute('data-theme')==='dark';if(dark){h.removeAttribute('data-theme')}else{h.setAttribute('data-theme','dark')}var b=document.getElementById('theme-btn');if(b)b.textContent=dark?'🌙':'☀️';}
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){poamsToggleTheme();}
+});
+</script>
+</body>
+</html>

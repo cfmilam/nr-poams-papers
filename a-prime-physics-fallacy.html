@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Prime Physics Fallacy</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root {
+  --bg: #ffffff; --fg: #2a2a2a; --accent: #8b6914; --accent2: #c9a84c;
+  --link: #8b6914; --blockquote-bg: rgba(139,105,20,0.06); --blockquote-border: #8b6914;
+}
+:root[data-theme="dark"] {
+  --bg: #1a1a2e; --fg: #e0e0e0; --accent: #c9a84c; --accent2: #8b6914;
+  --link: #c9a84c; --blockquote-bg: rgba(201,168,76,0.08); --blockquote-border: #c9a84c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 16px; }
+main { max-width: 750px; margin: 0 auto; padding: 3rem 2rem; }
+h1 { font-size: 1.8rem; color: var(--accent); margin: 1rem 0; line-height: 1.3; }
+h2 { font-size: 1.3rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--accent); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; color: var(--accent2); margin: 1.5rem 0 0.6rem; }
+p { margin: 0.8rem 0; text-align: left; }
+a { color: var(--link); }
+blockquote { border-left: 3px solid var(--blockquote-border); background: var(--blockquote-bg); padding: 1rem 1.5rem; margin: 1.2rem 0; font-style: italic; }
+.meta { color: var(--accent2); font-size: 0.95rem; margin-bottom: 2rem; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+#theme-btn {
+  position: fixed; top: 1rem; right: 1rem; z-index: 200;
+  background: var(--accent); color: var(--bg); border: none;
+  width: 40px; height: 40px; border-radius: 8px; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { main { padding: 2rem 1rem; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<button id="theme-btn" onclick="poamsToggleTheme()" title="Toggle theme (T)" aria-label="Toggle light/dark theme">☀️</button>
+<main>
+<a class="back-link" href="index.html">← Back to Papers</a>
+<h1>A Prime Physics Fallacy</h1>
+<p>D:\POAMS Discussion Group\Snippets for POAMS .doc</p>
+<h1>A PRIME PHYSICS FALLACY</h1>
+<p>A prime fallacy in modern physics is to talk of 'electrons', 'photons', 'quarks', 'waves in vacuo', the 'Big Bang', 'strings', etc., etc., as though they are things of which we have intimate, objective knowledge. In reality, all these are, in the end, are just names we have given to certain phenomena.</p>
+<p>Nature does not present us with these phenomena neatly classified, categorised and named securely for all time. It is we, the constructors of our scientific language, who do the naming. And we do it without any cosmical book of instructions on how to do it correctly, in such a way as to make that language immune from future revision in the light of expanding experience.</p>
+<p>For example, the fact that the whale was once classified as a 'fish' did not mean it had to remain a 'fish' for ever more. Nor did the classical, hard-line distinction between the categories 'biological' and 'mineral' survive the discovery of the virus-particle.</p>
+<p>Imagine, then, how it might have been if these changes in language had not been allowed to take place. Obviously, with such a restriction, science could never have advanced to its present stage.</p>
+<p>Why, then, has this restriction been imposed on physics? Why do we persist in talking about the 'electron' when it has been shown that this phenomenon, which has been traditionally interpreted as a particle possessed of a mysterious 'static' measure crackling away in 'coulombs', can be far more sensibly interpreted as a plain mass with a spin energy measured in ordinary units of joules?</p>
+<p>And why do we keep talking about the 'photon' as an impossible space-travelling 'wave-particle' when that whole conception can be removed in favour of Feynman-Wheeler type direct-action quantum resonances between atoms?</p>
+<p>Why, moreover, do we keep on talking about the mysterious 'gravitational force', when all free orbital motion can be explained entirely in terms of an angular momentum equation? Why insist that there is a problem of 'unification of forces' when it is shown that these 'forces' can be unified at a single stroke, by getting rid of them altogether?</p>
+<p>And how can people imagine that there is any sense in talking about a cosmical 'wave-continuum', when the idea of a wave without anything waving is pure nonsense. One might as well assume that a 'Mexican wave' can exist in a football stadium as a 'standing wave' when the stadium is empty and everyone has gone home!</p>
+<p>All waves are sequential motions of discrete particles whose movements are locally confined and do not travel in the way that the wave is said to 'travel'. None of the molecules in a sound-wave, a water wave – even a tsunami at sea – travels in the same direction and the at the same speed as is attributed to the wave. So why carry on talking about a wave as 'travelling', when nothing travels but only happens in an observational (i.e., phenomenal) sequence of discrete, local events?</p>
+<p>What 'local events', then, are there in a 'wave' travelling in a vacuum. The idea is complete nonsense. So why on earth do people persist in talking in that altogether nonsensical way?</p>
+<p>The supreme irony is that while it is POAMS that does all this and more (a large compilation on this is to appear soon in all the main world libraries), there are, amazingly, people entering into these discussions under the heading of 'POAMS', who take nothing of this into account, having plainly not even glanced at the website on which all this is carefully explained.</p>
+<p>What price professional scientific integrity, eh!</p>
+</main>
+<script>
+function poamsToggleTheme(){var h=document.documentElement,dark=h.getAttribute('data-theme')==='dark';if(dark){h.removeAttribute('data-theme')}else{h.setAttribute('data-theme','dark')}var b=document.getElementById('theme-btn');if(b)b.textContent=dark?'🌙':'☀️';}
+document.addEventListener('keydown',e=>{
+  if(e.key==='t'||e.key==='T'){poamsToggleTheme();}
+});
+</script>
+</body>
+</html>
