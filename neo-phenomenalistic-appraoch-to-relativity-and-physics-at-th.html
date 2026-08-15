@@ -46,8 +46,7 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 <p>It is postulated that:</p>
 <p><strong>(A1)</strong> The laws of physics are the same in all inertial frames.</p>
 <p><strong>(A2)</strong> Observational distance and time have a constant ratio of units, $c$, for all observers sharing that same conventional choice of units.</p>
-<p>Consider a clock $X$ moving with uniform velocity, <em>i.e.</em> with constant speed $v$ along a rectilinear path, relative to an observer $O$. After passage of time $t$ recorded by $O$, $X$ moves a distance $r = vt$. It follows, by using the conversion factor $c$, $X$ moves a distance-time $r/c$. Let us suppose that the same time interval as recorded by $X$'s clock is $\tau$, as observed by $O$. It then follows simply by applying Pythagoras's theorem in the associated two-dimensional time diagram with coordinates $r/c$ and $\tau$ that</p>
-<p>t^2 = \tau^2 + (r/c)^2 \quad (1)</p>
+<p>Consider a clock $X$ moving with uniform velocity, <em>i.e.</em> with constant speed $v$ along a rectilinear path, relative to an observer $O$. After passage of time $t$ recorded by $O$, $X$ moves a distance $r = vt$. It follows, by using the conversion factor $c$, $X$ moves a distance-time $r/c$. Let us suppose that the same time interval as recorded by $X$'s clock is $\tau$, as observed by $O$. It then follows simply by applying Pythagoras's theorem in the associated two-dimensional time diagram with coordinates $r/c$ and $\tau$ that t^2 = \tau^2 + (r/c)^2 \quad (1)</p>
 <p>Since $r = vt$ it follows from (1) that</p>
 <p>\tau = \sqrt{1 - v^2/c^2}\; t \quad (2)</p>
 <p>— the standard time dilation formula of SR.</p>
@@ -56,25 +55,19 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 <p>The right-hand side of (3) immediately provides an invariant quantity for all inertial observers, the separation between two events, the basis for Minkowski space-time (MST).</p>
 <p>Now suppose clock $X$ moves with non-constant velocity $\mathbf{v}(t)$ relative to observer $O$ and let $v(t) = \|$\mathbf{v}(t)\|$ denote the speed of the clock relative to $O$. It follows by (2) that in this case, the relatively moving clock $X$ records proper time $\tau$ given by</p>
 <p>\tau = \int \sqrt{1 - v^2(t)/c^2}\; dt \quad (4)</p>
-<p>Relative to Cartesian coordinates $(x, y, z)$, the speed of a moving object satisfies $v^2(t) = \|$\mathbf{v}(t)\|^2 = (dx/dt)^2 + (dy/dt)^2 + (dz/dt)^2$. Then (4) gives</p>
-<p>c^2(d\tau/dt)^2 = c^2 - v^2(t) = c^2 - (dx/dt)^2 - (dy/dt)^2 - (dz/dt)^2</p>
+<p>Relative to Cartesian coordinates $(x, y, z)$, the speed of a moving object satisfies $v^2(t) = \|$\mathbf{v}(t)\|^2 = (dx/dt)^2 + (dy/dt)^2 + (dz/dt)^2$. Then (4) gives c^2(d\tau/dt)^2 = c^2 - v^2(t) = c^2 - (dx/dt)^2 - (dy/dt)^2 - (dz/dt)^2</p>
 <p>\Rightarrow\; -c^2 d\tau^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2</p>
-<p>In this way, the time dilation formula directly provides the metric for MST. It follows directly from (4) that</p>
-<p>dt/d\tau = (1 - v^2(t)/c^2)^{-1/2} = \gamma(t)</p>
+<p>In this way, the time dilation formula directly provides the metric for MST. It follows directly from (4) that dt/d\tau = (1 - v^2(t)/c^2)^{-1/2} = \gamma(t)</p>
 <p>This result is crucial in relativistic dynamics. This formula, together with considerations of conservation of momentum, leads to the mass increase with velocity formula and to the equivalence of mass and energy.</p>
-<p>Consider two observers $O$ and $O'$, each situated at the origin of a set of Cartesian axes labelled $x, y, z$ and $x', y', z'$ respectively. Suppose that $O'$ moves along the $x$-axis in the positive direction with constant speed $v$ relative to $O$ such that the $x', y'$ and $z'$ axes remain parallel to the $x, y$ and $z$ axes respectively. Let $t$ be some passage of time as recorded by a clock in $O$'s inertial frame and let $t'$ be the corresponding passage of time as recorded by a clock in $O'$'s inertial frame. We suppose that the observers $O$ and $O'$ synchronise clocks when they coincide at $t = 0$, so that when $t = 0$ at $(0, 0, 0)$ relative to $O$, $t' = 0$ at $(0, 0, 0)$ relative to $O'$. It follows from (A1) exactly as in SR,</p>
-<p>x' = \gamma(x - vt) \quad (5)</p>
-<p>for some constant $\gamma$ to be determined. It then follows that since $O$ travels at speed $v$ in the negative $x'$ direction relative to $O'$, then $x = \gamma(x' + vt')$, giving</p>
-<p>t' = \gamma\!\left(t - \left(1 - $\frac{1}{\gamma^2}\right)$\frac{x}{v}\right) \quad (6)</p>
-<p>After time $t$ relative to $O$, $O'$ has moved a distance $x = vt$. Then the same passage of time, $t'$, as recorded by $O'$'s clock relative to $O$ is given by (6) with $x = vt$, so that</p>
-<p>t' = \gamma(t - (1 - 1/\gamma^2)t) = t/\gamma \quad (7)</p>
+<p>Consider two observers $O$ and $O'$, each situated at the origin of a set of Cartesian axes labelled $x, y, z$ and $x', y', z'$ respectively. Suppose that $O'$ moves along the $x$-axis in the positive direction with constant speed $v$ relative to $O$ such that the $x', y'$ and $z'$ axes remain parallel to the $x, y$ and $z$ axes respectively. Let $t$ be some passage of time as recorded by a clock in $O$'s inertial frame and let $t'$ be the corresponding passage of time as recorded by a clock in $O'$'s inertial frame. We suppose that the observers $O$ and $O'$ synchronise clocks when they coincide at $t = 0$, so that when $t = 0$ at $(0, 0, 0)$ relative to $O$, $t' = 0$ at $(0, 0, 0)$ relative to $O'$. It follows from (A1) exactly as in SR, x' = \gamma(x - vt) \quad (5)</p>
+<p>for some constant $\gamma$ to be determined. It then follows that since $O$ travels at speed $v$ in the negative $x'$ direction relative to $O'$, then $x = \gamma(x' + vt')$, giving t' = \gamma\!\left(t - \left(1 - $\frac{1}{\gamma^2}\right)$\frac{x}{v}\right) \quad (6)</p>
+<p>After time $t$ relative to $O$, $O'$ has moved a distance $x = vt$. Then the same passage of time, $t'$, as recorded by $O'$'s clock relative to $O$ is given by (6) with $x = vt$, so that t' = \gamma(t - (1 - 1/\gamma^2)t) = t/\gamma \quad (7)</p>
 <p>But here, $t' = \tau$, the proper time recorded by the travelling clock, so that (7) is the same as (2), immediately giving $\gamma = (1 - v^2/c^2)^{-1/2}$ from which the special Lorentz transformation, consisting of (5) and (6), follows.</p>
 <h2>The Pope-Osborne Angular Momentum Synthesis</h2>
 <p>It is postulated that all free motion is naturally orbital and that angular momentum is holistically conserved. Such natural orbital motion is explained in terms of conservation of momentum, without the need to postulate any <em><em>in vacuo</em></em> 'gravitational force' being responsible. The natural orbit of any particle is the path described by the particle when all restrictions on its motion are removed, that is, when the particle moves freely under the influence of nothing but its own angular momentum.</p>
 <p>Consider an isolated paired system, in which a particle $P$ of mass $m$ orbits a larger body $B$ of mass $M$, where $M \gg m$. $P$ can be considered as orbiting an origin $O$, which is the centre of mass of $B$. Orbital angular momentum, $L$, of $P$, about $O$: $\mathbf{L} = $\mathbf{r} \times m$\mathbf{v}$, where $\mathbf{r}$ is the position vector of $P$ and $\mathbf{v} = d$\mathbf{r}/dt$ is the velocity of $P$, relative to $O$, at any instant of time $t$. Note $\mathbf{L}$ is perpendicular to the plane containing $\mathbf{r}$ and $\mathbf{v}$. By hypothesis,\mathbf{L}$ is constant in time. Hence, the orbit of $P$ lies in a plane and $L = \|$\mathbf{L}\|$ is a constant.</p>
 <p>Also, since $d$\mathbf{L}/dt = 0$, $d$\mathbf{L}/dt = $\mathbf{v} \times m$\mathbf{v} + $\mathbf{r} \times m$\mathbf{a} = $\mathbf{r} \times m$\mathbf{a} = 0$, where $\mathbf{a} = d$\mathbf{v}/dt$ is the acceleration of $P$ relative to $O$. Since $m $\neq$ 0$, $r $\neq$ 0$ and $a $\neq$ 0$, this implies that $\mathbf{a}$ must be parallel to $\mathbf{r}$ and so the acceleration of $P$ is directed towards $O$.</p>
-<p>Since the orbit of $P$ lies in a plane, we use plane polar coordinates $r$ and $\theta$, where $r = \|$\mathbf{r}\|$ and $\theta$ is the angle between the radial vector $\mathbf{r}$ and some fixed radial axis. Exactly as in Newtonian theory, it then follows that the orbital speed, $v = \|$\mathbf{v}\|$, of $P$ is given by</p>
-<p>v^2 = \dot{r}^2 + r^2\dot{\theta$}^2 \quad (8)</p>
+<p>Since the orbit of $P$ lies in a plane, we use plane polar coordinates $r$ and $\theta$, where $r = \|$\mathbf{r}\|$ and $\theta$ is the angle between the radial vector $\mathbf{r}$ and some fixed radial axis. Exactly as in Newtonian theory, it then follows that the orbital speed, $v = \|$\mathbf{v}\|$, of $P$ is given by v^2 = \dot{r}^2 + r^2\dot{\theta$}^2 \quad (8)</p>
 <p>Also,</p>
 <p>a = \|$\mathbf{a}\| = |\ddot{r} - r\dot{\theta$}^2| \quad (9)</p>
 <p>and</p>
@@ -91,8 +84,7 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 <p>v^2 = GM/r \quad (15)</p>
 <p>As in Newtonian theory, (14) may be integrated to give</p>
 <p>\dot{r}^2 + $\frac{L^2}{m^2 r^2} = $\frac{2GM}{r} + K \quad (16)</p>
-<p>where $K$ is a constant. Since $P$'s orbit is assumed to be closed, $K < 0$. Multiplying (16) by $(mr^2/L)^2$, using (10) and then letting $u = 1/r$ gives, as in Newtonian theory,</p>
-<p>(du/d$\theta$)^2 + u^2 = (2GMm^2/L^2)u + Km^2/L^2 \quad (17)</p>
+<p>where $K$ is a constant. Since $P$'s orbit is assumed to be closed, $K < 0$. Multiplying (16) by $(mr^2/L)^2$, using (10) and then letting $u = 1/r$ gives, as in Newtonian theory, (du/d$\theta$)^2 + u^2 = (2GMm^2/L^2)u + Km^2/L^2 \quad (17)</p>
 <p>The solutions of (17) which are closed curves are ellipses.</p>
 <h2>Orbital Time Dilation</h2>
 <p>Consider again a freely moving particle $P$ orbiting a body $B$ of mass $M$. It follows by (15) and (4) that if the orbit of $P$ is circular, then since the speed of $P$ is constant, the time dilation determined by velocity effects alone is</p>
@@ -107,16 +99,14 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 <p>-c^2 d\tau^2 = -c^2(1 - a\mathcal{M}/r)\,dt^2 + r^2 d$\theta$^2 \quad (20)</p>
 <p>Equation (20) may be treated as a special case of the metric</p>
 <p>-c^2 d\tau^2 = -c^2(1 - a\mathcal{M}/r)\,dt^2 + A(r)\,dr^2 + r^2 d$\theta$^2 \quad (21)</p>
-<p>for a three-dimensional space-time when $r$ is a constant. The coefficient of $dr^2$, <em>i.e.</em> $A$, in (21) must be a function of $r$ alone, since the central mass $M$ is assumed to be spherically symmetric and static. In MST, the paths of freely moving particles are geodesics. In order for circular orbits satisfying (15) to be natural orbits in space, we require that these orbits are geodesics in the space-time with metric (21). It follows by standard differential geometry that all geodesics in this structure must satisfy</p>
-<p>dt/d\tau = (\alpha/c^2)(1 - a\mathcal{M}/r)^{-1} \quad (22a)</p>
+<p>for a three-dimensional space-time when $r$ is a constant. The coefficient of $dr^2$, <em>i.e.</em> $A$, in (21) must be a function of $r$ alone, since the central mass $M$ is assumed to be spherically symmetric and static. In MST, the paths of freely moving particles are geodesics. In order for circular orbits satisfying (15) to be natural orbits in space, we require that these orbits are geodesics in the space-time with metric (21). It follows by standard differential geometry that all geodesics in this structure must satisfy dt/d\tau = (\alpha/c^2)(1 - a\mathcal{M}/r)^{-1} \quad (22a)</p>
 <p>d$\theta$/d\tau = \beta/r^2 \quad (22b)</p>
 <p>2\ddot{r} + $\frac{ac^2\mathcal{M}}{Ar^2}\!\left(\frac{dt}{d\tau}\right)^{\!2} + $\frac{A'(r)}{A}\!\left(\frac{dr}{d\tau}\right)^{\!2} = $\frac{2r}{A}\!\left(\frac{d$\theta$}{d\tau}\right)^{\!2} \quad (22c)</p>
 <p>where $\alpha$ and $\beta$ are constants. In the special case when $r$ is a constant, (22c) reduces to $(ac^2\mathcal{M}/2r^3)(dt/d\tau)^2 = (d$\theta$/d\tau)^2$, giving $(d$\theta$/dt)^2 = ac^2\mathcal{M}/2r^3$. It then follows that for any circular orbit, since $v = r(d$\theta$/dt)$, $v^2 = ac^2\mathcal{M}/2r = aGM/2r$. Hence, in order for circular orbits given by (15) to be geodesics, $a = 2$. Then by (19), the true proper time recorded by $P$'s clock in its circular orbit relative to DST is given, as in GR, by</p>
 <p>\tau = \sqrt{1 - 3GM/(rc^2)}\; t</p>
 <h2>Schwarzschild Space-time as a Consequence of Time Dilation</h2>
 <p>The coefficient $A(r)$ in the metric (21) with $a = 2$, which is essentially the time dilation formula for any natural orbit in POAMS, can be determined by the fact that the geodesics in this space-time must give rise to curves in space that are ellipses, or at least almost ellipses, as dictated by Newtonian theory, POAMS and observation.</p>
-<p>The geodesics for the manifold with metric (21) are given by equations (22) with $a = 2$. It also follows from the metric (21) that along any geodesic,</p>
-<p>c^2(1 - 2\mathcal{M}/r)(dt/d\tau)^2(d\tau/d$\theta$)^2 - A(r)(1 - 2\mathcal{M}/r)(dr/d$\theta$)^2 - r^2(1 - 2\mathcal{M}/r) = c^2(d\tau/d$\theta$)^2</p>
+<p>The geodesics for the manifold with metric (21) are given by equations (22) with $a = 2$. It also follows from the metric (21) that along any geodesic, c^2(1 - 2\mathcal{M}/r)(dt/d\tau)^2(d\tau/d$\theta$)^2 - A(r)(1 - 2\mathcal{M}/r)(dr/d$\theta$)^2 - r^2(1 - 2\mathcal{M}/r) = c^2(d\tau/d$\theta$)^2</p>
 <p>Then from equations (22a) and (22b) it follows that</p>
 <p>(\alpha^2 r^4/\beta^2 c^2) - A(r)(1 - 2\mathcal{M}/r)(dr/d$\theta$)^2 - r^2(1 - 2\mathcal{M}/r) = (c^2 r^4/\beta^2)(1 - 2\mathcal{M}/r)</p>
 <p>Letting $r = 1/u$ then gives</p>
@@ -140,8 +130,7 @@ blockquote { border-left: 3px solid var(--blockquote-border); background: var(--
 <p>Once $K$ has been determined, it follows by (27) and (10) that $L^2 = 2Kmr_s^2 - m^2\dot{r}_s^2 r_s^2$. Since $L$ can also be determined, $r_s(t)$ can be determined from this equation and then $\omega_s(t)$ can be found using (10). The fact that $P$'s orbital parameters are affected by its spin gives rise to the fact that the equation of motion (14) must be adapted to read $\ddot{r}_s - r_s$\omega$_s^2 = -\mathcal{G}M/r_s^2$; that is, $G$ is replaced by a function $\mathcal{G}$ which depends on the orbital parameters $r_s$ and $\omega_s$. $\mathcal{G}$ reduces to $G$ when and only when (26) describes any natural, spin-less orbit of $P$.</p>
 <p>If the orbit of $P$ is circular, this process is considerably simplified. In this case</p>
 <p>v_s^2 = 2K/m \quad (28)</p>
-<p>where $v_s$ is the orbital speed of $P$. Since $K$ is known, $v_s$ may be determined by (28) and then $r_s$ may be calculated using (11), <em>i.e.</em></p>
-<p>r_s = L/(mv_s) \quad (29)</p>
+<p>where $v_s$ is the orbital speed of $P$. Since $K$ is known, $v_s$ may be determined by (28) and then $r_s$ may be calculated using (11), <em>i.e.</em> r_s = L/(mv_s) \quad (29)</p>
 <p>Finally in this case, it follows by (15) that</p>
 <p>\mathcal{G} = r_s v_s^2/M \quad (30)</p>
 <h2>POAMS at the Quantum Level</h2>
