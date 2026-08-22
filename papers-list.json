@@ -2179,8 +2179,16 @@
   "title": "QMC Exhibit I — The Two-Slit Experiment",
   "slug": "the-two-slit-experiment",
   "author": "N. V. Pope & A. D. Osborne",
-  "year": null,
+  "year": 2026,
   "pages": 11,
   "file": "the-two-slit-experiment.html"
+ },
+ {
+  "title": "QMC Exhibit II — The Nature of Time",
+  "slug": "the-nature-of-time",
+  "author": "A. D. Osborne & N. V. Pope",
+  "year": 2026,
+  "pages": null,
+  "file": "the-nature-of-time.html"
  }
 ]
